@@ -1,0 +1,66 @@
+.main {
+  font-size: 1.5rem;
+  width: 88%;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.main h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.main button {
+  font-size: 1.5rem;
+  min-width: 300px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(45deg, #00b4bd, #0083b0);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  z-index: 0;
+  transform: translate(-50%, -50%) scale(0);
+}
+button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+button:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+button:disabled {
+  background: #ccc;
+}
+
+#counter {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 100px;
+  align-items: center;
+}
