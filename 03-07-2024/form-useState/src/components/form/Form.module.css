@@ -1,0 +1,135 @@
+.form {
+  color: var(--grey-900);
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  gap: 8px;
+}
+
+h1 {
+  padding: 8px;
+}
+
+/*sezione nome e cosgnome con div */
+
+/*div con i campi nome e cognome*/
+
+.div1 {
+  gap: 12px;
+  padding: 8px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+/*div con label e input nome*/
+
+.name {
+  padding: 8px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/*div con label e input cognome*/
+
+.surname {
+  padding: 8px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/*div con label e input email*/
+
+.div2 {
+  gap: 8px;
+  width: 100%;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+/*div con i due checkbox + label */
+
+.div3 {
+  gap: 12px;
+  padding: 8px;
+  width: 100%;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+}
+
+.titleCheckBoxes {
+  padding: 8px;
+  gap: 8px;
+}
+
+/* div con il primo checkbox */
+
+.general {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 8px;
+  gap: 8px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+/*div con il secondo checkbox*/
+
+.support {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 8px;
+  gap: 8px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+/*div con la sezione messaggio ,spazio 5 righe*/
+
+.div4 {
+  gap: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+/*div con l'ultimo checkbox, accontento....*/
+
+.div5 {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 8px;
+}
+
+/* style h3 durante la compilatione */
+
+h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* stile bottone */
+
+.button {
+  color: var(--white);
+  border-radius: 12px;
+  padding: 12px 18px;
+  border: none;
+  background-color: var(--green-600);
+}
