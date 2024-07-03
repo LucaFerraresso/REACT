@@ -76,15 +76,20 @@ body {
 
 h1 {
   color: var(--neon-green);
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 6px;
   text-transform: uppercase;
   margin-bottom: 18px;
 }
 
+/* uso il flex per gestire il layout dell'h2 */
 h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
   color: var(--light-cyan);
-  font-size: 28px;
-  font-weight: 800;
+  font-size: 22px;
+  margin-bottom: 20px;
 }
