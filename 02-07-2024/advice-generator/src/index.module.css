@@ -62,3 +62,29 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+/* variabili css, COLORI */
+:root {
+  --dark-blue: #202733;
+  --neon-green: #53ffaa;
+  --light-cyan: #cee3e9;
+}
+
+body {
+  background: var(--dark-blue);
+}
+
+h1 {
+  color: var(--neon-green);
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+h2 {
+  color: var(--light-cyan);
+  font-size: 28px;
+  font-weight: 800;
+}
