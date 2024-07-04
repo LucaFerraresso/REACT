@@ -71,11 +71,10 @@
 /* div con le due checkboxes */
 
 .checkbox {
-  align-items: start;
+  align-items: end;
   justify-content: space-between;
   align-items: center;
   display: flex;
-
   padding: 8px;
 }
 
