@@ -1,0 +1,9 @@
+<h2>{input["mortage_amount"]}</h2>
+
+<h2>{input["mortage_term"]}</h2>
+
+<h2>{input["interest_rate"]}</h2>
+
+<h2>{input["repayment"]}</h2>
+
+<h2>{input["interest_only"]}</h2>

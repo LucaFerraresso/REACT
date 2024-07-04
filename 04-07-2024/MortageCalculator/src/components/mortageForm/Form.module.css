@@ -1,14 +1,158 @@
-* {
-  text-align: center;
-}
-.form {
-  background-color: grey;
-  color: white;
-  border: 1px solid red;
-  border-radius: 15px;
+/* cointainer principale */
+
+.container {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background-color: var(--white);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  min-width: 900px;
+  min-height: 450px;
+}
+
+/* container con dentro il form */
+
+.divform {
+  gap: 5px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background-color: var(--white);
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: var(--slate-500);
+  border-radius: 15px;
   padding: 20px;
+  text-align: start;
+}
+
+/* div con dentro il titolo e il pulsante clear all */
+
+.divtitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+}
+
+/* div contenente solo l'input mortage amount */
+
+.mortageAmount {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+
+/* div contenente le due offerte in riga , mortage type */
+
+.mortageType {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mortage1 {
+  padding: 8px;
+}
+
+.mortage2 {
+  padding: 8px;
+}
+
+/* div con le due checkboxes */
+
+.checkbox {
+  align-items: start;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px;
+}
+
+/* stile agli input */
+
+.divform input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+/* stile ai due bottoni, clear all e calculate */
+
+.button1 {
+  text-decoration: underline;
+  background-color: inherit;
+  border: none;
+  padding: 15px;
+  color: var(--slate-500);
+}
+
+.button2 {
+  padding: 10px;
+  background-color: var(--lime);
+  border-radius: 15px;
+  width: 200px;
+  border: none;
+}
+
+.calculate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* div di destra, con il risultato */
+
+.divresult {
+  justify-content: space-around;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 45px;
+  background-color: var(--slate-700);
+  padding: 20px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.divresult h1 {
+  color: var(--white);
+}
+
+.divresult p {
+  color: var(--slate-300);
+}
+
+/* div con il testo del risultato */
+
+.divcalcolo {
+  text-align: center;
+  height: 160px;
+  box-shadow: 0 0 0 2px var(--lime);
+  border-radius: 30px;
+  background-color: var(--slate-900);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.divcalcolo h1 {
+  color: var(--lime);
+}
+.divcalcolo h2 {
+  color: var(--white);
+}
+.divcalcolo h3 {
+  color: var(--slate-500);
 }

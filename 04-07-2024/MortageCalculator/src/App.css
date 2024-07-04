@@ -1,1 +1,38 @@
+/* variabili CSS globali */
 
+/*colors*/
+:root {
+  /*effetto hover input Repayment*/
+  /*colore testo risultato*/
+  --lime: hsl(61, 70%, 52%);
+  --red: hsl(4, 69%, 50%);
+  /*sfondo form,sfondo input*/
+  --white: hsl(0, 0%, 100%);
+  /*sfondo valuta input img*/
+  --slate-100: hsl(202, 86%, 94%);
+  /*colore bordi input*/
+  --slate-300: hsl(203, 41%, 72%);
+  /*colore testo div 2*/
+  --slate-500: hsl(200, 26%, 54%);
+  /*sfondo div contenente div.risultato*/
+  --slate-700: hsl(200, 24%, 40%);
+  /*sfondo div risultato*/
+  --slate-900: hsl(202, 55%, 16%);
+}
+
+* {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+h1 {
+  color: black;
+}
+
+h2 {
+  color: red;
+}
+
+body {
+  background-color: var(--slate-100);
+}
