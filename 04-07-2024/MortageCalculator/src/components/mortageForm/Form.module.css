@@ -72,10 +72,10 @@
 
 .checkbox {
   align-items: start;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+
   padding: 8px;
 }
 
