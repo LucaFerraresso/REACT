@@ -6,6 +6,7 @@ const Switcher = () => {
   const [input, setInput] = useState({
     slider: 50,
   });
+  const [result, setResult] = useState(0);
 
   // funzione handle price, per gestire "l'onChange" dell'input nell'elemento input
   const handlePrice = (e) => {
@@ -16,6 +17,7 @@ const Switcher = () => {
   //il valore dell'input lo decido io attraverso gli attributi
   //in questo caso devido che l'input va da 0 a 100
 
+  //converto il valore dell'e.target.value in un valore espresso in euro
   const calcolatedPrice = () => {
     //barra nel valore minimo
     const min_price = 8.0;
@@ -24,6 +26,15 @@ const Switcher = () => {
     const price = min_price + ((max_price - min_price) * input.slider) / 100;
     //adesso lo voglio mettere a DOM
     return price;
+  };
+
+  const risultato = (price) => {
+    setResult(calcolatedPrice(price));
+    console.log(typeof calcolatedPrice(price), calcolatedPrice(price));
+  };
+
+  const reset = () => {
+    window.location.reload();
   };
 
   return (
@@ -62,7 +73,9 @@ const Switcher = () => {
           {/* fine list */}
           {/* start button  div*/}
           <div className={styles.button}>
-            <button>Start my trial</button>
+            <button onClick={risultato}>Start my trial</button>
+            <h1>{result}</h1>
+            <button onClick={reset}>Clear all</button>
           </div>
           {/* fine button div */}
         </div>

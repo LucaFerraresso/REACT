@@ -1,3 +1,5 @@
+/* div principale */
+
 .switcher {
   width: 500px;
   gap: 20px;
@@ -11,6 +13,8 @@
   padding: 10px;
 }
 
+/* div contentente il titolo e il valore/month */
+
 .title_price {
   display: flex;
   flex-direction: row;
@@ -19,6 +23,8 @@
   border: 1px solid red;
   align-items: center;
 }
+
+/* div con lo slider e il  bottone switch */
 
 .range {
   gap: 20px;
@@ -33,6 +39,9 @@
 .range input {
   width: 100%;
 }
+
+/* container contentente la lista dei benefit e il bottoenSTAR FREE TRIAL */
+
 .list_button {
   display: flex;
   flex-direction: row;
@@ -40,6 +49,9 @@
   justify-content: space-around;
   padding: 8px;
 }
+
+/* div con solo la lista */
+
 .list {
   border: 1px solid red;
   display: flex;
@@ -47,6 +59,8 @@
   justify-content: space-between;
   padding: 8px;
 }
+
+/* div con solo il bottone */
 
 .button {
   padding: 8px;

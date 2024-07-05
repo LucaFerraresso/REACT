@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.module.css";
 import Switcher from "./components/switcher/Switcher";
 
 function App() {
