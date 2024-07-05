@@ -75,6 +75,7 @@ const Switcher = () => {
           <div className={styles.button}>
             <button onClick={risultato}>Start my trial</button>
             <h1>{result}</h1>
+            {/* creo un reset solo per manipolare lo slider, se possibile */}
             <button onClick={reset}>Clear all</button>
           </div>
           {/* fine button div */}
