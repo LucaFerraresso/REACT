@@ -1,0 +1,59 @@
+.switcher {
+  width: 500px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+
+.title_price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px;
+  border: 1px solid red;
+  align-items: center;
+}
+
+.range {
+  gap: 20px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  border: 1px solid red;
+}
+.range input {
+  width: 100%;
+}
+.list_button {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid red;
+  justify-content: space-around;
+  padding: 8px;
+}
+.list {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.button {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid red;
+}

@@ -1,9 +1,10 @@
 import "./App.css";
+import Switcher from "./components/switcher/Switcher";
 
 function App() {
   return (
     <>
-      <h1> Switcher-app</h1>
+      <Switcher />
     </>
   );
 }
