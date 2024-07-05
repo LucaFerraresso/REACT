@@ -56,7 +56,7 @@
   border: 1px solid red;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   padding: 8px;
 }
 
