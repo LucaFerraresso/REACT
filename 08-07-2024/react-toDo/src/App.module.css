@@ -1,0 +1,18 @@
+/* variabili globali */
+
+:root {
+  h1 {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  input {
+    border: none;
+    padding: 6px;
+    border-radius: 6px;
+  }
+}

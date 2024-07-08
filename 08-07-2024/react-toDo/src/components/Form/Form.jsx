@@ -47,19 +47,16 @@ const Form = () => {
       />
       <input type="submit" value="Add" onClick={addTodos} />
       <div className={styles.lista}>
-        <h2>Lista</h2>
-        <ul>
-          {todos.map((item) => {
-            return (
-              <li key={item.id}>
-                {item.title}
-                <button id={item.id} onClick={handleDelete}>
-                  delete
-                </button>
-              </li>
-            );
-          })}
-        </ul>
+        {todos.map((item) => {
+          return (
+            <h3 key={item.id}>
+              {item.title}
+              <button id={item.id} onClick={handleDelete}>
+                delete
+              </button>
+            </h3>
+          );
+        })}
       </div>
     </form>
   );
