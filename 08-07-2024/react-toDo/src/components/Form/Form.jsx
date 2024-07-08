@@ -45,7 +45,7 @@ const Form = () => {
         placeholder="To Do"
         onChange={handleChange}
       />
-      <input type="submit" value="Add" onClick={addTodos} />
+      <input type="submit" value="ADD" onClick={addTodos} />
       <div className={styles.lista}>
         {todos.map((item) => {
           return (

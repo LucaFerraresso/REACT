@@ -1,33 +1,87 @@
 .container {
+  background-color: var(--dark-grey-);
   text-align: center;
-  width: 300px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
-  padding: 16px;
+  padding: 18px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 1px solid coral;
+  border: 1px solid var(--coral-);
   border-radius: 16px;
   gap: 12px;
+  box-shadow: 0 12px 18px rgba(0, 0, 0, 0.9);
 }
 
 .lista {
-  border: 1px solid coral;
-  border-radius: 16px;
+  border: 1px solid var(--coral-);
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
-  padding: 16px;
-  gap: 16px;
+  padding: 12px;
+  gap: 12px;
+}
+
+h1 {
+  color: var(--coral-);
 }
 
 h3 {
-  border: 1px solid red;
+  color: var(--grey-);
+  text-align: center;
   border-radius: 12px;
   padding: 12px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.container input[type="text"],
+.container input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid var(--light-grey-);
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.container input[type="text"] {
+  background-color: var(--white-);
+  transition: border-color 3s;
+}
+
+.container input[type="text"]:focus {
+  border-color: var(--light-green-);
+}
+
+.container input[type="submit"] {
+  background-color: var(--light-green-);
+  color: var(--white-);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.container input[type="submit"]:hover {
+  background-color: var(-dark-green-);
+}
+
+.container button {
+  text-transform: uppercase;
+  background-color: var(--red-);
+  color: var(--white-);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.container button:hover {
+  background-color: var(--red-99-);
 }
