@@ -17,10 +17,10 @@
   --dark-grey-: rgb(58, 57, 57);
   --coral-: rgb(255, 127, 80);
   --grey-: rgb(199, 197, 197);
-  --light-grey-: #c5c5c5;
-  --white-: #fff;
-  --light-green-: #04c90efb;
-  --dark-green-: #18a705;
-  --red-: #ff4d4d;
-  --red-99-: #ff1a1a;
+  --light-grey-: rgb(197, 197, 197);
+  --white-: rgb(255, 255, 255);
+  --light-green-: rgb(4, 201, 14);
+  --dark-green-: rgb(24, 167, 5);
+  --red-: rgb(255, 77, 77);
+  --red-99-: rgb(255, 26, 26);
 }

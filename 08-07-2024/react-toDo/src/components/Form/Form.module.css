@@ -1,7 +1,9 @@
+/* stile container principale 
+*/
 .container {
   background-color: var(--dark-grey-);
   text-align: center;
-  max-width: 600px;
+  min-width: 450px;
   display: flex;
   flex-direction: column;
   padding: 18px;
@@ -15,8 +17,10 @@
   box-shadow: 0 12px 18px rgba(0, 0, 0, 0.9);
 }
 
+/* container contentente gli input inseriti dall'utente */
+
 .lista {
-  border: 1px solid var(--coral-);
+  /*border: 1px solid var(--coral-);*/
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -39,6 +43,8 @@ h3 {
   align-items: center;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
+
+/* stile per TUTTI i campi input */
 
 .container input[type="text"],
 .container input[type="submit"] {
@@ -70,6 +76,8 @@ h3 {
 .container input[type="submit"]:hover {
   background-color: var(-dark-green-);
 }
+
+/* stile bottoni DELETE */
 
 .container button {
   text-transform: uppercase;
