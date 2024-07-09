@@ -70,21 +70,25 @@ const Form = () => {
       <button type="submit">conferma</button>
 
       <div key={self.crypto.randomUUID()} className={styles.container2}>
-        <h1>Filter buttons</h1>
-        {alunni.map((item) => {
-          return <button onClick={handleDelete}>{item.citta}</button>;
-        })}
-        <h1>Classmates</h1>
-        {alunni.map((item) => {
-          return (
-            <ul key={self.crypto.randomUUID()}>
-              <li key={self.crypto.randomUUID()}>
-                {item.nome}
-                {item.cognome}
-              </li>
-            </ul>
-          );
-        })}
+        <div className={styles.filtersContainer}>
+          <h1>Filter buttons</h1>
+          {alunni.map((item) => {
+            return <button onClick={handleDelete}>{item.citta}</button>;
+          })}
+        </div>
+        <div className={styles.classmatesContainer}>
+          <h1>Classmates</h1>
+          {alunni.map((item) => {
+            return (
+              <ul key={self.crypto.randomUUID()}>
+                <li key={self.crypto.randomUUID()}>
+                  {item.nome}
+                  {item.cognome}
+                </li>
+              </ul>
+            );
+          })}
+        </div>
       </div>
     </form>
   );
