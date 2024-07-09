@@ -10,7 +10,7 @@ const initialState = {
 const Form = () => {
   const [input, setInput] = useState(initialState);
   const [alunni, setAlunni] = useState([]);
-  console.log("alunni fuori", alunni);
+  //console.log("alunni fuori", alunni);
 
   //ora l'utente puo' vedere a dom le sue interazioni
   const handleChange = (e) => {
