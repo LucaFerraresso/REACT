@@ -3,7 +3,7 @@ import Layout from "./components/Layout/Layout";
 
 function App() {
   return (
-    <div className="big">
+    <div className="container-principale">
       <Layout>
         <div className="children">
           <button

@@ -1,13 +1,13 @@
 /* stile per tutti i children */
 
 /* big e' il container che contiente il componente Layout*/
-.big {
-  background-color: azure;
+.container-principale {
+  background-color: white;
   padding: 90px;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
