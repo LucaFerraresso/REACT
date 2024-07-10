@@ -3,9 +3,9 @@ import Layout from "./components/Layout/Layout";
 
 function App() {
   return (
-    <>
+    <div className="big">
       <Layout>
-        <div>
+        <div className="children">
           <button
             onClick={(e) => console.log(e.target.innerText)}
             className="children3"
@@ -14,7 +14,7 @@ function App() {
           </button>
         </div>
       </Layout>
-    </>
+    </div>
   );
 }
 

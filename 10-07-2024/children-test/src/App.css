@@ -1,5 +1,41 @@
 /* stile per tutti i children */
 
+/* big e' il container che contiente il componente Layout*/
+.big {
+  background-color: azure;
+  padding: 90px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100dvh;
+}
+
+/* effetto hover dei bottoni*/
+button:hover {
+  background-color: black;
+  border: 1px solid white;
+}
+
+/* stile children DEL Layout; container del LAYOUT CHILDREN*/
+
+.children {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 14px;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #dc143c;
+  border-radius: 15px;
+  text-shadow: -1px -1px black, 1px -1px black, -1px 1px black, 1px 1px black;
+  height: 50px;
+  font-size: 1.5rem;
+}
+
+/* questo invece e' il container che contiene in children dell'header*/
 .children1 {
   margin-top: 20px;
   color: #fff;
@@ -13,6 +49,8 @@
   height: 50px;
   font-size: 1.5rem;
 }
+
+/* div container del childen del footer*/
 
 .children2 {
   margin-top: 20px;
@@ -28,11 +66,12 @@
   font-size: 1.5rem;
 }
 
+/* style bottone children componente layout */
 .children3 {
   margin-top: 20px;
   color: #fff;
   font-size: 14px;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   background-color: #dc143c;
   border: 1px solid black;
