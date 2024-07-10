@@ -1,0 +1,43 @@
+/* stile per tutti i children */
+
+.children1 {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 14px;
+  width: 90%;
+  margin: 0 auto;
+  background-color: coral;
+  border: 1px solid black;
+  border-radius: 15px;
+  text-shadow: -1px -1px black, 1px -1px black, -1px 1px black, 1px 1px black;
+  height: 50px;
+  font-size: 1.5rem;
+}
+
+.children2 {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 14px;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #db7093;
+  border: 1px solid black;
+  border-radius: 15px;
+  text-shadow: -1px -1px black, 1px -1px black, -1px 1px black, 1px 1px black;
+  height: 50px;
+  font-size: 1.5rem;
+}
+
+.children3 {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 14px;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #dc143c;
+  border: 1px solid black;
+  border-radius: 15px;
+  text-shadow: -1px -1px black, 1px -1px black, -1px 1px black, 1px 1px black;
+  height: 50px;
+  font-size: 1.5rem;
+}
