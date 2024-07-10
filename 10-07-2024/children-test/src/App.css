@@ -17,7 +17,6 @@
 /* effetto hover dei bottoni*/
 button:hover {
   background-color: black;
-  border: 1px solid white;
 }
 
 /* stile children DEL Layout; container del LAYOUT CHILDREN*/
