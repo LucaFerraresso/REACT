@@ -1,6 +1,7 @@
 import "./App.module.css";
 import Button from "./components/button/Buttons";
-import ImgCart from "./components/icons/img-Cart";
+import Counter from "./components/counter/Counter";
+import ImgCart from "./components/icons/Img-Cart";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Button text={"Add to cart"}>
         <ImgCart fill="#000" />
       </Button>
+      <Counter />
     </>
   );
 }
