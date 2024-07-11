@@ -1,11 +1,14 @@
 .button {
   background-color: var(--orange);
   display: flex;
-  justify-self: center;
+  justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 14px 42px;
+  padding: 16px 64px;
   border-radius: 14px;
   border: none;
-  color: var(--black);
+  gap: 16px;
+  flex-wrap: nowrap;
+  font-size: 18px;
+  font-weight: 700;
 }
