@@ -1,0 +1,10 @@
+.cover {
+  width: 450px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.cover img {
+  width: 450px;
+  height: 450px;
+}

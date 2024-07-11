@@ -1,0 +1,32 @@
+.wrapper {
+  width: 450px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.thumbnail {
+  width: 94px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.thumbnail img {
+  width: 94px;
+  object-fit: cover;
+  margin-right: 0;
+}
+.selected {
+  border: 3px solid var(--orange);
+}
+
+.over {
+  border-radius: 8px;
+  width: 94px;
+  height: 94px;
+  background-color: var(--white);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
