@@ -8,10 +8,22 @@ import LightBox from "./components/lightbox/LightBox";
 import Menu from "./components/menu/Menu";
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  const onClick = (e) => {
+    if (e.target.id === "plus") {
+      setCount(count + 1);
+    } else {
+      if (count === 0) return;
+      setCount(count - 1);
+    }
+  };
   return (
     <>
       <div className={styles.app}>
-        <Header />
+        <Header>counter:"{count}"</Header>
+
+        {/* qui passo il valore del counter */}
         <div className={styles.container}>
           <div className={styles.product}>
             {" "}
@@ -19,7 +31,7 @@ function App() {
           </div>
           <div className={styles.shop}>
             <Menu />
-            <div className={styles.counterButton}>
+            <div className={styles.counterButton} onClick={onClick}>
               <Counter />
               <Button text={"Add to cart"}>
                 <ImgCart fill="#000" />

@@ -9,6 +9,9 @@
 .counter button {
   all: unset;
   padding: 8px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 conter div {

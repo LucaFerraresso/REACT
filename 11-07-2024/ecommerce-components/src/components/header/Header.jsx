@@ -1,7 +1,7 @@
 import ImgCart from "../icons/Img-Cart";
 import styles from "./Header.module.css";
 
-const Header = () => {
+const Header = ({ children }) => {
   return (
     <div className={styles.header}>
       <h1>Sneakers</h1>
@@ -15,6 +15,7 @@ const Header = () => {
       <button onClick={(e) => console.log(e.currentTarget)}>
         <ImgCart />
       </button>
+      {children}
       <img
         src="../public/images/image-avatar.png"
         alt=""

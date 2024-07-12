@@ -1,6 +1,7 @@
 const ImgPlus = () => {
   return (
     <svg
+      id="plus"
       width="12"
       height="12"
       xmlns="http://www.w3.org/2000/svg"
@@ -12,7 +13,7 @@ const ImgPlus = () => {
           id="b"
         />
       </defs>
-      <use fill="#FF7E1B" fillRule="nonzero" xlinkHref="#b" />
+      <use id="plus" fill="#FF7E1B" fillRule="nonzero" xlinkHref="#b" />
     </svg>
   );
 };
