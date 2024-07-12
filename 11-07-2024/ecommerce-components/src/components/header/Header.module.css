@@ -7,6 +7,11 @@
   align-items: center;
 }
 
+.header button {
+  all: unset;
+  padding: 8px;
+}
+
 .header ul {
   display: flex;
   flex-direction: row;

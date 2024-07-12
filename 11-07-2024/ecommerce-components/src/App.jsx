@@ -1,9 +1,11 @@
+import { useState } from "react";
 import styles from "./App.module.css";
 import Button from "./components/button/Buttons";
 import Counter from "./components/counter/Counter";
 import Header from "./components/header/Header";
 import ImgCart from "./components/icons/Img-Cart";
 import LightBox from "./components/lightbox/LightBox";
+import Menu from "./components/menu/Menu";
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
             <LightBox />
           </div>
           <div className={styles.shop}>
+            <Menu />
             <div className={styles.counterButton}>
               <Counter />
               <Button text={"Add to cart"}>

@@ -16,8 +16,12 @@ const Counter = () => {
       setCount(count + 1);
     }
   };
+  const consoleValue = (e) => {
+    console.log("counter value", count);
+    console.log("current target", e.currentTarget);
+  };
   return (
-    <div className={classNames(styles.counter)}>
+    <div className={classNames(styles.counter)} onClick={consoleValue}>
       <button id="minus" onClick={handleClick}>
         <ImgMinus />
       </button>

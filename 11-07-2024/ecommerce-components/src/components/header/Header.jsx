@@ -1,6 +1,5 @@
 import ImgCart from "../icons/Img-Cart";
 import styles from "./Header.module.css";
-import Button from "./../button/Buttons";
 
 const Header = () => {
   return (
@@ -16,8 +15,12 @@ const Header = () => {
       <button onClick={(e) => console.log(e.currentTarget)}>
         <ImgCart />
       </button>
-
-      <img scr="../public/images/image-avatar.png" width={30} height={30} />
+      <img
+        src="../public/images/image-avatar.png"
+        alt=""
+        width={35}
+        height={35}
+      />
       <br />
     </div>
   );

@@ -22,10 +22,11 @@
   width: 100%;
 }
 .shop {
+  padding: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   width: 100%;
   border: 1px solid red;
 }
