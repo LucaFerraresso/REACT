@@ -1,9 +1,12 @@
-import "./App.css";
+import Card from "./components/nftCard/Card";
 
 function App() {
   return (
     <>
-      <h1>My React App with tailwind</h1>
+      <h1 className="text-3xl font-bold underline">
+        My React App with tailwind
+      </h1>
+      <Card />
     </>
   );
 }
