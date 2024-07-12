@@ -1,7 +1,9 @@
+import Card from "./components/card/Card";
 function App() {
   return (
     <>
-      <h1>Tailwind-app</h1>
+      <h1 className="text-3xl font-bold underline">Tailwind-app</h1>
+      <Card />
     </>
   );
 }
