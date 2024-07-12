@@ -1,10 +1,7 @@
 const Card = () => {
   return (
     <div>
-      <h1>
-        Ho terminato l'ecommerce-menu del 11/07/2024, nel week end termino la
-        nftcard.
-      </h1>
+      <h1 className="font-bold text-3xl">tailwind-test</h1>
     </div>
   );
 };
