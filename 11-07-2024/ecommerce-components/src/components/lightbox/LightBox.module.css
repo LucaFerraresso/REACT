@@ -1,4 +1,6 @@
 .lightBox {
+  display: flex;
+  flex-direction: column;
   width: 450px;
   background-color: var(--white);
 }

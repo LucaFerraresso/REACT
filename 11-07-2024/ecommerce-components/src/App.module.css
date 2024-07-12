@@ -1,1 +1,39 @@
+.app {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid red;
+  width: 1000px;
+}
+.container {
+  margin-top: 20px;
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-around;
+}
 
+.product {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.shop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid red;
+}
+
+.counterButton {
+  padding: 16px;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

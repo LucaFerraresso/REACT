@@ -1,7 +1,10 @@
 .cover {
+  display: flex;
   width: 450px;
   overflow: hidden;
   border-radius: 16px;
+  justify-content: center;
+  align-items: center;
 }
 
 .cover img {
