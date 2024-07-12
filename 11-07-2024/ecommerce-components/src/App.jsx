@@ -21,7 +21,9 @@ function App() {
   return (
     <>
       <div className={styles.app}>
-        <Header>counter:"{count}"</Header>
+        <Header>
+          <h3>counter:" {count} "</h3>
+        </Header>
 
         {/* qui passo il valore del counter */}
         <div className={styles.container}>
