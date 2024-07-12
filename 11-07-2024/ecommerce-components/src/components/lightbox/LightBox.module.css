@@ -1,6 +1,6 @@
 .lightBox {
   width: 450px;
-  background-color: aqua;
+  background-color: var(--white);
 }
 
 .thumbnailList {
