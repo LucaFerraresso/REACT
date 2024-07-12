@@ -1,12 +1,3 @@
-.wrapper {
-  width: 450px;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 8px;
-  overflow: hidden;
-}
 .thumbnail {
   width: 94px;
   border-radius: 8px;

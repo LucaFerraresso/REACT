@@ -1,3 +1,13 @@
 .lightBox {
-  width: 100%;
+  width: 450px;
+  background-color: aqua;
+}
+
+.thumbnailList {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+}
+.thumbnailList > li {
+  list-style: none;
 }
