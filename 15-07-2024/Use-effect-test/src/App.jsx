@@ -47,21 +47,28 @@ function App() {
   };
   return (
     <>
+      {/* inizio container principale */}
       <div className={styles.container}>
+        {/* inizio container di sinistra */}
         <div className={styles.div1}>
-          <h2>inserisci un id per ricevere il titolo corrispondente</h2>
-
+          <h2>Inserisci un id per ricevere il titolo corrispondente</h2>
           <input
             type="number"
             placeholder="Enter id"
             onChange={handleChange}
           ></input>
         </div>
+        {/* fine container di sinistra */}
+
+        {/* inizio container di destra */}
         <div className={styles.div2}>
+          {/* <h1>hello world</h1> */}
           {id && <h2>id:{id}</h2>}
           {message && <h2>title:{message}</h2>}
         </div>
+        {/* fine container di destra */}
 
+        {/* container del counter  */}
         <div className={styles.div3}>
           <button onClick={handleClick} name="minus">
             minus
@@ -71,6 +78,9 @@ function App() {
             plus
           </button>
         </div>
+        {/* fine container del counter  */}
+
+        {/* inizio container bottone reset */}
         <div className={styles.buttondiv}>
           <button onClick={reset}>
             <h1>R</h1>
@@ -80,7 +90,9 @@ function App() {
             <h1>T</h1>
           </button>
         </div>
+        {/* fine container bottone reset */}
       </div>
+      {/* fine container principale */}
     </>
   );
 }

@@ -1,3 +1,5 @@
+/*style container principale*/
+
 .container {
   position: absolute;
   top: 25%;
@@ -14,6 +16,8 @@
   border-radius: 12px;
 }
 
+/*style container di sinistra*/
+
 .div1 {
   align-items: center;
   text-align: center;
@@ -27,11 +31,33 @@
   gap: 20px;
   border-radius: 12px;
 }
+
+/*style input container sinistra*/
+
 .div1 input {
   text-align: center;
+  padding: 12px 0px;
   width: 100%;
   height: 50px;
+  border: 1px solid #ccc;
 }
+
+/*style input quando utilizzato*/
+
+.div1 input:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+/*style placeholder input*/
+
+.div1 input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/*style container di destra*/
+
 .div2 {
   display: flex;
   flex-direction: column;
@@ -44,6 +70,9 @@
   justify-content: center;
   border-radius: 12px;
 }
+
+/*style container con counter*/
+
 .div3 {
   position: absolute;
   transform: translate(0, -200%);
@@ -59,6 +88,8 @@
   border-radius: 12px;
 }
 
+/*style container contentente il bottone reset*/
+
 .buttondiv {
   display: flex;
   flex-direction: column;
@@ -68,14 +99,20 @@
   border-radius: 12px;
 }
 
+/*style bottone reset*/
+
 .buttondiv button {
+  color: white;
+  background-color: #4caf50;
   width: 50px;
   height: 100%;
   border-radius: 12px;
   border: none;
+  cursor: pointer;
 }
 
-button:active {
-  background-color: red;
-  border: 1px solid black;
+/*style bottone reset active*/
+
+button:hover {
+  background-color: #45a049;
 }
