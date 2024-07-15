@@ -1,6 +1,9 @@
 import styles from "./App.module.css";
 import { useState, useEffect } from "react";
 
+//ATTRAVERSO IL COUNTER, OTTENGO IL TITLE IN BASE AL VALORE DEL COUNTER----ID
+//ATTRAVERSO IL CAMPO INPUT, OTTENGO IL TITLE IN BASE AL VALORE DELL'INPUT ----ID
+
 function App() {
   const [count, setCount] = useState(0);
   const [message, setMessage] = useState("");
