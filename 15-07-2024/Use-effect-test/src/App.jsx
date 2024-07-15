@@ -51,7 +51,7 @@ function App() {
       <div className={styles.container}>
         {/* inizio container di sinistra */}
         <div className={styles.div1}>
-          <h2>Inserisci un id per ricevere il titolo corrispondente</h2>
+          <h3>Inserisci un id per ricevere il titolo corrispondente</h3>
           <input
             type="number"
             placeholder="Enter id"
@@ -63,8 +63,8 @@ function App() {
         {/* inizio container di destra */}
         <div className={styles.div2}>
           {/* <h1>hello world</h1> */}
-          {id && <h2>id:{id}</h2>}
-          {message && <h2>title:{message}</h2>}
+          {id && <h3>id: {id} </h3>}
+          {message && <h3>Title: {message} </h3>}
         </div>
         {/* fine container di destra */}
 
@@ -73,7 +73,7 @@ function App() {
           <button onClick={handleClick} name="minus">
             minus
           </button>
-          <h2>{count}</h2>
+          <h3>" {count} "</h3>
           <button onClick={handleClick} name="plus">
             plus
           </button>

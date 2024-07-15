@@ -6,6 +6,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   border: 1px solid red;
+  border: 1px solid black;
   padding: 16px;
   width: 900px;
   height: 350px;
@@ -23,6 +24,7 @@
   text-align: center;
   overflow: hidden;
   border: 1px solid red;
+  border: 1px solid black;
   padding: 16px;
   width: 45%;
   display: flex;
@@ -40,6 +42,7 @@
   width: 100%;
   height: 50px;
   border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
 /*style input quando utilizzato*/
@@ -65,6 +68,7 @@
   text-align: center;
   overflow: hidden;
   border: 1px solid red;
+  border: 1px solid black;
   padding: 16px;
   width: 55%;
   justify-content: center;
@@ -80,12 +84,35 @@
   align-items: center;
   text-align: center;
   border: 1px solid red;
+  border: 1px solid black;
   padding: 16px;
   width: 33%;
   display: flex;
   flex-direction: row;
   height: 50px;
   border-radius: 12px;
+}
+
+/*style bottoni del counter*/
+
+.div3 button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0px;
+  color: white;
+  background-color: #4caf50;
+  width: 100px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  height: 25px;
+}
+
+/*style bottoni counter in hover*/
+
+.div3 button:hover {
+  background-color: #45a049;
 }
 
 /*style container contentente il bottone reset*/
@@ -111,8 +138,8 @@
   cursor: pointer;
 }
 
-/*style bottone reset active*/
+/*style bottone reset in hover*/
 
-button:hover {
+.buttondiv button:hover {
   background-color: #45a049;
 }
