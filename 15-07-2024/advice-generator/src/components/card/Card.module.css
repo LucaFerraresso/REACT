@@ -1,0 +1,35 @@
+.card {
+  background-color: #313a49;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 380px;
+  text-align: center;
+  height: 250px;
+}
+
+.card > img {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.button {
+  border: none;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, +50%);
+  padding: 12px;
+  border-radius: 50%;
+  background-color: var(--neon-green);
+}
+.button:hover {
+  box-shadow: 0 0 20px var(--neon-green);
+  background-color: var(--neon-green);
+}
