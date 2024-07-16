@@ -9,12 +9,6 @@ function App() {
   const [isHidden, setIsHidden] = useState(true);
   const [isHidden2, setIsHidden2] = useState(true);
 
-  const handleClick = () => {
-    //come generare un numero randomico
-    const random = Math.floor(Math.random() * 199) + 1;
-    getTodo(random);
-  };
-  //faccio una chiamata al server al primo render della pagina e stampo in console il risultato
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/todos").then((response) =>
       response.json().then((data) => {
@@ -30,23 +24,21 @@ function App() {
       })
     );
   }, []);
-
-  //ora che al primo render ho filtrato i risultati voglio mappare i due array ottenuti,completed e non completed
-
-  //al click, faccio una chiamata per id
+  const handleClick = () => {
+    const random = Math.floor(Math.random() * 199) + 1;
+    getTodo(random);
+  };
   const getTodo = (id) => {
     fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
       .then((response) => response.json())
       .then((json) => setTodo(json));
   };
-  //funzione per chiamare il server utilizando l'input dell'utente come id
   const handleChange = (e) => {
     const id = e.target.value;
     //setto id con il valore dell'input
     getTodo(id);
   };
-
-  //al rendertodo voglio visualizzare a dom il risultato degli array filtrati
+  //funzioni per gestire le liste todo. hidden, (non visibili)
   const rendertodo = (e) => {
     const { name } = e.target;
     if (name === "completed") {
@@ -62,7 +54,7 @@ function App() {
       setIsHidden2(false);
     }
   };
-
+  //funzione per rispristinare le todo aperte
   const reset = () => {
     setIsHidden(true);
     setIsHidden2(true);
