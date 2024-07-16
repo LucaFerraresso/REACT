@@ -1,3 +1,5 @@
+/*STILE CONTAINER PRINCIPALE*/
+
 .container {
   display: flex;
   flex-direction: column;
@@ -12,6 +14,9 @@
   height: 1000px;
   gap: 10px;
 }
+
+/*STILE CONTAINER CON INPUT E BOTTONE GET TODO*/
+
 .filterBar {
   border-radius: 8px;
   align-items: center;
@@ -23,6 +28,9 @@
   height: 74px;
   gap: 30px;
 }
+
+/*STILE CONTAINER CARD*/
+
 .card {
   border-radius: 8px;
   padding: 16px;
@@ -34,11 +42,17 @@
   justify-content: space-between;
   text-align: start;
 }
+
+/*STILE CONTAINER CON LE TODO COMPLETATE*/
+
 .list1 {
   border-radius: 8px;
   border: 1px solid black;
   height: 300px;
 }
+
+/*STILE TESTO E BOTTONE COMPELTED*/
+
 .section1 {
   border-radius: 8px;
   margin-top: 10px;
@@ -49,11 +63,17 @@
   align-items: center;
   height: 60px;
 }
+
+/*STILE CONTAINER CON TODO NON COMPLETATE*/
+
 .list2 {
   border-radius: 8px;
   border: 1px solid black;
   height: 300px;
 }
+
+/*STILE TESTO E BOTTONE NOTCOMPLETED*/
+
 .section2 {
   border-radius: 8px;
   margin-top: 10px;
@@ -64,15 +84,23 @@
   align-items: center;
   height: 60px;
 }
+
+/*STILE CONTAINER CON BOTTONE RESERT*/
+
 .reset {
   border-radius: 8px;
   margin-top: 10px;
   height: 50px;
 }
+
+/*STILE BOTTONE RESET*/
+
 .reset button {
   width: 100%;
   background-color: red;
 }
+
+/*STILE UL TODO COMPLETATE */
 
 .Completed {
   border-radius: 8px;
@@ -85,6 +113,9 @@
   display: none;
   height: 200px;
 }
+
+/*STILE UL TODO NON COMPLETATE*/
+
 .NotCompleted {
   border-radius: 8px;
   border: 1px solid black;
@@ -96,6 +127,9 @@
   height: 200px;
   display: none;
 }
+
+/*STILE LISTE DOPO IL CLICK DEI PULSATI COMPLETED/NON COMPLETED*/
+
 .hidden {
   border-radius: 8px;
   display: flex;
@@ -108,6 +142,8 @@
   height: 200px;
 }
 
+/*STILE ELEMENTI GLOBALI*/
+
 ul {
   border-radius: 8px;
   text-align: start;
@@ -115,6 +151,8 @@ ul {
   color: black;
   background-color: lightblue;
 }
+
+/*STILE BOTTONI GLOBALI*/
 
 button {
   background-color: #4caf50;
@@ -132,6 +170,8 @@ button {
 button:hover {
   background-color: #45a049;
 }
+
+/*STILE INPUT GLOBALE*/
 
 input {
   width: 50%;
