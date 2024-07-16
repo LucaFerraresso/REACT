@@ -65,24 +65,29 @@ function App() {
       <div className={styles.container}>
         <h1>hello effect</h1>
         <div className={styles.filterBar}>
-          <input type="text" onChange={handleChange} />
+          <h2>Filter by id:</h2>
+          <input
+            placeholder="Insert an ID"
+            type="text"
+            onChange={handleChange}
+          />
           {/* al click, faccio una chiamata per id,estraendolo randomicamente */}
           <button onClick={handleClick}>get todos</button>
         </div>
         <div className={styles.card}>
-          <h1>ID:"{todo.id}"</h1>
-          <h1>TODO:"{todo.title}"</h1>
-          {todo && <h1>COMPLETED:"{todo.completed ? "YES" : "NO"}"</h1>}
+          <h2>ID:"{todo.id}"</h2>
+          <h2>TODO:"{todo.title}"</h2>
+          {todo && <h2>COMPLETED:"{todo.completed ? "YES" : "NO"}"</h2>}
         </div>
 
-        <hr></hr>
         <div className={styles.list1}>
           <div className={styles.section1}>
-            <h1>COMPLETED</h1>
+            <h2>COMPLETED</h2>
             <button name="completed" on onClick={rendertodo}>
               completed
             </button>
           </div>
+          <hr></hr>
 
           <ul className={isHidden ? styles.Completed : styles.hidden}>
             {completed.map((item) => (
@@ -92,18 +97,18 @@ function App() {
         </div>
         <div className={styles.list2}>
           <div className={styles.section2}>
-            <h1>NOT COMPLETED</h1>
+            <h2>NOT COMPLETED</h2>
             <button name="notCompleted" onClick={rendertodo}>
               not completed
             </button>
           </div>
+          <hr></hr>
 
           <ul className={isHidden2 ? styles.Completed : styles.hidden}>
             {notCompleted.map((item) => (
               <li key={item.id}>{item.title}</li>
             ))}
           </ul>
-          <hr></hr>
         </div>
         <div className={styles.reset}>
           <button onClick={reset}>RESET</button>
