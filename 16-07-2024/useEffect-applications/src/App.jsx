@@ -72,7 +72,7 @@ function App() {
             onChange={handleChange}
           />
           {/* al click, faccio una chiamata per id,estraendolo randomicamente */}
-          <button onClick={handleClick}>get todos</button>
+          <button onClick={handleClick}>GET TODO</button>
         </div>
         <div className={styles.card}>
           <h2>ID:"{todo.id}"</h2>
@@ -84,7 +84,7 @@ function App() {
           <div className={styles.section1}>
             <h2>COMPLETED</h2>
             <button name="completed" on onClick={rendertodo}>
-              completed
+              COMPLETED
             </button>
           </div>
           <hr></hr>
@@ -99,7 +99,7 @@ function App() {
           <div className={styles.section2}>
             <h2>NOT COMPLETED</h2>
             <button name="notCompleted" onClick={rendertodo}>
-              not completed
+              NOT COMPLETED
             </button>
           </div>
           <hr></hr>
