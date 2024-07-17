@@ -1,13 +1,20 @@
 import { useEffect, useState } from "react";
 function App() {
   const [product, setProduct] = useState([]);
+  const [card, setCard] = useState([]);
   //al primo rendering , mi restituisce il prodotto all'indice 1
   useEffect(() => {
     fetch("https://api.escuelajs.co/api/v1/products")
       .then((response) => response.json())
       .then((json) => setProduct(json[1]));
   }, []);
+  //voglio poter renderizzare tuuuuutta la risposta,non solo il primo elemento
+  useEffect(() => {
+    const data = fetch("https://api.escuelajs.co/api/v1/products");
+    const res = data.then((response) => response.json());
 
+    res.then((json) => setCard(json));
+  }, []);
   //al click, aggiungo il prodotto al localstorage
   //localStorage.removeItem("product");
   const handleClick = () => {
@@ -55,6 +62,53 @@ function App() {
           {/* FINISCE QUI IL DIV CONTENENTE LA CARD */}
         </div>
         <br />
+      </div>
+      <div className="bg-slate-700 text-white">
+        provo a mappare tutta la risposta api
+        {card.map((product) => (
+          <div
+            key={self.crypto.randomUUID}
+            className="max-w-sm mx-auto bg-green-400 shadow-md rounded-lg overflow-hidden"
+          >
+            <div key={self.crypto.randomUUID} className="bg-gray-200 p-4">
+              <h2
+                key={self.crypto.randomUUID}
+                className="text-lg font-semibold text-gray-700"
+              >
+                ID:"{product.id}"{" "}
+              </h2>
+            </div>
+            <div key={self.crypto.randomUUID} className="p-6">
+              <h2
+                key={self.crypto.randomUUID}
+                className="text-xl font-bold mb-2 text-gray-800"
+              >
+                Title: "{product.title}"
+              </h2>
+              <h2
+                key={self.crypto.randomUUID}
+                className="text-lg text-gray-700 mb-4"
+              >
+                Price: "{product.price}€"
+              </h2>
+              <p key={self.crypto.randomUUID} className="text-gray-600">
+                Description: "{product.description}"
+              </p>
+            </div>
+            <div
+              key={self.crypto.randomUUID}
+              className="p-4 bg-gray-200 text-center"
+            >
+              <button
+                onClick={handleClick}
+                key={self.crypto.randomUUID}
+                className="bg-gray-800 text-white font-bold py-2 px-4 rounded-full shadow-md hover:bg-gray-700 transform hover:scale-105 transition-transform duration-300 ease-in-out"
+              >
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     </>
   );
