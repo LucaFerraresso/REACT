@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 function App() {
   const [product, setProduct] = useState([]);
   const [card, setCard] = useState([]);
+
   //al primo rendering , mi restituisce il prodotto all'indice 1
   useEffect(() => {
     fetch("https://api.escuelajs.co/api/v1/products")
       .then((response) => response.json())
       .then((json) => setProduct(json[1]));
   }, []);
+
   //renderizzo l'intero array di oggetti, non solo il primo elemento
   useEffect(() => {
     const data = fetch("https://api.escuelajs.co/api/v1/products");
@@ -17,15 +19,13 @@ function App() {
 
   //libero sempre il local storage al reload della pagina
   localStorage.removeItem("product");
-  //localStorage.removeItem("[object Object]");
-  //al click, aggiungo il prodotto al localstorage, funziona solo con il primo prodotto
+
   const handleClick = (e) => {
     if (product.length === 0) return;
     console.log(product);
     localStorage.setItem("product", JSON.stringify(product));
   };
-  //funzione per aggiungere al carrello elementi del secondo div
-  //all'inizio aggiungeva sempre lo stesso, anche cliccando su prodotti diversi
+
   const handleClick2 = (e) => {
     console.log(e.currentTarget.id);
     const newProduct = card.find(
@@ -76,12 +76,11 @@ function App() {
         </div>
         <br />
       </div>
-      <div className="bg-slate-700 text-white p-10">
-        <h2>Arrivo dall'API</h2>
+      <div className="bg-slate-700 text-white p-10 grid gri-cols-1 sm:grid-cols-2 gap-6 ">
         {card.map((product) => (
           <div
             key={product.id}
-            className="max-w-sm mx-auto bg-green-400 shadow-md rounded-lg overflow-hidden mb-10 "
+            className=" flex flex-col justify-between max-w-sm mx-auto bg-green-400 shadow-md rounded-lg overflow-hidden mb-10 h-[400px] w-[400px]"
           >
             <div className="bg-gray-200 p-4">
               <h2 className="text-lg font-semibold text-gray-700">
@@ -96,7 +95,7 @@ function App() {
                 Price: "{product.price}€"
               </h2>
             </div>
-            <div className="p-4 bg-gray-200 text-center">
+            <div className="p-4 bg-gray-200 text-center ">
               <button
                 id={product.id}
                 onClick={(e) => handleClick2(e)}
