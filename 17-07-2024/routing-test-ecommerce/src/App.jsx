@@ -17,7 +17,7 @@ function App() {
 
   //libero sempre il local storage al reload della pagina
   localStorage.removeItem("product");
-  localStorage.removeItem("[object Object]");
+  //localStorage.removeItem("[object Object]");
   //al click, aggiungo il prodotto al localstorage, funziona solo con il primo prodotto
   const handleClick = (e) => {
     if (product.length === 0) return;
@@ -32,6 +32,7 @@ function App() {
       (product) => product.id === Number(e.currentTarget.id)
     );
     localStorage.setItem("product", JSON.stringify(newProduct));
+    console.log(newProduct);
   };
   return (
     <>
@@ -75,44 +76,30 @@ function App() {
         </div>
         <br />
       </div>
-      <div className="bg-slate-700 text-white">
-        provo a mappare tutta la risposta api
+      <div className="bg-slate-700 text-white p-10">
+        <h2>Arrivo dall'API</h2>
         {card.map((product) => (
           <div
             key={product.id}
-            className="max-w-sm mx-auto bg-green-400 shadow-md rounded-lg overflow-hidden"
+            className="max-w-sm mx-auto bg-green-400 shadow-md rounded-lg overflow-hidden mb-10 "
           >
-            <div
-              id={product.id}
-              key={self.crypto.randomUUID}
-              className="bg-gray-200 p-4"
-            >
-              <h2
-                key={product.id}
-                className="text-lg font-semibold text-gray-700"
-              >
+            <div className="bg-gray-200 p-4">
+              <h2 className="text-lg font-semibold text-gray-700">
                 ID:"{product.id}"
               </h2>
             </div>
-            <div key={product.id} className="p-6">
-              <h2
-                key={product.id}
-                className="text-xl font-bold mb-2 text-gray-800"
-              >
+            <div className="p-6">
+              <h2 className="text-xl font-bold mb-2 text-gray-800">
                 Title: "{product.title}"
               </h2>
-              <h2 key={product.id} className="text-lg text-gray-700 mb-4">
+              <h2 className="text-lg text-gray-700 mb-4">
                 Price: "{product.price}€"
               </h2>
-              <p key={product.id} className="text-gray-600">
-                Description: "{product.description}"
-              </p>
             </div>
-            <div key={product.id} className="p-4 bg-gray-200 text-center">
+            <div className="p-4 bg-gray-200 text-center">
               <button
                 id={product.id}
                 onClick={(e) => handleClick2(e)}
-                key={self.crypto.randomUUID}
                 className="bg-gray-800 text-white font-bold py-2 px-4 rounded-full shadow-md hover:bg-gray-700 transform hover:scale-105 transition-transform duration-300 ease-in-out"
               >
                 ADD TO CART
