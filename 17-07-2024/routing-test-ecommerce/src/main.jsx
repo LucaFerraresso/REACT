@@ -9,32 +9,40 @@ import Contacts from "./pages/Contacts.jsx";
 import Services from "./pages/Services.jsx";
 import Privacy from "./pages/Privacy.jsx";
 import Terms from "./pages/Terms.jsx";
+import DefaultLayout from "./pages/DefaultLayout.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <DefaultLayout />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "About",
-    element: <About />,
-  },
-  {
-    path: "Services",
-    element: <Services />,
-  },
-  {
-    path: "Contact",
-    element: <Contacts />,
-  },
-  {
-    path: "Privacy",
-    element: <Privacy />,
-  },
-  {
-    path: "Terms",
-    element: <Terms />,
+    children: [
+      {
+        path: "/",
+        element: <App />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "About",
+        element: <About />,
+      },
+      {
+        path: "Services",
+        element: <Services />,
+      },
+      {
+        path: "Contact",
+        element: <Contacts />,
+      },
+      {
+        path: "Privacy",
+        element: <Privacy />,
+      },
+      {
+        path: "Terms",
+        element: <Terms />,
+      },
+    ],
   },
 ]);
 
