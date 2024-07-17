@@ -23,7 +23,7 @@ const menuFooter = [
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white p-4">
+    <footer className="bg-gray-900 text-white p-4 mb-0">
       <ul className="flex space-x-4">
         {menuFooter.map((item, index) => (
           <li key={index}>
