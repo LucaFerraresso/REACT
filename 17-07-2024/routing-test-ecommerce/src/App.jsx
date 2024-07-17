@@ -12,17 +12,26 @@ function App() {
   useEffect(() => {
     const data = fetch("https://api.escuelajs.co/api/v1/products");
     const res = data.then((response) => response.json());
-
     res.then((json) => setCard(json));
   }, []);
 
   //libero sempre il local storage al reload della pagina
   localStorage.removeItem("product");
-  //al click, aggiungo il prodotto al localstorage
-  const handleClick = () => {
+  localStorage.removeItem("[object Object]");
+  //al click, aggiungo il prodotto al localstorage, funziona solo con il primo prodotto
+  const handleClick = (e) => {
     if (product.length === 0) return;
     console.log(product);
     localStorage.setItem("product", JSON.stringify(product));
+  };
+  //funzione per aggiungere al carrello elementi del secondo div
+  //all'inizio aggiungeva sempre lo stesso, anche cliccando su prodotti diversi
+  const handleClick2 = (e) => {
+    console.log(e.currentTarget.id);
+    const newProduct = card.find(
+      (product) => product.id === Number(e.currentTarget.id)
+    );
+    localStorage.setItem("product", JSON.stringify(newProduct));
   };
   return (
     <>
@@ -54,7 +63,8 @@ function App() {
             </div>
             <div className="p-4 bg-gray-200 text-center">
               <button
-                onClick={handleClick}
+                id={product.id}
+                onClick={(e) => handleClick(e)}
                 className="bg-gray-800 text-white font-bold py-2 px-4 rounded-full shadow-md hover:bg-gray-700 transform hover:scale-105 transition-transform duration-300 ease-in-out"
               >
                 ADD TO CART
@@ -69,40 +79,39 @@ function App() {
         provo a mappare tutta la risposta api
         {card.map((product) => (
           <div
-            key={self.crypto.randomUUID}
+            key={product.id}
             className="max-w-sm mx-auto bg-green-400 shadow-md rounded-lg overflow-hidden"
           >
-            <div key={self.crypto.randomUUID} className="bg-gray-200 p-4">
+            <div
+              id={product.id}
+              key={self.crypto.randomUUID}
+              className="bg-gray-200 p-4"
+            >
               <h2
-                key={self.crypto.randomUUID}
+                key={product.id}
                 className="text-lg font-semibold text-gray-700"
               >
-                ID:"{product.id}"{" "}
+                ID:"{product.id}"
               </h2>
             </div>
-            <div key={self.crypto.randomUUID} className="p-6">
+            <div key={product.id} className="p-6">
               <h2
-                key={self.crypto.randomUUID}
+                key={product.id}
                 className="text-xl font-bold mb-2 text-gray-800"
               >
                 Title: "{product.title}"
               </h2>
-              <h2
-                key={self.crypto.randomUUID}
-                className="text-lg text-gray-700 mb-4"
-              >
+              <h2 key={product.id} className="text-lg text-gray-700 mb-4">
                 Price: "{product.price}€"
               </h2>
-              <p key={self.crypto.randomUUID} className="text-gray-600">
+              <p key={product.id} className="text-gray-600">
                 Description: "{product.description}"
               </p>
             </div>
-            <div
-              key={self.crypto.randomUUID}
-              className="p-4 bg-gray-200 text-center"
-            >
+            <div key={product.id} className="p-4 bg-gray-200 text-center">
               <button
-                onClick={handleClick}
+                id={product.id}
+                onClick={(e) => handleClick2(e)}
                 key={self.crypto.randomUUID}
                 className="bg-gray-800 text-white font-bold py-2 px-4 rounded-full shadow-md hover:bg-gray-700 transform hover:scale-105 transition-transform duration-300 ease-in-out"
               >
