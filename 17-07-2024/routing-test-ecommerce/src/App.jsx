@@ -8,15 +8,17 @@ function App() {
       .then((response) => response.json())
       .then((json) => setProduct(json[1]));
   }, []);
-  //voglio poter renderizzare tuuuuutta la risposta,non solo il primo elemento
+  //renderizzo l'intero array di oggetti, non solo il primo elemento
   useEffect(() => {
     const data = fetch("https://api.escuelajs.co/api/v1/products");
     const res = data.then((response) => response.json());
 
     res.then((json) => setCard(json));
   }, []);
+
+  //libero sempre il local storage al reload della pagina
+  localStorage.removeItem("product");
   //al click, aggiungo il prodotto al localstorage
-  //localStorage.removeItem("product");
   const handleClick = () => {
     if (product.length === 0) return;
     console.log(product);
