@@ -16,8 +16,9 @@ const Modal = ({ onClose, isOpen, product }) => {
               alt={product.title}
               className="w-[300px] h-[300px]"
             />
-            <h2>{product.title}</h2>
-            <p>{product.description}</p>
+            <h2>Title: {product.title}</h2>
+            <p>Description: {product.description}</p>
+            <p>Prezzo: {product.price}€</p>
             <button onClick={onClose}>CLOSE</button>
             <button onClick={addItem}>ADD TO CART</button>
           </div>
