@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
 import Modal from "./components/Modal";
-import Modal2 from "./components/Modal2";
 
 function App() {
   const [product, setProduct] = useState([]);
@@ -61,7 +61,7 @@ function App() {
             {product.title}
           </h1>
           {/* DA QUI INIZIA IL DIV CONTENENTE LA CARD */}
-          <Modal2
+          <Modal
             product={product}
             isOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
@@ -104,7 +104,7 @@ function App() {
                 </button>
               </div>
             </div>
-          </Modal2>
+          </Modal>
           {/* FINISCE QUI IL DIV CONTENENTE LA CARD */}
         </div>
         <br />
