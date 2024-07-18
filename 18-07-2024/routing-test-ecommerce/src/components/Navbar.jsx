@@ -28,7 +28,14 @@ const Navbar = () => {
       <ul className="flex space-x-4 margin-0">
         {menulist.map((item, index) => (
           <li key={index}>
-            <NavLink to={item.path}>{item.name}</NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "font-bold text-green-400 underline" : ""
+              }
+              to={item.path}
+            >
+              {item.name}
+            </NavLink>
           </li>
         ))}
       </ul>

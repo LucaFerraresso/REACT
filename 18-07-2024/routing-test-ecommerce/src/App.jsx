@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 function App() {
   const [product, setProduct] = useState([]);
-  const [card, setCard] = useState([]);
+  const [cards, setCards] = useState([]);
 
   //al primo rendering , mi restituisce il prodotto all'indice 1
   useEffect(() => {
@@ -14,11 +15,13 @@ function App() {
   useEffect(() => {
     const data = fetch("https://api.escuelajs.co/api/v1/products");
     const res = data.then((response) => response.json());
-    res.then((json) => setCard(json));
+    res.then((json) => setCards(json));
   }, []);
 
   //libero sempre il local storage al reload della pagina
   localStorage.removeItem("product");
+  localStorage.removeItem("cart");
+  localStorage.removeItem("object Object");
 
   const handleClick = (e) => {
     if (product.length === 0) return;
@@ -28,7 +31,7 @@ function App() {
 
   const handleClick2 = (e) => {
     console.log(e.currentTarget.id);
-    const newProduct = card.find(
+    const newProduct = cards.find(
       (product) => product.id === Number(e.currentTarget.id)
     );
     localStorage.setItem("product", JSON.stringify(newProduct));
@@ -48,8 +51,11 @@ function App() {
           <div className="max-w-sm mx-auto bg-green-400 shadow-md rounded-lg overflow-hidden">
             <div className="bg-gray-200 p-4">
               <h2 className="text-lg font-semibold text-gray-700">
-                ID:"{product.id}"{" "}
+                Item:"{product.id}"{" "}
               </h2>
+            </div>
+            <div className="bg-gray-200 p-4 ">
+              <img src={product.images} alt="product image" />
             </div>
             <div className="p-6">
               <h2 className="text-xl font-bold mb-2 text-gray-800">
@@ -61,6 +67,14 @@ function App() {
               <p className="text-gray-600">
                 Description: "{product.description}"
               </p>
+              <h2 className="text-lg text-gray-700 mb-4">
+                <Link
+                  className="font-bold text-white"
+                  to={`product/${product.id}`}
+                >
+                  MORE INFO:CLICK HERE!
+                </Link>
+              </h2>
             </div>
             <div className="p-4 bg-gray-200 text-center">
               <button
@@ -77,15 +91,18 @@ function App() {
         <br />
       </div>
       <div className="bg-slate-700 text-white p-10 grid gri-cols-1 sm:grid-cols-2 gap-6 ">
-        {card.map((product) => (
+        {cards.map((product) => (
           <div
             key={product.id}
-            className=" flex flex-col justify-between max-w-sm mx-auto bg-green-400 shadow-md rounded-lg overflow-hidden mb-10 h-[400px] w-[400px]"
+            className=" max-w-sm mx-auto bg-green-400 shadow-md rounded-lg overflow-hidden"
           >
             <div className="bg-gray-200 p-4">
               <h2 className="text-lg font-semibold text-gray-700">
-                ID:"{product.id}"
+                Item:"{product.id}"
               </h2>
+            </div>
+            <div className="bg-gray-200 p-4">
+              <img src={product.images} alt="product image" />
             </div>
             <div className="p-6">
               <h2 className="text-xl font-bold mb-2 text-gray-800">
@@ -93,6 +110,14 @@ function App() {
               </h2>
               <h2 className="text-lg text-gray-700 mb-4">
                 Price: "{product.price}€"
+              </h2>
+              <h2 className="text-lg text-gray-700 mb-4">
+                <Link
+                  className="font-bold text-white"
+                  to={`product/${product.id}`}
+                >
+                  MORE INFO:CLICK HERE!
+                </Link>
               </h2>
             </div>
             <div className="p-4 bg-gray-200 text-center ">

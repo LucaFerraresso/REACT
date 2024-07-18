@@ -11,6 +11,7 @@ import Privacy from "./pages/Privacy.jsx";
 import Terms from "./pages/Terms.jsx";
 import DefaultLayout from "./pages/DefaultLayout.jsx";
 import Shop from "./pages/Shop.jsx";
+import ProductPage from "./pages/ProductPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "Shop",
         element: <Shop />,
+      },
+      {
+        path: "product/:id",
+        element: <ProductPage />,
       },
     ],
   },

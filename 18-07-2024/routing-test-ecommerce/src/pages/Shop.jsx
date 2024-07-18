@@ -16,11 +16,15 @@ const Shop = () => {
       <br />
       <h2>"Arrivo dal LOCAL STORAGE"</h2>
       <br />
-      <div className="max-w-sm mx-auto bg-blue-400 shadow-md rounded-lg overflow-hidden">
+
+      <div className="max-w-sm mx-auto bg-blue-400 shadow-md rounded-lg overflow-hidden ">
         <div className="bg-gray-200 p-4">
           <h2 className="text-lg font-semibold text-gray-700">
-            Id:"{product.id}"
+            Item:"{product.id}"
           </h2>
+        </div>
+        <div className="bg-gray-200 p-4 ">
+          <img src={product.images} alt="product image" />
         </div>
         <div className="p-6">
           <h2 className="text-xl font-bold mb-2 text-gray-800">
