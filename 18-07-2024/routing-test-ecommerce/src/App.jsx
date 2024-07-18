@@ -22,9 +22,11 @@ function App() {
   }, []);
 
   //libero sempre il local storage al reload della pagina
-  localStorage.removeItem("product");
+  //localStorage.removeItem("product");
   localStorage.removeItem("cart");
   localStorage.removeItem("object Object");
+  localStorage.removeItem("cartItems");
+  localStorage.removeItem("Items");
 
   const handleClick = (e) => {
     if (product.length === 0) return;

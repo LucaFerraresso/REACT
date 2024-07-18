@@ -1,6 +1,10 @@
 //devo importare una libreria da react-dom per costruire una modale
 import { createPortal } from "react-dom";
 const Modal = ({ onClose, isOpen, product }) => {
+  const addItem = () => {
+    const cartItem = JSON.stringify(product);
+    localStorage.setItem("product", cartItem);
+  };
   return createPortal(
     <>
       {isOpen && (
@@ -12,11 +16,10 @@ const Modal = ({ onClose, isOpen, product }) => {
               alt={product.title}
               className="w-[300px] h-[300px]"
             />
-
             <h2>{product.title}</h2>
             <p>{product.description}</p>
-
             <button onClick={onClose}>CLOSE</button>
+            <button onClick={addItem}>ADD TO CART</button>
           </div>
         </div>
       )}
