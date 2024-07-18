@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 const menulist = [
   {
     name: "Home",
@@ -27,7 +28,7 @@ const Navbar = () => {
       <ul className="flex space-x-4 margin-0">
         {menulist.map((item, index) => (
           <li key={index}>
-            <a href={item.path}>{item.name}</a>
+            <NavLink to={item.path}>{item.name}</NavLink>
           </li>
         ))}
       </ul>
