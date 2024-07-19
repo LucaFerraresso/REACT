@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+
+import Card from "./components/Card";
 
 function App() {
   const [todo, setToDo] = useState([]);
@@ -9,19 +11,12 @@ function App() {
         console.log(json), setToDo(json);
       });
   }, []);
+
   return (
     <>
-      <div className="w-full h-full grid grid-cols-3 p-6 rounded-md bg-green-500">
+      <div className="w-full h-full grid grid-cols-3 p-6 rounded-md bg-green-900 gap-2">
         {todo.map((todo) => (
-          <div
-            className="flex flex-col border-2 border-black bg-orange-500"
-            key={todo.id}
-          >
-            <h2>Id:{todo.id}</h2>
-            <h1>title:{todo.title}</h1>
-            <p>description:{todo.description}</p>
-            <h2>userId:{todo.userId}</h2>
-          </div>
+          <Card key={todo.id} todo={todo} />
         ))}
       </div>
     </>

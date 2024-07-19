@@ -11,6 +11,8 @@ import Services from "./pages/Services.jsx";
 import Contacts from "./pages/Contacts.jsx";
 import Privacy from "./pages/Privacy.jsx";
 import Terms from "./pages/Terms.jsx";
+import Shop from "./pages/Shop.jsx";
+import ToDoProvider from "./providers/ToDoContext.jsx";
 
 const router = createBrowserRouter([
   {
@@ -42,12 +44,18 @@ const router = createBrowserRouter([
         path: "Terms",
         element: <Terms />,
       },
+      {
+        path: "shop",
+        element: <Shop />,
+      },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ToDoProvider>
+      <RouterProvider router={router} />
+    </ToDoProvider>
   </React.StrictMode>
 );

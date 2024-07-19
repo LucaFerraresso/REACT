@@ -1,4 +1,7 @@
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { toDoContext } from "../providers/ToDoContext";
+
 const menulist = [
   {
     name: "Home",
@@ -23,6 +26,7 @@ const menulist = [
 ];
 
 const Navbar = () => {
+  const { toDos } = useContext(toDoContext);
   return (
     <nav className="bg-gray-800 text-white p-4 ">
       <ul className="flex space-x-4 margin-0">
@@ -39,6 +43,9 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
+      <div className="bg-green-400 w-12 h-12 rounded-full flex justify-center items-center">
+        {toDos.length}
+      </div>
     </nav>
   );
 };
