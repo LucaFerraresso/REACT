@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { setToDoContext, toDoContext } from "../providers/ToDoContext";
+import { toDoContext } from "../providers/ToDoContext";
 import Card from "../components/Card";
 const Shop = () => {
   const { toDos } = useContext(toDoContext);
