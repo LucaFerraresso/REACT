@@ -6,6 +6,10 @@ import ErrorPage from "./pages/ErrorPage.jsx";
 import DefaultLayout from "./layout/DefaultLayout.jsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import HomePage from "./pages/HomePage.jsx";
+import PageOne from "./pages/PageOne.jsx";
+import PageTwo from "./pages/PageTwo.jsx";
+import PageThree from "./pages/PageThree.jsx";
 
 const router = createBrowserRouter([
   {
@@ -14,32 +18,24 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",
+        path: "/App",
         element: <App />,
       },
       {
-        path: "About",
-        element: <>ciao sono about</>,
+        path: "HomePage",
+        element: <HomePage />,
       },
       {
-        path: "Services",
-        element: <>ciao sono services</>,
+        path: "/pageone",
+        element: <PageOne />,
       },
       {
-        path: "Contact",
-        element: <>ciao sono contacts</>,
+        path: "pagetwo",
+        element: <PageTwo />,
       },
       {
-        path: "Privacy",
-        element: <>ciao sono pricavy</>,
-      },
-      {
-        path: "Terms",
-        element: <>ciao sono terms</>,
-      },
-      {
-        path: "shop",
-        element: <>ciao sono shop</>,
+        path: "pagethree",
+        element: <PageThree />,
       },
     ],
   },
