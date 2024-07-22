@@ -17,7 +17,7 @@ const HomePage = () => {
     <>
       {" "}
       {/*inizio div app*/}
-      <div className="grid grid-rows-3 grid-cols-3 gap-6 justify-center items-center p-[16px] bg-red-600 h-full w-full">
+      <div className="grid grid-rows-3 grid-cols-3 gap-6 justify-center items-center p-[16px] bg-gray-300 h-full w-full">
         {/*inizio div 1 in app con modale*/}
         <div className="flex flex-row justify-between items-center p-[16px] bg-blue-700 h-full w-full">
           {" "}
