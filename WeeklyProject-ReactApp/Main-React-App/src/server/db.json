@@ -7,7 +7,7 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/4/45/Bialetti_Moka_Express.jpg",
       "price": 24.99,
       "quantity": 150,
-      "category": "cucina"
+      "category": "Cucina"
     },
     {
       "id": 3,
@@ -34,7 +34,7 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Modern_Clock.jpg",
       "price": 29.99,
       "quantity": 60,
-      "category": "varie"
+      "category": "Varie"
     },
     {
       "id": 6,
@@ -52,7 +52,7 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Hiking_Backpack.jpg",
       "price": 79.99,
       "quantity": 50,
-      "category": "varie"
+      "category": "Varie"
     },
     {
       "id": 8,
@@ -61,7 +61,7 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Orthopedic_Pillow.jpg",
       "price": 25.99,
       "quantity": 120,
-      "category": "varie"
+      "category": "Varie"
     },
     {
       "id": 9,
@@ -79,7 +79,7 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Hair_Straightener.jpg",
       "price": 45.99,
       "quantity": 90,
-      "category": "varie"
+      "category": "Varie"
     },
     {
       "id": 11,
@@ -88,7 +88,7 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Steam_Iron.jpg",
       "price": 39.99,
       "quantity": 110,
-      "category": "varie"
+      "category": "Varie"
     },
     {
       "id": 12,
@@ -97,7 +97,7 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/5/58/Instant_Camera.jpg",
       "price": 89.99,
       "quantity": 70,
-      "category": "varie"
+      "category": "Varie"
     },
     {
       "id": 13,
@@ -115,7 +115,7 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Cordless_Vacuum_Cleaner.jpg",
       "price": 159.99,
       "quantity": 55,
-      "category": "varie"
+      "category": "Varie"
     },
     {
       "id": 15,
@@ -151,7 +151,7 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Stainless_Steel_Thermos.jpg",
       "price": 19.99,
       "quantity": 140,
-      "category": "varie"
+      "category": "Varie"
     },
     {
       "id": 19,
@@ -160,7 +160,7 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Digital_Kitchen_Scale.jpg",
       "price": 25.99,
       "quantity": 110,
-      "category": "varie"
+      "category": "Varie"
     },
     {
       "id": 20,
@@ -178,7 +178,7 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/WiFi_Security_Camera.jpg",
       "price": 69.99,
       "quantity": 90,
-      "category": "varie"
+      "category": "Varie"
     },
     {
       "id": 22,
@@ -259,7 +259,7 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Digital_Bathroom_Scale.jpg",
       "price": 29.99,
       "quantity": 100,
-      "category": "varie"
+      "category": "Varie"
     },
     {
       "id": 31,
@@ -268,7 +268,7 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/d/da/Air_Purifier.jpg",
       "price": 149.99,
       "quantity": 60,
-      "category": "varie"
+      "category": "Varie"
     },
     {
       "id": 32,
