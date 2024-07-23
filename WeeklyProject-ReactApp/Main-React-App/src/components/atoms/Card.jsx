@@ -34,7 +34,7 @@ const Card = ({ item }) => {
 
           <div className="sm:flex sm:items-end sm:justify-end">
             <Link
-              to="/:id"
+              to={`/products/${item.id}`}
               className="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"
             >
               Read More

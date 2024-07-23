@@ -7,7 +7,7 @@ const ProductPage = () => {
 
   return (
     <>
-      <h1>ProductPage: product id cliccato{id} :</h1>
+      <h1>ProductPage: product id cliccato :{id} </h1>
     </>
   );
 };
