@@ -15,7 +15,6 @@ const ProductPage = () => {
       //voglio filtrare l'array per id e visualizzare solo il prodotto cliccato
       const filteredProduct = await data.filter((product) => product.id == id);
       setProduct(filteredProduct);
-      console.log("await", filteredProduct);
     } catch (error) {
       console.log(error);
     } finally {
@@ -25,9 +24,6 @@ const ProductPage = () => {
   useEffect(() => {
     getProducts();
   }, []);
-  useEffect(() => {
-    console.log(product);
-  }, [product]);
 
   if (isloading) {
     return <h1>loading...</h1>;
