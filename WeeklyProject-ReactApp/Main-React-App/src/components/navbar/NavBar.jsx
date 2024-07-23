@@ -2,23 +2,23 @@ import { NavLink } from "react-router-dom";
 
 const menulist = [
   {
-    name: "Home",
+    name: "/App",
     path: "/App",
   },
   {
-    name: "HomePage",
+    name: "Home",
     path: "/homepage",
   },
   {
-    name: "ALL TODOS",
+    name: "All Product",
     path: "/pageone",
   },
   {
-    name: "COMPLETED",
+    name: "Category",
     path: "/pagetwo",
   },
   {
-    name: "NOT-COMPLETED",
+    name: "Favorites",
     path: "pagethree",
   },
 ];

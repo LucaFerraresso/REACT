@@ -10,6 +10,7 @@ import HomePage from "./pages/HomePage.jsx";
 import PageOne from "./pages/PageOne.jsx";
 import PageTwo from "./pages/PageTwo.jsx";
 import PageThree from "./pages/PageThree.jsx";
+import ProductPage from "./pages/ProductPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/app",
+        path: "/App",
         element: <App />,
       },
       {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "pagethree",
         element: <PageThree />,
+      },
+      {
+        path: "/:id",
+        element: <ProductPage />,
       },
     ],
   },

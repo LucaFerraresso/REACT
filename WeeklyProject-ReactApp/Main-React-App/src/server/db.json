@@ -1,0 +1,454 @@
+{
+  "products": [
+    {
+      "id": 2,
+      "title": "Caffettiera Moka Express",
+      "description": "Classica caffettiera moka per un caffè aromatico e intenso, realizzata in alluminio.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/45/Bialetti_Moka_Express.jpg",
+      "price": 24.99,
+      "quantity": 150,
+      "category": "cucina"
+    },
+    {
+      "id": 3,
+      "title": "Ventilatore a Piantana",
+      "description": "Ventilatore a piantana con oscillazione, tre velocità e altezza regolabile.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Floor_Fan.jpg",
+      "price": 59.99,
+      "quantity": 75,
+      "category": "Cucina"
+    },
+    {
+      "id": 4,
+      "title": "Bicchiere da Vino",
+      "description": "Set di 6 bicchieri da vino in cristallo, perfetti per degustazioni e cene eleganti.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/85/Empty_Wine_Glasses.jpg",
+      "price": 49.99,
+      "quantity": 80,
+      "category": "Cucina"
+    },
+    {
+      "id": 5,
+      "title": "Orologio da Parete Moderno",
+      "description": "Orologio da parete con design moderno e minimalista, ideale per qualsiasi ambiente.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Modern_Clock.jpg",
+      "price": 29.99,
+      "quantity": 60,
+      "category": "varie"
+    },
+    {
+      "id": 6,
+      "title": "Tostapane a Doppia Fessura",
+      "description": "Tostapane con doppia fessura, controllo della doratura e funzione di scongelamento.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/14/Toaster.jpg",
+      "price": 34.99,
+      "quantity": 100,
+      "category": "Cucina"
+    },
+    {
+      "id": 7,
+      "title": "Zaino da Escursione",
+      "description": "Zaino da escursione da 30 litri con supporto lombare e diverse tasche per l'organizzazione.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Hiking_Backpack.jpg",
+      "price": 79.99,
+      "quantity": 50,
+      "category": "varie"
+    },
+    {
+      "id": 8,
+      "title": "Cuscino Ortopedico",
+      "description": "Cuscino ortopedico in memory foam, ideale per supportare la schiena e migliorare la postura.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Orthopedic_Pillow.jpg",
+      "price": 25.99,
+      "quantity": 120,
+      "category": "varie"
+    },
+    {
+      "id": 9,
+      "title": "Chitarra Acustica",
+      "description": "Chitarra acustica in legno massello, perfetta per principianti e musicisti esperti.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/45/Acoustic_Guitar.jpg",
+      "price": 199.99,
+      "quantity": 40,
+      "category": "Musica"
+    },
+    {
+      "id": 10,
+      "title": "Piastra per Capelli",
+      "description": "Piastra per capelli con rivestimento in ceramica, temperatura regolabile e spegnimento automatico.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Hair_Straightener.jpg",
+      "price": 45.99,
+      "quantity": 90,
+      "category": "varie"
+    },
+    {
+      "id": 11,
+      "title": "Ferro da Stiro a Vapore",
+      "description": "Ferro da stiro a vapore con funzione anti-goccia, potenza di 2400W e piastra in acciaio inox.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Steam_Iron.jpg",
+      "price": 39.99,
+      "quantity": 110,
+      "category": "varie"
+    },
+    {
+      "id": 12,
+      "title": "Macchina Fotografica Istantanea",
+      "description": "Macchina fotografica istantanea con stampa immediata delle foto, design retrò e facile utilizzo.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/58/Instant_Camera.jpg",
+      "price": 89.99,
+      "quantity": 70,
+      "category": "varie"
+    },
+    {
+      "id": 13,
+      "title": "Bollitore Elettrico",
+      "description": "Bollitore elettrico con capacità di 1.7 litri, spegnimento automatico e filtro anti-calcare.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/90/Electric_Kettle.jpg",
+      "price": 29.99,
+      "quantity": 130,
+      "category": "Cucina"
+    },
+    {
+      "id": 14,
+      "title": "Scopa Elettrica Senza Fili",
+      "description": "Scopa elettrica senza fili con batteria ricaricabile, autonomia di 40 minuti e funzione aspirapolvere.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Cordless_Vacuum_Cleaner.jpg",
+      "price": 159.99,
+      "quantity": 55,
+      "category": "varie"
+    },
+    {
+      "id": 15,
+      "title": "Frullatore ad Immersione",
+      "description": "Frullatore ad immersione con motore potente, accessori intercambiabili e manico ergonomico.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Immersion_Blender.jpg",
+      "price": 49.99,
+      "quantity": 100,
+      "category": "Cucina"
+    },
+    {
+      "id": 16,
+      "title": "Set di Coltelli da Cucina",
+      "description": "Set di coltelli da cucina in acciaio inox, inclusi coltello da chef, da pane e da verdure.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Kitchen_Knife_Set.jpg",
+      "price": 59.99,
+      "quantity": 85,
+      "category": "Cucina"
+    },
+    {
+      "id": 17,
+      "title": "Forno a Microonde",
+      "description": "Forno a microonde con funzione grill, capacità di 20 litri e pannello di controllo digitale.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/60/Microwave_Oven.jpg",
+      "price": 99.99,
+      "quantity": 70,
+      "category": "Cucina"
+    },
+    {
+      "id": 18,
+      "title": "Termos in Acciaio Inox",
+      "description": "Termos in acciaio inox da 1 litro, ideale per mantenere bevande calde o fredde per ore.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Stainless_Steel_Thermos.jpg",
+      "price": 19.99,
+      "quantity": 140,
+      "category": "varie"
+    },
+    {
+      "id": 19,
+      "title": "Bilancia da Cucina Digitale",
+      "description": "Bilancia da cucina digitale con precisione al grammo, display LCD e funzione tara.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Digital_Kitchen_Scale.jpg",
+      "price": 25.99,
+      "quantity": 110,
+      "category": "varie"
+    },
+    {
+      "id": 20,
+      "title": "Friggitrice ad Aria",
+      "description": "Friggitrice ad aria con capacità di 5 litri, controllo della temperatura e timer integrato.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/20/Air_Fryer.jpg",
+      "price": 89.99,
+      "quantity": 60,
+      "category": "Cucina"
+    },
+    {
+      "id": 21,
+      "title": "Telecamera di Sicurezza Wi-Fi",
+      "description": "Telecamera di sicurezza Wi-Fi con visione notturna, rilevamento del movimento e audio bidirezionale.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/WiFi_Security_Camera.jpg",
+      "price": 69.99,
+      "quantity": 90,
+      "category": "varie"
+    },
+    {
+      "id": 22,
+      "title": "Macchina del Caffè Espresso",
+      "description": "Macchina del caffè espresso con sistema a capsule, compatta e facile da usare.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/57/Espresso_Machine.jpg",
+      "price": 129.99,
+      "quantity": 40,
+      "category": "Cucina"
+    },
+    {
+      "id": 23,
+      "title": "Robot da Cucina Multifunzione",
+      "description": "Robot da cucina con multiple funzioni, ideale per impastare, frullare e tritare.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/88/Food_Processor.jpg",
+      "price": 249.99,
+      "quantity": 30,
+      "category": "Cucina"
+    },
+    {
+      "id": 24,
+      "title": "Termometro da Cucina Digitale",
+      "description": "Termometro da cucina digitale con sonda in acciaio inox, ideale per carni e liquidi.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Digital_Meat_Thermometer.jpg",
+      "price": 15.99,
+      "quantity": 120,
+      "category": "Cucina"
+    },
+    {
+      "id": 25,
+      "title": "Frullatore da Tavolo",
+      "description": "Frullatore da tavolo con vaso in vetro, lame in acciaio inox e diverse velocità.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Blender.jpg",
+      "price": 39.99,
+      "quantity": 80,
+      "category": "Cucina"
+    },
+    {
+      "id": 26,
+      "title": "Spremiagrumi Elettrico",
+      "description": "Spremiagrumi elettrico con doppio cono, design compatto e facile da pulire.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/Electric_Citrus_Juicer.jpg",
+      "price": 29.99,
+      "quantity": 70,
+      "category": "Cucina"
+    },
+    {
+      "id": 27,
+      "title": "Tritatutto Elettrico",
+      "description": "Tritatutto elettrico compatto, ideale per tritare verdure, frutta e carne.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Electric_Food_Chopper.jpg",
+      "price": 19.99,
+      "quantity": 90,
+      "category": "Cucina"
+    },
+    {
+      "id": 28,
+      "title": "Griglia Elettrica da Tavolo",
+      "description": "Griglia elettrica da tavolo con piastra antiaderente, perfetta per grigliare carne e verdure.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/84/Electric_Table_Grill.jpg",
+      "price": 59.99,
+      "quantity": 50,
+      "category": "Cucina"
+    },
+    {
+      "id": 29,
+      "title": "Macchina per il Pane",
+      "description": "Macchina per il pane con programmi automatici, capacità di 1 kg e funzione di mantenimento caldo.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Bread_Maker.jpg",
+      "price": 89.99,
+      "quantity": 40,
+      "category": "Cucina"
+    },
+    {
+      "id": 30,
+      "title": "Bilancia Pesa Persone Digitale",
+      "description": "Bilancia pesa persone digitale con display LCD, misurazione precisa e design moderno.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Digital_Bathroom_Scale.jpg",
+      "price": 29.99,
+      "quantity": 100,
+      "category": "varie"
+    },
+    {
+      "id": 31,
+      "title": "Purificatore d'Aria",
+      "description": "Purificatore d'aria con filtro HEPA, silenzioso e adatto per ambienti fino a 30 m².",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/da/Air_Purifier.jpg",
+      "price": 149.99,
+      "quantity": 60,
+      "category": "varie"
+    },
+    {
+      "id": 32,
+      "title": "Tosaerba Elettrico",
+      "description": "Tosaerba elettrico con regolazione dell'altezza di taglio, ideale per giardini di medie dimensioni.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Electric_Lawn_Mower.jpg",
+      "price": 199.99,
+      "quantity": 30,
+      "category": "Giardino"
+    },
+    {
+      "id": 33,
+      "title": "Tagliasiepi a Batteria",
+      "description": "Tagliasiepi a batteria con lama da 45 cm, leggero e facile da usare.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/32/Cordless_Hedge_Trimmer.jpg",
+      "price": 129.99,
+      "quantity": 50,
+      "category": "Giardino"
+    },
+    {
+      "id": 34,
+      "title": "Set di Attrezzi da Giardino",
+      "description": "Set di attrezzi da giardino in acciaio inox, inclusi pala, rastrello e forbici da potatura.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Garden_Tool_Set.jpg",
+      "price": 39.99,
+      "quantity": 100,
+      "category": "Giardino"
+    },
+    {
+      "id": 35,
+      "title": "Irrigatore Oscillante",
+      "description": "Irrigatore oscillante con ampia copertura, perfetto per mantenere il prato verde.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/27/Oscillating_Sprinkler.jpg",
+      "price": 24.99,
+      "quantity": 80,
+      "category": "Giardino"
+    },
+    {
+      "id": 36,
+      "title": "Barbecue a Carbonella",
+      "description": "Barbecue a carbonella con griglia regolabile e ruote per un facile trasporto.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Charcoal_Grill.jpg",
+      "price": 89.99,
+      "quantity": 40,
+      "category": "Giardino"
+    },
+    {
+      "id": 37,
+      "title": "Tenda da Giardino",
+      "description": "Tenda da giardino impermeabile con struttura in acciaio e pareti laterali removibili.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Garden_Tent.jpg",
+      "price": 149.99,
+      "quantity": 25,
+      "category": "Giardino"
+    },
+    {
+      "id": 38,
+      "title": "Lampada Solare da Giardino",
+      "description": "Lampada solare da giardino con sensore di movimento, ricaricabile e resistente alle intemperie.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Solar_Garden_Light.jpg",
+      "price": 29.99,
+      "quantity": 90,
+      "category": "Giardino"
+    },
+    {
+      "id": 39,
+      "title": "Dondolo da Giardino",
+      "description": "Dondolo da giardino con struttura in acciaio e cuscini imbottiti, perfetto per rilassarsi all'aperto.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/17/Garden_Swing.jpg",
+      "price": 199.99,
+      "quantity": 20,
+      "category": "Giardino"
+    },
+    {
+      "id": 40,
+      "title": "Vaso Auto-irrigante",
+      "description": "Vaso auto-irrigante in plastica resistente, ideale per piante da interno ed esterno.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Self_Watering_Planter.jpg",
+      "price": 19.99,
+      "quantity": 70,
+      "category": "Giardino"
+    },
+    {
+      "id": 41,
+      "title": "Amaca da Giardino",
+      "description": "Amaca da giardino in cotone, con supporto in acciaio e facile da montare.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/98/Garden_Hammock.jpg",
+      "price": 59.99,
+      "quantity": 60,
+      "category": "Giardino"
+    },
+    {
+      "id": 42,
+      "title": "Navigatore GPS",
+      "description": "Navigatore GPS con schermo da 5 pollici, aggiornamenti mappe a vita e guida vocale.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/67/GPS_Navigator.jpg",
+      "price": 129.99,
+      "quantity": 50,
+      "category": "Auto"
+    },
+    {
+      "id": 43,
+      "title": "Aspirapolvere per Auto",
+      "description": "Aspirapolvere portatile per auto con alimentazione a 12V, compatto e potente.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Car_Vacuum_Cleaner.jpg",
+      "price": 29.99,
+      "quantity": 100,
+      "category": "Auto"
+    },
+    {
+      "id": 44,
+      "title": "Supporto Smartphone per Auto",
+      "description": "Supporto magnetico per smartphone da auto, facile da installare e compatibile con tutti i telefoni.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Car_Smartphone_Holder.jpg",
+      "price": 14.99,
+      "quantity": 150,
+      "category": "Auto"
+    },
+    {
+      "id": 45,
+      "title": "Compressore d'Aria Portatile",
+      "description": "Compressore d'aria portatile per auto con display digitale e spegnimento automatico.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/72/Portable_Air_Compressor.jpg",
+      "price": 49.99,
+      "quantity": 70,
+      "category": "Auto"
+    },
+    {
+      "id": 46,
+      "title": "Coprisedili Auto Universali",
+      "description": "Set di coprisedili universali in pelle, compatibili con la maggior parte dei veicoli.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/21/Car_Seat_Covers.jpg",
+      "price": 79.99,
+      "quantity": 40,
+      "category": "Auto"
+    },
+    {
+      "id": 47,
+      "title": "Kit di Emergenza per Auto",
+      "description": "Kit di emergenza per auto con cavi di avviamento, triangolo di emergenza e torcia LED.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/49/Car_Emergency_Kit.jpg",
+      "price": 59.99,
+      "quantity": 60,
+      "category": "Auto"
+    },
+    {
+      "id": 48,
+      "title": "Rilevatore di Pressione Pneumatici",
+      "description": "Sistema di monitoraggio della pressione dei pneumatici con display LCD e sensori wireless.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Tire_Pressure_Monitoring_System.jpg",
+      "price": 99.99,
+      "quantity": 30,
+      "category": "Auto"
+    },
+    {
+      "id": 49,
+      "title": "Parcheggio Assistito",
+      "description": "Sistema di parcheggio assistito con sensori di distanza e allarme sonoro.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/29/Parking_Assistance_System.jpg",
+      "price": 89.99,
+      "quantity": 40,
+      "category": "Auto"
+    },
+    {
+      "id": 50,
+      "title": "Caricatore USB per Auto",
+      "description": "Caricatore USB per auto a doppia porta, compatibile con smartphone e tablet.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/Car_USB_Charger.jpg",
+      "price": 19.99,
+      "quantity": 200,
+      "category": "Auto"
+    },
+    {
+      "id": 51,
+      "title": "Copriauto Impermeabile",
+      "description": "Copriauto impermeabile e resistente ai raggi UV, adatto a tutte le stagioni.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Car_Cover.jpg",
+      "price": 59.99,
+      "quantity": 50,
+      "category": "Auto"
+    }
+  ]
+}
