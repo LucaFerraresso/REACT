@@ -7,13 +7,9 @@ export const PageThree = () => {
   const [data, setData] = useState([]);
   const getData = async () => {
     try {
-      //voglio fare una chiamata fetch e visualizzare la risposta
       const products = await fetch("https://fakestoreapi.com/products");
-      //const products = await fetch("https://api.storerestapi.com/products");
       const json = await products.json();
-
       setData(json);
-      console.log(json);
     } catch (error) {
       console.log(error);
     }
@@ -37,7 +33,7 @@ export const PageThree = () => {
         />
       </div>
 
-      <div>
+      <div className="flex flex-col gap-4">
         {data
           .filter((item) => item.title.toLowerCase().includes(input))
           .map((item) => (

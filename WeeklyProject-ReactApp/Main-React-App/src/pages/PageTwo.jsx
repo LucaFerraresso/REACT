@@ -8,13 +8,9 @@ export const PageTwo = () => {
   const [data, setData] = useState([]);
   const getData = async () => {
     try {
-      //voglio fare una chiamata fetch e visualizzare la risposta
       const products = await fetch("https://fakestoreapi.com/products");
-      //const products = await fetch("https://api.storerestapi.com/products");
       const json = await products.json();
-
       setData(json);
-      console.log(json);
     } catch (error) {
       console.log(error);
     }
@@ -38,7 +34,7 @@ export const PageTwo = () => {
         />
       </div>
 
-      <div>
+      <div className="grid grid-cols-2">
         {data
           .filter((item) => item.title.toLowerCase().includes(input))
           .map((item) => (
