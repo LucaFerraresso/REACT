@@ -30,10 +30,9 @@ export const PageOne = () => {
     setInput(e.target.value.toLowerCase());
   };
 
-  //al primo rendering voglio eseguire getData
   return (
     <>
-      <h1>all Products</h1>
+      <h1>All Products API 1, Card components</h1>
       <div className="flex gap-10">
         <h2>Filter products by title:</h2>
         <input

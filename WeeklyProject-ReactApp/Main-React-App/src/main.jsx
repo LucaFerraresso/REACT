@@ -11,6 +11,7 @@ import PageOne from "./pages/PageOne.jsx";
 import PageTwo from "./pages/PageTwo.jsx";
 import PageThree from "./pages/PageThree.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
+import ComponentsPage from "./pages/ComponentsPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "pagethree",
         element: <PageThree />,
+      },
+      {
+        path: "pagefour",
+        element: <ComponentsPage />,
       },
       {
         path: "products/:id",

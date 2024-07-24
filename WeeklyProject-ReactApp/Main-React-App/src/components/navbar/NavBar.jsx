@@ -10,16 +10,20 @@ const menulist = [
     path: "/homepage",
   },
   {
-    name: "All Product",
+    name: "API 1",
     path: "/pageone",
   },
   {
-    name: "Category",
+    name: "API 2",
     path: "/pagetwo",
   },
   {
-    name: "Favorites",
+    name: "API 3",
     path: "pagethree",
+  },
+  {
+    name: "COMPONENTS",
+    path: "pagefour",
   },
 ];
 

@@ -166,3 +166,11 @@ const HomePage = () => {
 };
 
 export default HomePage;
+//fetch in locale, no immagini
+http://localhost:3000/product
+//prima API (20 PRODOTTI si immagini)
+https://fakestoreapi.com/products
+// SECONDA API (20 PRODOTTI no immagini)
+https://api.storerestapi.com/products [json.data]
+
+
