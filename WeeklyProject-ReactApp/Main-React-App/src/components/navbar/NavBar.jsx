@@ -31,7 +31,7 @@ const Navbar = () => {
   const { products } = useContext(ProductContext);
   const { favorites } = useContext(FavoriteContext);
   return (
-    <nav className="bg-gray-800 text-white p-4 ">
+    <nav className="bg-gray-800 text-white p-4 flex justify-between">
       <ul className="flex space-x-4 margin-0">
         {menulist.map((item, index) => (
           <li key={index}>
@@ -46,10 +46,10 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-      <div className="flex space-x-4">
+      <span className="flex space-x-4">
         <span>Products: {products.length}</span>
         <span>Favorites: {favorites.length}</span>
-      </div>
+      </span>
     </nav>
   );
 };

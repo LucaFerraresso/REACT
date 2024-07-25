@@ -6,6 +6,8 @@ import {
   FavoriteContext,
   setFavoriteContext,
 } from "../providers/FavoriteContext";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const favoriteArray = [];
 const cartArray = [];
@@ -34,9 +36,6 @@ export const PageOne = () => {
     getProducts();
   }, []);
 
-  if (isloading) {
-    return <h1>loading...</h1>;
-  }
   const handleChange = (e) => {
     setInput(e.target.value.toLowerCase());
   };
@@ -53,10 +52,6 @@ export const PageOne = () => {
 
   return (
     <>
-      <div>
-        <h1>products count {products.length}</h1>
-        <h1>favorite count {favorites.length}</h1>
-      </div>
       <div className="flex gap-10">
         <h2>Filter products by title:</h2>
         <input
@@ -66,17 +61,30 @@ export const PageOne = () => {
         />
       </div>
       <div className="bg-blue-200  grid grid-cols-2 style-none gap-2 p-4 ">
-        {data
-          .filter((item) => item.title.toLowerCase().includes(input))
-          .map((item) => (
-            <Item
-              key={item.id}
-              item={item}
-              handleFavorite={handleFavorite}
-              description={"Click READ MORE"}
-              addToCard={addToCart}
-            />
-          ))}
+        {isloading ? (
+          <>
+            <Skeleton height={400} />
+            <Skeleton height={400} />
+            <Skeleton height={400} />
+            <Skeleton height={400} />
+            <Skeleton height={400} />
+            <Skeleton height={400} />
+            <Skeleton height={400} />
+            <Skeleton height={400} />
+          </>
+        ) : (
+          data
+            .filter((item) => item.title.toLowerCase().includes(input))
+            .map((item) => (
+              <Item
+                key={item.id}
+                item={item}
+                handleFavorite={handleFavorite}
+                description={"Click READ MORE"}
+                addToCard={addToCart}
+              />
+            ))
+        )}
       </div>
     </>
   );
