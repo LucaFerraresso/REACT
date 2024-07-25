@@ -25,6 +25,10 @@ const menulist = [
     name: "COMPONENTS",
     path: "pagefour",
   },
+  {
+    name: "SHOP",
+    path: "pagefive",
+  },
 ];
 
 const Navbar = () => {

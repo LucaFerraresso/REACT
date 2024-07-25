@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const SideMenu = () => {
   return (
     <>
@@ -9,18 +10,18 @@ const SideMenu = () => {
 
           <ul className="mt-6 space-y-1">
             <li>
-              <a
-                href="#"
+              <Link
+                to="/"
                 className="block rounded-lg bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700"
               >
-                General
-              </a>
+                CATEGORIE:
+              </Link>
             </li>
 
             <li>
               <details className="group [&_summary::-webkit-details-marker]:hidden">
                 <summary className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700">
-                  <span className="text-sm font-medium"> Teams </span>
+                  <span className="text-sm font-medium"> API utilizzate </span>
 
                   <span className="shrink-0 transition duration-300 group-open:-rotate-180">
                     <svg
@@ -40,42 +41,58 @@ const SideMenu = () => {
 
                 <ul className="mt-2 space-y-1 px-4">
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/pageone"
                       className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                     >
-                      Banned Users
-                    </a>
+                      API locale
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/pagetwo"
+                      className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+                    >
+                      API 2
+                    </Link>
                   </li>
 
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/pagethree"
                       className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                     >
-                      Calendar
-                    </a>
+                      API 3
+                    </Link>
                   </li>
                 </ul>
               </details>
             </li>
 
             <li>
-              <a
-                href="#"
+              <Link
+                to="/pagefour"
                 className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
               >
-                Billing
-              </a>
+                Components page
+              </Link>
             </li>
 
             <li>
-              <a
-                href="#"
+              <Link
+                to="/HomePage"
                 className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
               >
-                Invoices
-              </a>
+                Home Page
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/pagefive"
+                className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+              >
+                SHOP
+              </Link>
             </li>
 
             <li>

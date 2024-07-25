@@ -12,6 +12,7 @@ import PageTwo from "./pages/PageTwo.jsx";
 import PageThree from "./pages/PageThree.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
 import ComponentsPage from "./pages/ComponentsPage.jsx";
+import Shop from "./pages/Shop.jsx";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
         path: "pagefour",
         element: <ComponentsPage />,
       },
+      {
+        path: "pagefive",
+        element: <Shop />,
+      },
+
       {
         path: "products/:id",
         element: <ProductPage />,
