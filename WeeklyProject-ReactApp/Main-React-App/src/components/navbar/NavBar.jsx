@@ -1,33 +1,27 @@
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
 
 const menulist = [
-  {
-    name: "/App",
-    path: "/App",
-  },
   {
     name: "Home",
     path: "/homepage",
   },
   {
-    name: "API 1",
-    path: "/pageone",
+    name: "Products",
+    path: "/Products",
   },
-  {
-    name: "API 2",
-    path: "/pagetwo",
-  },
-  {
-    name: "API 3",
-    path: "pagethree",
-  },
+
   {
     name: "COMPONENTS",
     path: "pagefour",
   },
   {
+    name: "FAVORITES",
+    path: "Favorites",
+  },
+  {
     name: "SHOP",
-    path: "pagefive",
+    path: "Shop",
   },
 ];
 
@@ -48,6 +42,15 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
+      <div>
+        <h1>SHOP,qui visualizzo il numero di prodotti inseriti nel carrello</h1>
+      </div>
+      <div>
+        <h1>
+          FAVORITES,qui visualizzo il numero di prodotti inseriti nel lista
+          favorites
+        </h1>
+      </div>
     </nav>
   );
 };

@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import "./index.css";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import DefaultLayout from "./layout/DefaultLayout.jsx";
@@ -8,11 +7,11 @@ import DefaultLayout from "./layout/DefaultLayout.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage.jsx";
 import PageOne from "./pages/PageOne.jsx";
-import PageTwo from "./pages/PageTwo.jsx";
-import PageThree from "./pages/PageThree.jsx";
+
 import ProductPage from "./pages/ProductPage.jsx";
 import ComponentsPage from "./pages/ComponentsPage.jsx";
 import Shop from "./pages/Shop.jsx";
+import PageSix from "./pages/PageSix.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,32 +20,28 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/App",
-        element: <App />,
+        path: "/",
+        element: <HomePage />,
       },
       {
         path: "HomePage",
         element: <HomePage />,
       },
       {
-        path: "/pageone",
+        path: "/Products",
         element: <PageOne />,
-      },
-      {
-        path: "pagetwo",
-        element: <PageTwo />,
-      },
-      {
-        path: "pagethree",
-        element: <PageThree />,
       },
       {
         path: "pagefour",
         element: <ComponentsPage />,
       },
       {
-        path: "pagefive",
+        path: "Shop",
         element: <Shop />,
+      },
+      {
+        path: "Favorites",
+        element: <PageSix />,
       },
 
       {

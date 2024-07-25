@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
-import CardTW from "../components/atoms/CardTW";
+import Item from "../components/atoms/item";
+import getProductsList from "../DataClient/DataClient";
+const favoriteProduct = [];
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -11,11 +12,8 @@ const ProductPage = () => {
 
   const getProducts = async () => {
     try {
-      //const data = await getProductsList();
-      const data = await fetch("https://fakestoreapi.com/products");
-      const json = await data.json();
-      //voglio filtrare l'array per id e visualizzare solo il prodotto cliccato
-      const filteredData = await json.filter((product) => product.id == id);
+      const data = await getProductsList();
+      const filteredData = await data.filter((product) => product.id == id);
       setProduct(filteredData);
       console.log(filteredData);
     } catch (error) {
@@ -32,10 +30,6 @@ const ProductPage = () => {
     return <h1>loading...</h1>;
   }
   const handleFavorite = (e) => {
-    console.log(e.currentTarget);
-    console.log(e.currentTarget.id);
-    //qui devo aggiungere il prodotto ai preferiti
-    const favoriteProduct = [];
     favoriteProduct.push(e.currentTarget.id);
     console.log(favoriteProduct);
     return favoriteProduct;
@@ -43,15 +37,16 @@ const ProductPage = () => {
 
   return (
     <>
-      <h1>ProductPage: product id cliccato :{id} </h1>
-      {product.map((item) => (
-        <CardTW
-          key={item.id}
-          item={item}
-          description={item.description}
-          handleFavorite={handleFavorite}
-        />
-      ))}
+      <div className="bg-blue-200  grid grid-cols-2 style-none gap-2 p-4 ">
+        {product.map((item) => (
+          <Item
+            key={item.id}
+            item={item}
+            description={item.description}
+            handleFavorite={handleFavorite}
+          />
+        ))}
+      </div>
     </>
   );
 };

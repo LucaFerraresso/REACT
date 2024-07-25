@@ -3,19 +3,7 @@ import { NavLink } from "react-router-dom";
 const menuFooter = [
   {
     name: "Home",
-    path: "/",
-  },
-  {
-    name: "About",
-    path: "/about",
-  },
-  {
-    name: "Services",
-    path: "/services",
-  },
-  {
-    name: "Contact",
-    path: "/contact",
+    path: "HomePage",
   },
   {
     name: "Shop",

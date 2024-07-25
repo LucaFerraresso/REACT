@@ -1,3 +1,4 @@
+import { useContext } from "react";
 const Shop = () => {
   return <h1>Shop</h1>;
 };

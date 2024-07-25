@@ -42,27 +42,10 @@ const SideMenu = () => {
                 <ul className="mt-2 space-y-1 px-4">
                   <li>
                     <Link
-                      to="/pageone"
+                      to="/Products"
                       className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                     >
-                      API locale
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/pagetwo"
-                      className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
-                    >
-                      API 2
-                    </Link>
-                  </li>
-
-                  <li>
-                    <Link
-                      to="/pagethree"
-                      className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
-                    >
-                      API 3
+                      API PRODUCTS
                     </Link>
                   </li>
                 </ul>
@@ -80,15 +63,15 @@ const SideMenu = () => {
 
             <li>
               <Link
-                to="/HomePage"
+                to="/Favorites"
                 className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
               >
-                Home Page
+                Favorites
               </Link>
             </li>
             <li>
               <Link
-                to="/pagefive"
+                to="/Shop"
                 className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
               >
                 SHOP

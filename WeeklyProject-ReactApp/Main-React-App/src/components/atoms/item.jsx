@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const CardTW = ({ item, description, handleFavorite }) => {
+const Item = ({ item, description, handleFavorite, addToCard }) => {
   return (
     <>
-      <a href="#" className="group relative block overflow-hidden">
+      <div className="group relative block overflow-hidden">
         <button className="absolute end-4 top-4 z-10 rounded-full bg-white p-1.5 text-gray-900 transition hover:text-gray-900/75">
           <span className="sr-only">Wishlist</span>
 
@@ -58,17 +58,19 @@ const CardTW = ({ item, description, handleFavorite }) => {
             </Link>
           </div>
 
-          <form className="mt-4">
-            <Link to="/pagefive">
-              <button className="block w-full rounded bg-yellow-400 p-4 text-sm font-medium transition hover:scale-105">
-                Add to Cart
-              </button>
-            </Link>
-          </form>
+          <div className="mt-4">
+            <button
+              id={item.id}
+              onClick={addToCard}
+              className="block w-full rounded bg-yellow-400 p-4 text-sm font-medium transition hover:scale-105"
+            >
+              Add to Cart
+            </button>
+          </div>
         </div>
-      </a>
+      </div>
     </>
   );
 };
 
-export default CardTW;
+export default Item;
