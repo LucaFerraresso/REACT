@@ -174,3 +174,5 @@ https://fakestoreapi.com/products
 https://api.storerestapi.com/products [json.data]
 
 
+//usecontext navbar elementi carrello
+

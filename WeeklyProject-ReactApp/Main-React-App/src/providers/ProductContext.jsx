@@ -1,6 +1,7 @@
 import { useState, createContext } from "react";
-const ProductContext = createContext();
-const setProductContext = createContext();
+export const ProductContext = createContext();
+export const setProductContext = createContext();
+
 const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
 

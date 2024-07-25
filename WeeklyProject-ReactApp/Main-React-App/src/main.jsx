@@ -3,16 +3,15 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import DefaultLayout from "./layout/DefaultLayout.jsx";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage.jsx";
 import PageOne from "./pages/PageOne.jsx";
-
 import ProductPage from "./pages/ProductPage.jsx";
 import ComponentsPage from "./pages/ComponentsPage.jsx";
 import Shop from "./pages/Shop.jsx";
 import PageSix from "./pages/PageSix.jsx";
 import ProductProvider from "./providers/ProductContext.jsx";
+import FavoriteProvider from "./providers/FavoriteContext.jsx";
 
 const router = createBrowserRouter([
   {
@@ -55,8 +54,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ProductProvider>
-      <RouterProvider router={router} />
-    </ProductProvider>
+    <FavoriteProvider>
+      <ProductProvider>
+        <RouterProvider router={router} />
+      </ProductProvider>
+    </FavoriteProvider>
   </React.StrictMode>
 );

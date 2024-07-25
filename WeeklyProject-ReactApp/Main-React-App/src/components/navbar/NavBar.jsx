@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
+import { ProductContext } from "../../providers/ProductContext";
+import { FavoriteContext } from "../../providers/FavoriteContext";
 
 const menulist = [
   {
@@ -26,6 +28,8 @@ const menulist = [
 ];
 
 const Navbar = () => {
+  const { products } = useContext(ProductContext);
+  const { favorites } = useContext(FavoriteContext);
   return (
     <nav className="bg-gray-800 text-white p-4 ">
       <ul className="flex space-x-4 margin-0">
@@ -42,14 +46,9 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-      <div>
-        <h1>SHOP,qui visualizzo il numero di prodotti inseriti nel carrello</h1>
-      </div>
-      <div>
-        <h1>
-          FAVORITES,qui visualizzo il numero di prodotti inseriti nel lista
-          favorites
-        </h1>
+      <div className="flex space-x-4">
+        <span>Products: {products.length}</span>
+        <span>Favorites: {favorites.length}</span>
       </div>
     </nav>
   );

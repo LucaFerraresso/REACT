@@ -1,18 +1,23 @@
-import { useEffect, useState } from "react";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import getProductsList from "../DataClient/DataClient";
 import Item from "../components/atoms/item";
-const favoriteProduct = [];
-const cart = [];
+import { ProductContext, setProductContext } from "../providers/ProductContext";
+import {
+  FavoriteContext,
+  setFavoriteContext,
+} from "../providers/FavoriteContext";
+
+const favoriteArray = [];
+const cartArray = [];
 
 export const PageOne = () => {
   const [data, setData] = useState([]);
   const [isloading, setIsLoading] = useState(true);
   const [input, setInput] = useState("");
-  const [favorites, setFavorites] = useState([]);
-  const [cart, setCart] = useState([]);
-  const [navBarCart, setNavBarCart] = useState([]);
-  const [navBarFavorites, setNavBarFavorites] = useState([]);
+  const { setProducts } = useContext(setProductContext);
+  const { setFavorites } = useContext(setFavoriteContext);
+  const { products } = useContext(ProductContext);
+  const { favorites } = useContext(FavoriteContext);
 
   const getProducts = async () => {
     try {
@@ -36,30 +41,22 @@ export const PageOne = () => {
     setInput(e.target.value.toLowerCase());
   };
   const handleFavorite = (e) => {
-    //al click del cuore, da un array vuoto,viene pushato il valore dell'id del currentTarget
-    favoriteProduct.push(e.currentTarget.id);
-    console.log("favorites", favoriteProduct);
-    //gestisco il valore dell'array favorites finale
-    setFavorites(favoriteProduct);
-    //gestisco il valore nella navbar
-    setNavBarFavorites(favoriteProduct.length);
+    favoriteArray.push(e.currentTarget.id);
+    console.log("favorites", favoriteArray);
+    setFavorites(favorites + 1);
   };
   const addToCart = (e) => {
-    cart.push(e.currentTarget.id);
-    console.log(cart);
-    setCart(cart);
-    setNavBarCart(cart.length);
+    cartArray.push(e.currentTarget.id);
+    console.log("carrello", cartArray);
+    setProducts(products + 1);
   };
 
   return (
     <>
       <div>
-        <h1>counter shop {cart.length}</h1>
+        <h1>products count {products.length}</h1>
+        <h1>favorite count {favorites.length}</h1>
       </div>
-      <div>
-        <h1>counter favorites {favorites.length}</h1>
-      </div>
-
       <div className="flex gap-10">
         <h2>Filter products by title:</h2>
         <input
