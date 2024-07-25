@@ -2,8 +2,11 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Item from "../components/atoms/item";
 import getProductsList from "../DataClient/DataClient";
-const favoriteProduct = [];
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import { useContext } from "react";
 
+const favoriteProduct = [];
 const ProductPage = () => {
   const { id } = useParams();
   const [isloading, setIsLoading] = useState(true);
@@ -26,9 +29,6 @@ const ProductPage = () => {
     getProducts();
   }, []);
 
-  if (isloading) {
-    return <h1>loading...</h1>;
-  }
   const handleFavorite = (e) => {
     favoriteProduct.push(e.currentTarget.id);
     console.log(favoriteProduct);
@@ -38,14 +38,20 @@ const ProductPage = () => {
   return (
     <>
       <div className="bg-blue-200  grid grid-cols-2 style-none gap-2 p-4 ">
-        {product.map((item) => (
-          <Item
-            key={item.id}
-            item={item}
-            description={item.description}
-            handleFavorite={handleFavorite}
-          />
-        ))}
+        {isloading ? (
+          <>
+            <Skeleton height={400} />
+          </>
+        ) : (
+          product.map((item) => (
+            <Item
+              key={item.id}
+              item={item}
+              description={item.description}
+              handleFavorite={handleFavorite}
+            />
+          ))
+        )}
       </div>
     </>
   );

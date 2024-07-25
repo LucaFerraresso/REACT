@@ -9,9 +9,9 @@ import PageOne from "./pages/PageOne.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
 import ComponentsPage from "./pages/ComponentsPage.jsx";
 import Shop from "./pages/Shop.jsx";
-import PageSix from "./pages/PageSix.jsx";
 import ProductProvider from "./providers/ProductContext.jsx";
 import FavoriteProvider from "./providers/FavoriteContext.jsx";
+import Favorite from "./pages/Favorites.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "HomePage",
+        path: "/HomePage",
         element: <HomePage />,
       },
       {
@@ -32,20 +32,20 @@ const router = createBrowserRouter([
         element: <PageOne />,
       },
       {
-        path: "pagefour",
+        path: "/pagefour",
         element: <ComponentsPage />,
       },
       {
-        path: "Shop",
+        path: "/Shop",
         element: <Shop />,
       },
       {
-        path: "Favorites",
-        element: <PageSix />,
+        path: "/Favorite",
+        element: <Favorite />,
       },
 
       {
-        path: "products/:id",
+        path: "/products/:id",
         element: <ProductPage />,
       },
     ],

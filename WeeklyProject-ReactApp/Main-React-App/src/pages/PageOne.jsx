@@ -40,14 +40,16 @@ export const PageOne = () => {
     setInput(e.target.value.toLowerCase());
   };
   const handleFavorite = (e) => {
+    const id = e.currentTarget.id;
     favoriteArray.push(e.currentTarget.id);
     console.log("favorites", favoriteArray);
-    setFavorites(favorites + 1);
+    setFavorites(favorites + id);
   };
   const addToCart = (e) => {
+    const id = e.currentTarget.id;
     cartArray.push(e.currentTarget.id);
     console.log("carrello", cartArray);
-    setProducts(products + 1);
+    setProducts(products + id);
   };
 
   return (

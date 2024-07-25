@@ -19,7 +19,7 @@ const menulist = [
   },
   {
     name: "FAVORITES",
-    path: "Favorites",
+    path: "/Favorite",
   },
   {
     name: "SHOP",
