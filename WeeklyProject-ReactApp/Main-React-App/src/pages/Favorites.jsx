@@ -25,6 +25,8 @@ const Favorite = () => {
     return array;
   };
   const getproducts = async () => {
+    //filtra il data con gli id dell'array sopra
+    //poi renderizzo gli oggetti filtrati
     const data = await getProductsList();
     console.log("data", data);
   };
