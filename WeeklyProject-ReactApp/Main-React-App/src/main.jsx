@@ -12,6 +12,7 @@ import ProductPage from "./pages/ProductPage.jsx";
 import ComponentsPage from "./pages/ComponentsPage.jsx";
 import Shop from "./pages/Shop.jsx";
 import PageSix from "./pages/PageSix.jsx";
+import ProductProvider from "./providers/ProductContext.jsx";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ProductProvider>
+      <RouterProvider router={router} />
+    </ProductProvider>
   </React.StrictMode>
 );
