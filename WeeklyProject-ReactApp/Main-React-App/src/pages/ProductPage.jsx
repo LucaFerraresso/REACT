@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import getProductsList from "../DataClient/DataClient";
 import Card from "../components/atoms/Card/";
+import CardTW from "../components/atoms/CardTW";
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -11,10 +12,13 @@ const ProductPage = () => {
 
   const getProducts = async () => {
     try {
-      const data = await getProductsList();
+      //const data = await getProductsList();
+      const data = await fetch("https://fakestoreapi.com/products");
+      const json = await data.json();
       //voglio filtrare l'array per id e visualizzare solo il prodotto cliccato
-      const filteredProduct = await data.filter((product) => product.id == id);
-      setProduct(filteredProduct);
+      const filteredData = await json.filter((product) => product.id == id);
+      setProduct(filteredData);
+      console.log(filteredData);
     } catch (error) {
       console.log(error);
     } finally {
@@ -33,7 +37,7 @@ const ProductPage = () => {
     <>
       <h1>ProductPage: product id cliccato :{id} </h1>
       {product.map((item) => (
-        <Card key={item.id} item={item} />
+        <CardTW key={item.id} item={item} />
       ))}
     </>
   );

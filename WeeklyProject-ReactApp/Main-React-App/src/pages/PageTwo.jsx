@@ -1,7 +1,8 @@
 //qui filtro i risultati facendo fetch di natura diversa.
 
 import { useEffect, useState } from "react";
-import MiniCard from "../components/atoms/miniCard";
+
+import CardTW from "../components/atoms/CardTW";
 
 export const PageTwo = () => {
   const [input, setInput] = useState("");
@@ -38,7 +39,7 @@ export const PageTwo = () => {
         {data
           .filter((item) => item.title.toLowerCase().includes(input))
           .map((item) => (
-            <MiniCard key={item.id} item={item} />
+            <CardTW key={item.id} item={item} />
           ))}
       </div>
     </>
