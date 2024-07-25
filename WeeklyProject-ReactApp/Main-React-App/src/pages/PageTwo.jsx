@@ -1,8 +1,8 @@
 //qui filtro i risultati facendo fetch di natura diversa.
 
 import { useEffect, useState } from "react";
-
 import CardTW from "../components/atoms/CardTW";
+const favoriteProduct = [];
 
 export const PageTwo = () => {
   const [input, setInput] = useState("");
@@ -22,6 +22,22 @@ export const PageTwo = () => {
   const handleChange = (e) => {
     setInput(e.target.value.toLowerCase());
   };
+  const handleFavorite = (e) => {
+    console.log(e.currentTarget);
+    console.log(e.currentTarget.id);
+    //qui devo aggiungere il prodotto ai preferiti
+
+    //e se l'array ontiene gia' elementi
+    if (favoriteProduct.length > 0) {
+      //voglio pushare il restoperator. ...favoriteproduct
+      favoriteProduct.push(...favoriteProduct, e.currentTarget.id);
+      console.log(favoriteProduct);
+    } else {
+      favoriteProduct.push(e.currentTarget.id);
+    }
+    console.log("finale", favoriteProduct);
+  };
+
   return (
     <>
       <h1>all Products API 2 , MiniCard components</h1>
@@ -39,7 +55,12 @@ export const PageTwo = () => {
         {data
           .filter((item) => item.title.toLowerCase().includes(input))
           .map((item) => (
-            <CardTW key={item.id} item={item} />
+            <CardTW
+              key={item.id}
+              item={item}
+              description={" click read more"}
+              handleFavorite={handleFavorite}
+            />
           ))}
       </div>
     </>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const CardTW = ({ item }) => {
+const CardTW = ({ item, description, handleFavorite }) => {
   return (
     <>
       <a href="#" className="group relative block overflow-hidden">
@@ -15,6 +15,10 @@ const CardTW = ({ item }) => {
             strokeWidth="1.5"
             stroke="currentColor"
             className="h-4 w-4"
+            aria-hidden="true"
+            style={{ color: "black" }}
+            onClick={handleFavorite}
+            id={item.id}
           >
             <path
               strokeLinecap="round"
@@ -43,7 +47,7 @@ const CardTW = ({ item }) => {
           <p className="mt-1.5 text-sm text-gray-700">{item.price}$</p>
           <p className="mt-1.5 text-sm text-gray-700">ID:{item.id}</p>
           <p className="mt-1.5 text-sm text-gray-700">
-            Description:{item.description}
+            Description:{description}
           </p>
           <div className="sm:flex sm:items-end sm:justify-end">
             <Link
