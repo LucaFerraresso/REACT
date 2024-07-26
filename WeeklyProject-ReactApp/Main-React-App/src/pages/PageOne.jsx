@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import getProductsList from "../DataClient/DataClient";
-import Items3 from "../components/atoms/items3";
+import Item from "../components/atoms/item";
 import { ProductContext, setProductContext } from "../providers/ProductContext";
 import {
   FavoriteContext,
@@ -66,7 +66,7 @@ export const PageOne = () => {
         />
       </div>
 
-      <div className="bg-blue-200  grid grid-cols-2 style-none gap-2 p-4 ">
+      <div className="bg-blue-300  grid grid-cols-2 style-none gap-2 p-4 ">
         {data.length === 0 ? (
           <>
             <Skeleton height={300} />
@@ -86,7 +86,7 @@ export const PageOne = () => {
           data
             .filter((item) => item.title.toLowerCase().includes(input))
             .map((item) => (
-              <Items3
+              <Item
                 key={item.id}
                 item={item}
                 handleFavorite={addToFavorite}

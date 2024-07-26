@@ -1,15 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
-import {
-  FavoriteContext,
-  setFavoriteContext,
-} from "../providers/FavoriteContext";
+import { FavoriteContext } from "../providers/FavoriteContext";
 import "react-loading-skeleton/dist/skeleton.css";
 import getProductsList from "../DataClient/DataClient";
-import Items3 from "../components/atoms/items3";
+import Item from "../components/atoms/item";
 
 const Favorite = () => {
-  const [isloading, setIsLoading] = useState(true);
   const { favorites } = useContext(FavoriteContext);
   const [favorite, setFavorite] = useState([]);
 
@@ -30,7 +26,6 @@ const Favorite = () => {
         .map((id) => data.find((product) => product.id == id))
         .filter(Boolean);
       setFavorite(filteredFavorites);
-      setIsLoading(false);
     }
   };
 
@@ -42,11 +37,11 @@ const Favorite = () => {
     <>
       {favorite.length === 0 ? (
         <>
-          <div className="bg-orange-200 items-center">
-            <div className="bg-orange-200 flex flex-col items-center text-2xl">
+          <div className="bg-orange-300 items-center">
+            <div className="bg-orange-300 flex flex-col items-center text-2xl">
               ...Your Favorite List is EMPTY...
             </div>
-            <div className="bg-orange-200  grid grid-cols-2 style-none gap-2 p-4 ">
+            <div className="bg-orange-300  grid grid-cols-2 style-none gap-2 p-4 ">
               <Skeleton height={300} />
               <Skeleton height={300} />
               <Skeleton height={300} />
@@ -65,9 +60,9 @@ const Favorite = () => {
       ) : (
         <>
           <div>
-            <div className="bg-orange-600  grid grid-cols-2 style-none gap-2 p-4 ">
+            <div className="bg-orange-300  grid grid-cols-2 style-none gap-2 p-4 ">
               {favorite.map((item) => (
-                <Items3 key={item.id} item={item} />
+                <Item key={item.id} item={item} />
               ))}
             </div>
           </div>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Items3 from "../components/atoms/items3";
+import Item from "../components/atoms/item";
 import getProductsList from "../DataClient/DataClient";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -18,7 +18,7 @@ const ProductPage = () => {
       const data = await getProductsList();
       const filteredData = await data.filter((product) => product.id == id);
       setProduct(filteredData);
-      console.log(filteredData);
+      //console.log(filteredData);
     } catch (error) {
       console.log(error);
     } finally {
@@ -44,7 +44,7 @@ const ProductPage = () => {
           </>
         ) : (
           product.map((item) => (
-            <Items3
+            <Item
               key={item.id}
               item={item}
               description={item.description}

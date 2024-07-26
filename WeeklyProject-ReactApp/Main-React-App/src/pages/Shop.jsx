@@ -3,7 +3,7 @@ import Skeleton from "react-loading-skeleton";
 import { ProductContext } from "../providers/ProductContext";
 import "react-loading-skeleton/dist/skeleton.css";
 import getProductsList from "../DataClient/DataClient";
-import Items3 from "../components/atoms/items3";
+import Item from "../components/atoms/item";
 
 const Shop = () => {
   const { products } = useContext(ProductContext);
@@ -37,11 +37,11 @@ const Shop = () => {
     <>
       {cart.length === 0 ? (
         <>
-          <div className="bg-green-200 items-center">
-            <div className="bg-green-200 flex flex-col items-center text-2xl">
+          <div className="bg-green-300 items-center">
+            <div className="bg-green-300 flex flex-col items-center text-2xl">
               ...Your Cart is EMPTY...
             </div>
-            <div className="bg-green-200  grid grid-cols-2 style-none gap-2 p-4 ">
+            <div className="bg-green-300  grid grid-cols-2 style-none gap-2 p-4 ">
               <Skeleton height={300} />
               <Skeleton height={300} />
               <Skeleton height={300} />
@@ -60,9 +60,9 @@ const Shop = () => {
       ) : (
         <>
           <div>
-            <div className="bg-green-600  grid grid-cols-2 style-none gap-2 p-4 ">
+            <div className="bg-green-300  grid grid-cols-2 style-none gap-2 p-4 ">
               {cart.map((item) => (
-                <Items3 key={item.id} item={item} />
+                <Item key={item.id} item={item} />
               ))}
             </div>
           </div>
