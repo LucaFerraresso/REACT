@@ -75,6 +75,10 @@ export const PageOne = () => {
             <Skeleton height={300} />
             <Skeleton height={300} />
             <Skeleton height={300} />
+            <Skeleton height={300} />
+            <Skeleton height={300} />
+            <Skeleton height={300} />
+            <Skeleton height={300} />
           </>
         ) : (
           data
