@@ -1,30 +1,52 @@
 import { useContext, useEffect, useState } from "react";
-import { ProductContext, setProductContext } from "../providers/ProductContext";
 import Skeleton from "react-loading-skeleton";
+import { ProductContext, setProductContext } from "../providers/ProductContext";
 import "react-loading-skeleton/dist/skeleton.css";
+import getProductsList from "../DataClient/DataClient";
+
+const array = [];
 const Shop = () => {
-  const [product, setProduct] = useState([]);
+  const [isloading, setIsLoading] = useState(true);
   const { products } = useContext(ProductContext);
-  const { setProducts } = useContext(setProductContext);
-  console.log(products);
+  const [cart, setCart] = useState([]);
+
+  const getArray = () => {
+    for (let i = 0; i < products.length; i++) {
+      const element = products[i];
+      array.push(element);
+    }
+    console.log("array finale favorite", array);
+  };
+  const getproducts = async () => {
+    const data = await getProductsList();
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    getproducts();
+    getArray();
+  }, []);
 
   return (
     <>
-      <div className="pageTwo">
-        <h1>qui renderizzo i prodotti</h1>
-        <div className="container">
-          {product.length === 0 ? (
-            <Skeleton count={1} height={300} width={300} />
-          ) : (
-            product.map((product) => (
-              <div className="card" key={product.id}>
-                <img src={product.image} alt={product.title} />
-                <h3>{product.title}</h3>
-                <p>{product.price}</p>
+      <div>...rendering product</div>
+      <div className="bg-blue-200 grid grid-cols-2 style-none gap-2 p-4 ">
+        {cart.length === 0 || isloading ? (
+          <>
+            <Skeleton height={300} />
+            <Skeleton height={300} />
+            <Skeleton height={300} />
+            <Skeleton height={300} />
+          </>
+        ) : (
+          cart.map((item) => {
+            return (
+              <div key={item.id}>
+                <p>{item.title}</p>
               </div>
-            ))
-          )}
-        </div>
+            );
+          })
+        )}
       </div>
     </>
   );

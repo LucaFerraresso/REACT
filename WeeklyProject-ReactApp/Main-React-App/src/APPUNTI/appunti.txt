@@ -180,3 +180,79 @@ https://api.storerestapi.com/products [json.data]
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
+//map cart array return (
+    <>
+      <div>...is rendering shop</div>
+      <div className="bg-blue-200  grid grid-cols-2 style-none gap-2 p-4 ">
+        {product.length === 0 || isloading ? (
+          <>
+            <Skeleton height={300} />
+            <Skeleton height={300} />
+            <Skeleton height={300} />
+            <Skeleton height={300} />
+          </>
+        ) : (
+          product.map((item) => {
+            return (
+              <div key={item.id}>
+                <p>{item.title}</p>
+              </div>
+            );
+          })
+        )}
+      </div>
+    </>
+  );
+};
+
+//parte rimanente shop
+import { useContext, useEffect, useState } from "react";
+import { ProductContext, setProductContext } from "../providers/ProductContext";
+
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import getProductsList from "../DataClient/DataClient";
+
+const Shop = () => {
+  const [isloading, setIsLoading] = useState(true);
+  const [product, setProduct] = useState([]);
+  const { products } = useContext(ProductContext);
+  const { setProducts } = useContext(setProductContext);
+  console.log(products);
+  const array = [];
+  const getArray = () => {
+    for (let i = 0; i < products.length; i++) {
+      const element = products[i];
+      array.push(element);
+    }
+    console.log("array finale prodotti", array);
+    return array;
+  };
+  const getproducts = async () => {
+    //filtra il data con gli id dell'array sopra
+    //poi renderizzo gli oggetti filtrati
+    const data = await getProductsList();
+    console.log("data", data);
+    setIsLoading(false);
+  };
+  const renderProducts = async () => {
+    const data = await getProductsList();
+
+    console.log("data in render", data);
+    getArray();
+    console.log("array in render", array);
+    const arrayFinale = [];
+    for (let i = 0; i < array.length; i++) {
+      const element = array[i];
+      arrayFinale.push(element);
+    }
+    console.log("array finale", arrayFinale);
+    setProduct(arrayFinale);
+  };
+
+  useEffect(() => {
+    getproducts();
+    getArray();
+    renderProducts();
+  }, []);
+

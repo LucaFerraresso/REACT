@@ -12,6 +12,8 @@ import Shop from "./pages/Shop.jsx";
 import ProductProvider from "./providers/ProductContext.jsx";
 import FavoriteProvider from "./providers/FavoriteContext.jsx";
 import Favorite from "./pages/Favorites.jsx";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const router = createBrowserRouter([
   {
@@ -53,11 +55,10 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <FavoriteProvider>
-      <ProductProvider>
-        <RouterProvider router={router} />
-      </ProductProvider>
-    </FavoriteProvider>
-  </React.StrictMode>
+  <FavoriteProvider>
+    <ProductProvider>
+      <RouterProvider router={router} />
+      <ToastContainer />
+    </ProductProvider>
+  </FavoriteProvider>
 );

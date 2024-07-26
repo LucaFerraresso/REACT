@@ -6,6 +6,7 @@ import {
   FavoriteContext,
   setFavoriteContext,
 } from "../providers/FavoriteContext";
+
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
@@ -62,17 +63,18 @@ export const PageOne = () => {
           onChange={handleChange}
         />
       </div>
+
       <div className="bg-blue-200  grid grid-cols-2 style-none gap-2 p-4 ">
         {isloading ? (
           <>
-            <Skeleton height={400} />
-            <Skeleton height={400} />
-            <Skeleton height={400} />
-            <Skeleton height={400} />
-            <Skeleton height={400} />
-            <Skeleton height={400} />
-            <Skeleton height={400} />
-            <Skeleton height={400} />
+            <Skeleton height={300} />
+            <Skeleton height={300} />
+            <Skeleton height={300} />
+            <Skeleton height={300} />
+            <Skeleton height={300} />
+            <Skeleton height={300} />
+            <Skeleton height={300} />
+            <Skeleton height={300} />
           </>
         ) : (
           data
