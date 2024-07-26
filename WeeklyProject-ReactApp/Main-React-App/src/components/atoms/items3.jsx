@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Item2 = ({ item, description, handleFavorite, addToCart }) => {
+const Items3 = ({ item, description, handleFavorite, addToCart }) => {
   return (
-    <div className="flex flex-col justify-center h-[600px] w-[480px] rounded-3xl overflow-hidden shadow-lg transition duration-300 transform hover:scale-105">
+    <div className="flex flex-col justify-center h-[600px] w-[480px] rounded-3xl overflow-hidden shadow-lg transition-transform duration-500 ">
       <div className="group relative block overflow-hidden">
         <button
-          className="absolute right-4 top-4 z-10 rounded-full bg-white p-1.5 text-gray-900 transition hover:text-red-500"
+          className="absolute right-4 top-4 z-10 rounded-full bg-white p-2 text-gray-900 transition-colors duration-300 hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
           onClick={handleFavorite}
           id={item.id}
         >
@@ -17,9 +17,8 @@ const Item2 = ({ item, description, handleFavorite, addToCart }) => {
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className="h-4 w-4"
+            className="h-6 w-6"
             aria-hidden="true"
-            style={{ color: "black" }}
             onClick={handleFavorite}
             id={item.id}
           >
@@ -34,11 +33,11 @@ const Item2 = ({ item, description, handleFavorite, addToCart }) => {
         <img
           src={item.image}
           alt=""
-          className="h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
+          className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110 sm:h-72"
         />
 
         <div className="relative border border-gray-100 bg-white p-6">
-          <span className="whitespace-nowrap bg-yellow-400 px-3 py-1.5 text-xs font-medium">
+          <span className="whitespace-nowrap bg-yellow-400 px-3 py-1.5 text-xs font-medium rounded-full">
             New
           </span>
 
@@ -54,7 +53,7 @@ const Item2 = ({ item, description, handleFavorite, addToCart }) => {
           <div className="sm:flex sm:items-end sm:justify-end">
             <Link
               to={`/products/${item.id}`}
-              className="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400 focus:bg-yellow-500 active:bg-yellow-600"
+              className="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition-colors duration-300 hover:bg-yellow-400 focus:bg-yellow-500 active:bg-yellow-600"
             >
               Read More
             </Link>
@@ -64,7 +63,7 @@ const Item2 = ({ item, description, handleFavorite, addToCart }) => {
             <button
               id={item.id}
               onClick={addToCart}
-              className="block w-full rounded bg-yellow-400 p-4 text-sm font-medium transition hover:bg-yellow-500 focus:bg-yellow-600 active:bg-yellow-700 disabled:bg-gray-300 disabled:cursor-not-allowed hover:scale-105"
+              className="block w-full rounded bg-yellow-400 p-4 text-sm font-medium transition-transform duration-300 hover:bg-yellow-500 focus:bg-yellow-600 active:bg-yellow-700 disabled:bg-gray-300 disabled:cursor-not-allowed hover:scale-105"
             >
               Add to Cart
             </button>
@@ -75,4 +74,4 @@ const Item2 = ({ item, description, handleFavorite, addToCart }) => {
   );
 };
 
-export default Item2;
+export default Items3;

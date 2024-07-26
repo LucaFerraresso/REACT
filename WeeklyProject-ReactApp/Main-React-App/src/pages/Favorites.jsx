@@ -6,7 +6,7 @@ import {
 } from "../providers/FavoriteContext";
 import "react-loading-skeleton/dist/skeleton.css";
 import getProductsList from "../DataClient/DataClient";
-import Item from "../components/atoms/item";
+import Items3 from "../components/atoms/items3";
 
 const Favorite = () => {
   const [isloading, setIsLoading] = useState(true);
@@ -67,7 +67,7 @@ const Favorite = () => {
           <div>
             <div className="bg-orange-600  grid grid-cols-2 style-none gap-2 p-4 ">
               {favorite.map((item) => (
-                <Item key={item.id} item={item} />
+                <Items3 key={item.id} item={item} />
               ))}
             </div>
           </div>

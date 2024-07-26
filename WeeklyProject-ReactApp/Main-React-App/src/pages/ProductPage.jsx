@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Item from "../components/atoms/item";
+import Items3 from "../components/atoms/items3";
 import getProductsList from "../DataClient/DataClient";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -31,7 +31,7 @@ const ProductPage = () => {
 
   const handleFavorite = (e) => {
     favoriteProduct.push(e.currentTarget.id);
-    console.log(favoriteProduct);
+    //console.log(favoriteProduct);
     return favoriteProduct;
   };
 
@@ -44,7 +44,7 @@ const ProductPage = () => {
           </>
         ) : (
           product.map((item) => (
-            <Item
+            <Items3
               key={item.id}
               item={item}
               description={item.description}

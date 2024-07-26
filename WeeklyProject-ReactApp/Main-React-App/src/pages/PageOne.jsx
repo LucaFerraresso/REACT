@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import getProductsList from "../DataClient/DataClient";
-import Item from "../components/atoms/item";
+import Items3 from "../components/atoms/items3";
 import { ProductContext, setProductContext } from "../providers/ProductContext";
 import {
   FavoriteContext,
@@ -39,7 +39,7 @@ export const PageOne = () => {
     const favoriteArray = [];
     const id = e.currentTarget.id;
     favoriteArray.push(e.currentTarget.id);
-    console.log("favorites", favoriteArray);
+    //console.log("favorites", favoriteArray);
     setFavorites(favorites + id);
     return favoriteArray;
   };
@@ -47,7 +47,7 @@ export const PageOne = () => {
     const cartArray = [];
     const id = e.currentTarget.id;
     cartArray.push(e.currentTarget.id);
-    console.log("carrello", cartArray);
+    //console.log("carrello", cartArray);
     setProducts(products + id);
     return cartArray;
   };
@@ -86,7 +86,7 @@ export const PageOne = () => {
           data
             .filter((item) => item.title.toLowerCase().includes(input))
             .map((item) => (
-              <Item
+              <Items3
                 key={item.id}
                 item={item}
                 handleFavorite={addToFavorite}
