@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
+import getRandomAdvice from "../API/getData";
 
 const AdviceApp = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -14,9 +13,9 @@ const AdviceApp = () => {
   const getAdvice = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch("https://api.adviceslip.com/advice");
-      const data = await response.json();
-      setAdvice(data.slip.advice);
+      const response = await getRandomAdvice();
+      const data = await response;
+      setAdvice(data);
       setCount(count + 1);
     } catch (error) {
       console.error("Error fetching advice:", error);
@@ -26,20 +25,21 @@ const AdviceApp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-blue-900 flex items-center justify-center">
-      <div className="bg-blue-800 text-center p-8 rounded-xl shadow-lg max-w-md w-full">
+    <div className="min-h-screen bg-dark-blue flex items-center justify-center">
+      <div className="bg-dark-grayish-blue text-center p-8 rounded-xl shadow-lg max-w-md w-full">
         {isLoading ? (
-          <div>
-            <h1 className="text-2xl text-white mb-4">Loading...</h1>
-            <Skeleton count={1} height={30} />
-            <Skeleton count={1} height={20} className="mt-2" />
-            <Skeleton count={1} height={20} className="mt-2" />
+          <div className="animate-pulse">
+            <div className="text-2xl text-light-cyan mb-4">Loading...</div>
+            <div className="bg-gray-700 h-8 w-full mb-4"></div>
+            <div className="bg-gray-700 h-6 w-3/4 mb-2"></div>
+            <div className="bg-gray-700 h-6 w-2/3"></div>
           </div>
         ) : (
           <>
-            <h1 className="text-2xl text-green-300 mb-6">"{advice}"</h1>
+            <p className="text-neon-green text-sm mb-2">ADVICE #{count}</p>
+            <h1 className="text-2xl text-light-cyan mb-6">"{advice}"</h1>
             <button
-              className="bg-green-500 p-4 rounded-full hover:bg-green-400 transition duration-300"
+              className="bg-neon-green p-4 rounded-full hover:bg-light-cyan hover:shadow-neon transition duration-300"
               onClick={getAdvice}
             >
               <img
@@ -48,7 +48,7 @@ const AdviceApp = () => {
                 className="w-6 h-6"
               />
             </button>
-            <p className="text-green-300 mt-4">
+            <p className="text-light-cyan mt-4">
               You have read {count} pieces of advice
             </p>
           </>
