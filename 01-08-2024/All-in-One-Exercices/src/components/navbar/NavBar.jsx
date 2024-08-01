@@ -3,11 +3,11 @@ import { NavLink } from "react-router-dom";
 const menulist = [
   {
     name: "Home",
-    path: "/HomePage",
+    path: "/homepage",
   },
   {
-    name: "Others",
-    path: "/Others",
+    name: "Advice-Generator",
+    path: "/homepage/advicegenerator",
   },
 ];
 
