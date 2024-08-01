@@ -25,7 +25,7 @@ const AdviceApp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-dark-blue flex items-center justify-center">
+    <div className="min-h-screen bg-dark-blue flex items-center justify-center font-sans">
       <div className="bg-dark-grayish-blue text-center p-8 rounded-xl shadow-lg max-w-md w-full">
         {isLoading ? (
           <div className="animate-pulse">

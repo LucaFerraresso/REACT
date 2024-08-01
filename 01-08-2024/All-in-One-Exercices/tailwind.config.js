@@ -11,6 +11,9 @@ export default {
         "dark-grayish-blue": "hsl(217, 19%, 24%)",
         "dark-blue": "hsl(218, 23%, 16%)",
       },
+      fontFamily: {
+        sans: ["Manrope", "sans-serif"],
+      },
     },
   },
   plugins: [],
