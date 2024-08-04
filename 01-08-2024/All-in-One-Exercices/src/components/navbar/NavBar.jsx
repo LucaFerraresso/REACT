@@ -13,6 +13,10 @@ const menulist = [
     name: "Age-Calculator",
     path: "/exercise/agecalculator",
   },
+  {
+    name: "Contact-Form",
+    path: "/exercise/contactform",
+  },
 ];
 
 const Navbar = () => {

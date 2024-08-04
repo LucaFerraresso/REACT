@@ -1,551 +1,109 @@
+import React, { useState } from "react";
 
-import React, { useState, useEffect } from "react";
-import getRandomAdvice from "../API/getData";
+const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState({});
+  const [successMessage, setSuccessMessage] = useState("");
 
-const AdviceApp = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [advice, setAdvice] = useState("");
-  const [count, setCount] = useState(0);
-  const [id, setId] = useState(0);
+  const validate = () => {
+    let tempErrors = {};
+    if (!formData.name) tempErrors.name = "Name is required";
+    if (!formData.email) tempErrors.email = "Email is required";
+    else if (!/\S+@\S+\.\S+/.test(formData.email))
+      tempErrors.email = "Email address is invalid";
+    if (!formData.message) tempErrors.message = "Message is required";
 
-  useEffect(() => {
-    getAdvice();
-  }, []);
+    setErrors(tempErrors);
+    return Object.keys(tempErrors).length === 0;
+  };
 
-  const getAdvice = async () => {
-    setIsLoading(true);
-    try {
-      const response = await getRandomAdvice();
-      const data = await response;
-      setAdvice(data.slip.advice);
-      setId(data.slip.id);
-      setCount(count + 1);
-    } catch (error) {
-      console.error("Error fetching advice:", error);
-    } finally {
-      setIsLoading(false);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      setSuccessMessage("Your message has been sent!");
+      setFormData({ name: "", email: "", message: "" });
+      setErrors({});
     }
   };
 
-  return (
-    <div className="min-h-screen bg-dark-blue flex items-center justify-center font-sans p-4">
-      <div className="bg-dark-grayish-blue text-center p-8 rounded-xl shadow-lg max-w-md w-full">
-        {isLoading ? (
-          <div className="animate-pulse">
-            <div className="text-2xl text-light-cyan mb-4">Loading...</div>
-            <div className="bg-gray-700 h-8 w-full mb-4"></div>
-            <div className="bg-gray-700 h-6 w-3/4 mb-2"></div>
-            <div className="bg-gray-700 h-6 w-2/3"></div>
-          </div>
-        ) : (
-          <>
-            <p className="text-neon-green text-sm mb-2">ADVICE #{id}</p>
-            <h1 className="text-2xl text-light-cyan mb-6">"{advice}"</h1>
-            <div className="mb-6 flex items-center justify-center">
-              <svg
-                className="hidden md:block"
-                width="384"
-                height="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g fill="none" fillRule="evenodd">
-                  <path fill="#4F5D74" d="M0 8h144v1H0zM240 8h144v1H240z" />
-                  <g transform="translate(182)" fill="#CEE3E9">
-                    <rect width="6" height="16" rx="3" />
-                    <rect x="14" width="6" height="16" rx="3" />
-                  </g>
-                </g>
-              </svg>
-              <svg
-                className="md:hidden"
-                width="295"
-                height="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g fill="none" fillRule="evenodd">
-                  <path fill="#4F5D74" d="M0 8h122v1H0zM173 8h122v1H173z" />
-                  <g transform="translate(138)" fill="#CEE3E9">
-                    <rect width="6" height="16" rx="3" />
-                    <rect x="14" width="6" height="16" rx="3" />
-                  </g>
-                </g>
-              </svg>
-            </div>
-            <div className="flex justify-center">
-              <button
-                className="bg-neon-green p-4 rounded-full hover:bg-light-cyan hover:shadow-neon transition duration-300"
-                onClick={getAdvice}
-              >
-                <img
-                  src="/Exercises/advice-generator-app-main/images/icon-dice.svg"
-                  alt="Get Advice"
-                  className="w-6 h-6"
-                />
-              </button>
-            </div>
-            <p className="text-light-cyan mt-4">
-              You have read {count} pieces of advice
-            </p>
-          </>
-        )}
-      </div>
-    </div>
-  );
-};
-
-export default AdviceApp;
-
-homepage
-
-import { Link } from "react-router-dom";
-
-const HomePage = () => {
-  return (
-    <>
-      <div className="w-[1024px] h-[1166px] flex flex-col">
-        <h1 className="bg-orange-600 text-white text-2xl text-center uppercase">
-          All in one project app
-        </h1>
-        <div>
-          <div>
-            <h1>esercizio 1</h1>
-            <p>advice generator</p>
-            <Link to="/homepage/adviceGenerator">vai alla pagina</Link>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
-
-export default HomePage;
-
-//////age calculator
-
-import React, { useState } from "react";
-
-const AgeCalculator = () => {
-  const [day, setDay] = useState("");
-  const [month, setMonth] = useState("");
-  const [year, setYear] = useState("");
-  const [age, setAge] = useState({ years: "--", months: "--", days: "--" });
-
-  const calculateAge = (e) => {
-    e.preventDefault();
-    const birthDate = new Date(`${year}-${month}-${day}`);
-    const today = new Date();
-    const ageYears = today.getFullYear() - birthDate.getFullYear();
-    const ageMonths = today.getMonth() - birthDate.getMonth();
-    const ageDays = today.getDate() - birthDate.getDate();
-
-    setAge({
-      years: ageYears < 0 ? "--" : ageYears - 1,
-      months: ageMonths < 0 ? 12 + ageMonths : ageMonths,
-      days: ageDays < 0 ? 30 + ageDays : ageDays,
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
     });
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-off-white">
+    <div className="min-h-screen bg-grey-900 flex items-center justify-center p-4">
       <form
-        onSubmit={calculateAge}
-        className="bg-white rounded-lg shadow-md p-8 md:p-16 text-center"
+        className="bg-white p-8 rounded-lg shadow-md w-full max-w-lg"
+        onSubmit={handleSubmit}
       >
-        <div className="flex space-x-4 mb-6">
-          <div>
-            <label className="block text-smokey-grey">Day</label>
-            <input
-              type="number"
-              value={day}
-              onChange={(e) => setDay(e.target.value)}
-              className="w-20 p-2 text-2xl border-2 border-light-grey rounded-lg focus:outline-none focus:border-purple"
-              placeholder="DD"
-              required
-            />
-          </div>
-          <div>
-            <label className="block text-smokey-grey">Month</label>
-            <input
-              type="number"
-              value={month}
-              onChange={(e) => setMonth(e.target.value)}
-              className="w-20 p-2 text-2xl border-2 border-light-grey rounded-lg focus:outline-none focus:border-purple"
-              placeholder="MM"
-              required
-            />
-          </div>
-          <div>
-            <label className="block text-smokey-grey">Year</label>
-            <input
-              type="number"
-              value={year}
-              onChange={(e) => setYear(e.target.value)}
-              className="w-28 p-2 text-2xl border-2 border-light-grey rounded-lg focus:outline-none focus:border-purple"
-              placeholder="YYYY"
-              required
-            />
-          </div>
+        <h2 className="text-2xl font-bold mb-6 text-grey-900">Contact Us</h2>
+        {successMessage && (
+          <p className="text-green-600 mb-4">{successMessage}</p>
+        )}
+        <div className="mb-4">
+          <label htmlFor="name" className="block text-grey-900 mb-2">
+            Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            className={`w-full p-3 border ${
+              errors.name ? "border-red" : "border-grey-500"
+            } rounded-lg`}
+          />
+          {errors.name && <p className="text-red mt-2">{errors.name}</p>}
+        </div>
+        <div className="mb-4">
+          <label htmlFor="email" className="block text-grey-900 mb-2">
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className={`w-full p-3 border ${
+              errors.email ? "border-red" : "border-grey-500"
+            } rounded-lg`}
+          />
+          {errors.email && <p className="text-red mt-2">{errors.email}</p>}
+        </div>
+        <div className="mb-4">
+          <label htmlFor="message" className="block text-grey-900 mb-2">
+            Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            className={`w-full p-3 border ${
+              errors.message ? "border-red" : "border-grey-500"
+            } rounded-lg`}
+          />
+          {errors.message && <p className="text-red mt-2">{errors.message}</p>}
         </div>
         <button
           type="submit"
-          className="mt-4 px-6 py-2 bg-purple-300 text-black text-xl font-semibold rounded-full hover:bg-purple-dark transition-all duration-300"
+          className="bg-green-600 text-white p-3 rounded-lg w-full hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-200"
         >
-          Calculate
+          Send Message
         </button>
       </form>
-      <div className="mt-10 text-center">
-        <div className="text-5xl font-extrabold text-purple">{age.years}</div>
-        <div className="text-2xl font-bold">years</div>
-        <div className="text-5xl font-extrabold text-purple">{age.months}</div>
-        <div className="text-2xl font-bold">months</div>
-        <div className="text-5xl font-extrabold text-purple">{age.days}</div>
-        <div className="text-2xl font-bold">days</div>
-      </div>
     </div>
   );
 };
 
-export default AgeCalculator;
-
-/////advice generator con animazioni e colori
-
-import React, { useState, useEffect } from "react";
-import getRandomAdvice from "../API/getData";
-
-const AdviceApp = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [advice, setAdvice] = useState("");
-  const [count, setCount] = useState(0);
-  const [id, setId] = useState(0);
-
-  useEffect(() => {
-    getAdvice();
-  }, []);
-
-  const getAdvice = async () => {
-    setIsLoading(true);
-    try {
-      const response = await getRandomAdvice();
-      const data = await response;
-      setAdvice(data.slip.advice);
-      setId(data.slip.id);
-      setCount(count + 1);
-    } catch (error) {
-      console.error("Error fetching advice:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  return (
-    <div className="min-h-screen bg-dark-blue flex items-center justify-center font-sans p-4">
-      <div className="bg-dark-grayish-blue text-center p-8 rounded-xl shadow-lg max-w-md w-full">
-        {isLoading ? (
-          <div className="animate-pulse">
-            <div className="text-2xl text-light-cyan mb-4">Loading...</div>
-            <div className="bg-gray-700 h-8 w-full mb-4"></div>
-            <div className="bg-gray-700 h-6 w-3/4 mb-2"></div>
-            <div className="bg-gray-700 h-6 w-2/3"></div>
-          </div>
-        ) : (
-          <>
-            <p className="text-neon-green text-sm mb-2">ADVICE #{id}</p>
-            <h1 className="text-2xl text-light-cyan mb-6">"{advice}"</h1>
-            <div className="mb-6 flex items-center justify-center">
-              <svg
-                className="hidden md:block"
-                width="384"
-                height="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g fill="none" fillRule="evenodd">
-                  <path fill="#4F5D74" d="M0 8h144v1H0zM240 8h144v1H240z" />
-                  <g transform="translate(182)" fill="#CEE3E9">
-                    <rect width="6" height="16" rx="3" />
-                    <rect x="14" width="6" height="16" rx="3" />
-                  </g>
-                </g>
-              </svg>
-              <svg
-                className="md:hidden"
-                width="192"
-                height="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g fill="none" fillRule="evenodd">
-                  <path fill="#4F5D74" d="M0 8h80v1H0zM112 8h80v1H112z" />
-                  <g transform="translate(88)" fill="#CEE3E9">
-                    <rect width="6" height="16" rx="3" />
-                    <rect x="14" width="6" height="16" rx="3" />
-                  </g>
-                </g>
-              </svg>
-            </div>
-            <div className="flex justify-center">
-              <button
-                className="bg-neon-green p-4 rounded-full hover:bg-light-cyan hover:shadow-neon transition duration-300"
-                onClick={getAdvice}
-              >
-                <img
-                  src="/Exercises/advice-generator-app-main/images/icon-dice.svg"
-                  alt="Get Advice"
-                  className="w-6 h-6"
-                />
-              </button>
-            </div>
-            <p className="text-light-cyan mt-4">
-              You have read {count} pieces of advice
-            </p>
-          </>
-        )}
-      </div>
-    </div>
-  );
-};
-
-export default AdviceApp;
-
-//advice pro
-
-import React, { useState, useEffect } from "react";
-import { useSpring, animated } from "@react-spring/web";
-import getRandomAdvice from "../API/getData";
-
-const AdviceApp = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [advice, setAdvice] = useState("");
-  const [count, setCount] = useState(0);
-  const [id, setId] = useState(0);
-
-  useEffect(() => {
-    getAdvice();
-  }, []);
-
-  const getAdvice = async () => {
-    setIsLoading(true);
-    try {
-      const response = await getRandomAdvice();
-      const data = await response;
-      setAdvice(data.slip.advice);
-      setId(data.slip.id);
-      setCount(count + 1);
-    } catch (error) {
-      console.error("Error fetching advice:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const buttonAnimation = useSpring({
-    from: { transform: "scale(1)", backgroundColor: "hsl(150, 100%, 66%)" },
-    to: async (next) => {
-      while (true) {
-        await next({
-          transform: "scale(1.1)",
-          backgroundColor: "hsl(193, 38%, 86%)",
-        });
-        await next({
-          transform: "scale(1)",
-          backgroundColor: "hsl(150, 100%, 66%)",
-        });
-      }
-    },
-  });
-
-  return (
-    <div className="min-h-screen bg-dark-blue flex items-center justify-center font-sans p-4">
-      <div className="bg-dark-grayish-blue text-center p-8 rounded-xl shadow-lg max-w-md w-full">
-        {isLoading ? (
-          <div className="animate-pulse">
-            <div className="text-2xl text-light-cyan mb-4">Loading...</div>
-            <div className="bg-gray-700 h-8 w-full mb-4"></div>
-            <div className="bg-gray-700 h-6 w-3/4 mb-2"></div>
-            <div className="bg-gray-700 h-6 w-2/3"></div>
-          </div>
-        ) : (
-          <>
-            <p className="text-neon-green text-sm mb-2">ADVICE #{id}</p>
-            <h1 className="text-2xl text-light-cyan mb-6">"{advice}"</h1>
-            <div className="mb-6 flex items-center justify-center">
-              <svg
-                className="hidden md:block"
-                width="384"
-                height="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g fill="none" fillRule="evenodd">
-                  <path fill="#4F5D74" d="M0 8h144v1H0zM240 8h144v1H240z" />
-                  <g transform="translate(182)" fill="#CEE3E9">
-                    <rect width="6" height="16" rx="3" />
-                    <rect x="14" width="6" height="16" rx="3" />
-                  </g>
-                </g>
-              </svg>
-              <svg
-                className="md:hidden"
-                width="192"
-                height="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g fill="none" fillRule="evenodd">
-                  <path fill="#4F5D74" d="M0 8h80v1H0zM112 8h80v1H112z" />
-                  <g transform="translate(88)" fill="#CEE3E9">
-                    <rect width="6" height="16" rx="3" />
-                    <rect x="14" width="6" height="16" rx="3" />
-                  </g>
-                </g>
-              </svg>
-            </div>
-            <div className="flex justify-center">
-              <animated.button
-                style={buttonAnimation}
-                className="p-4 rounded-full hover:shadow-neon transition duration-300"
-                onClick={getAdvice}
-              >
-                <img
-                  src="/Exercises/advice-generator-app-main/images/icon-dice.svg"
-                  alt="Get Advice"
-                  className="w-6 h-6"
-                />
-              </animated.button>
-            </div>
-            <p className="text-light-cyan mt-4">
-              You have read {count} pieces of advice
-            </p>
-          </>
-        )}
-      </div>
-    </div>
-  );
-};
-
-export default AdviceApp;
-
-import React, { useState, useEffect } from "react";
-import { useSpring, animated, config } from "@react-spring/web";
-import getRandomAdvice from "../API/getData";
-
-const AdviceApp = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [advice, setAdvice] = useState("");
-  const [count, setCount] = useState(0);
-  const [id, setId] = useState(0);
-
-  useEffect(() => {
-    getAdvice();
-  }, []);
-
-  const getAdvice = async () => {
-    setIsLoading(true);
-    try {
-      const response = await getRandomAdvice();
-      const data = await response;
-      setAdvice(data.slip.advice);
-      setId(data.slip.id);
-      setCount(count + 1);
-    } catch (error) {
-      console.error("Error fetching advice:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const [hoverProps, setHover] = useSpring(() => ({
-    scale: 1,
-    backgroundColor: "hsl(150, 100%, 66%)",
-  }));
-
-  const [clickProps, setClick] = useSpring(() => ({
-    boxShadow: "0px 0px 0px 0px rgba(0, 255, 0, 0)",
-  }));
-
-  const handleMouseEnter = () => {
-    setHover({ scale: 1.1 });
-  };
-
-  const handleMouseLeave = () => {
-    setHover({ scale: 1 });
-  };
-
-  const handleClick = async () => {
-    setClick({
-      boxShadow: "0px 0px 20px 5px rgba(0, 255, 0, 0.6)",
-      config: config.wobbly,
-    });
-    await getAdvice();
-    setClick({
-      boxShadow: "0px 0px 0px 0px rgba(0, 255, 0, 0)",
-      config: { duration: 1000 },
-    });
-  };
-
-  return (
-    <div className="min-h-screen bg-dark-blue flex items-center justify-center font-sans p-4">
-      <div className="bg-dark-grayish-blue text-center p-8 rounded-xl shadow-lg max-w-md w-full">
-        {isLoading ? (
-          <div className="animate-pulse">
-            <div className="text-2xl text-light-cyan mb-4">Loading...</div>
-            <div className="bg-gray-700 h-8 w-full mb-4"></div>
-            <div className="bg-gray-700 h-6 w-3/4 mb-2"></div>
-            <div className="bg-gray-700 h-6 w-2/3"></div>
-          </div>
-        ) : (
-          <>
-            <p className="text-neon-green text-sm mb-2">ADVICE #{id}</p>
-            <h1 className="text-2xl text-light-cyan mb-6">"{advice}"</h1>
-            <div className="mb-6 flex items-center justify-center">
-              <svg
-                className="hidden md:block"
-                width="384"
-                height="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g fill="none" fillRule="evenodd">
-                  <path fill="#4F5D74" d="M0 8h144v1H0zM240 8h144v1H240z" />
-                  <g transform="translate(182)" fill="#CEE3E9">
-                    <rect width="6" height="16" rx="3" />
-                    <rect x="14" width="6" height="16" rx="3" />
-                  </g>
-                </g>
-              </svg>
-              <svg
-                className="md:hidden"
-                width="192"
-                height="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g fill="none" fillRule="evenodd">
-                  <path fill="#4F5D74" d="M0 8h80v1H0zM112 8h80v1H112z" />
-                  <g transform="translate(88)" fill="#CEE3E9">
-                    <rect width="6" height="16" rx="3" />
-                    <rect x="14" width="6" height="16" rx="3" />
-                  </g>
-                </g>
-              </svg>
-            </div>
-            <div className="flex justify-center">
-              <animated.button
-                style={{ ...hoverProps, ...clickProps }}
-                className="p-4 rounded-full hover:shadow-neon transition duration-300"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                onClick={handleClick}
-              >
-                <img
-                  src="/Exercises/advice-generator-app-main/images/icon-dice.svg"
-                  alt="Get Advice"
-                  className="w-6 h-6"
-                />
-              </animated.button>
-            </div>
-            <p className="text-light-cyan mt-4">
-              You have read {count} pieces of advice
-            </p>
-          </>
-        )}
-      </div>
-    </div>
-  );
-};
-
-export default AdviceApp;
+export default ContactForm;

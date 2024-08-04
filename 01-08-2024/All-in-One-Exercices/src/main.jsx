@@ -7,6 +7,7 @@ import DefaultLayout from "./pages/DefaultLayout.jsx";
 import AdviceApp from "./pages/AdviceGenerator.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import AgeCalculator from "./pages/AgeCalculator.jsx";
+import ContactForm from "./pages/ContactForm.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/exercise/agecalculator",
         element: <AgeCalculator />,
+      },
+      {
+        path: "/exercise/contactform",
+        element: <ContactForm />,
       },
     ],
   },
