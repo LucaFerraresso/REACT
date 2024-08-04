@@ -7,11 +7,11 @@ const menulist = [
   },
   {
     name: "Advice-Generator",
-    path: "/homepage/advicegenerator",
+    path: "/exercise/advicegenerator",
   },
   {
     name: "Age-Calculator",
-    path: "/homepage/agecalculator",
+    path: "/exercise/agecalculator",
   },
 ];
 

@@ -119,3 +119,90 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+//////age calculator
+
+import React, { useState } from "react";
+
+const AgeCalculator = () => {
+  const [day, setDay] = useState("");
+  const [month, setMonth] = useState("");
+  const [year, setYear] = useState("");
+  const [age, setAge] = useState({ years: "--", months: "--", days: "--" });
+
+  const calculateAge = (e) => {
+    e.preventDefault();
+    const birthDate = new Date(`${year}-${month}-${day}`);
+    const today = new Date();
+    const ageYears = today.getFullYear() - birthDate.getFullYear();
+    const ageMonths = today.getMonth() - birthDate.getMonth();
+    const ageDays = today.getDate() - birthDate.getDate();
+
+    setAge({
+      years: ageYears < 0 ? "--" : ageYears - 1,
+      months: ageMonths < 0 ? 12 + ageMonths : ageMonths,
+      days: ageDays < 0 ? 30 + ageDays : ageDays,
+    });
+  };
+
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen bg-off-white">
+      <form
+        onSubmit={calculateAge}
+        className="bg-white rounded-lg shadow-md p-8 md:p-16 text-center"
+      >
+        <div className="flex space-x-4 mb-6">
+          <div>
+            <label className="block text-smokey-grey">Day</label>
+            <input
+              type="number"
+              value={day}
+              onChange={(e) => setDay(e.target.value)}
+              className="w-20 p-2 text-2xl border-2 border-light-grey rounded-lg focus:outline-none focus:border-purple"
+              placeholder="DD"
+              required
+            />
+          </div>
+          <div>
+            <label className="block text-smokey-grey">Month</label>
+            <input
+              type="number"
+              value={month}
+              onChange={(e) => setMonth(e.target.value)}
+              className="w-20 p-2 text-2xl border-2 border-light-grey rounded-lg focus:outline-none focus:border-purple"
+              placeholder="MM"
+              required
+            />
+          </div>
+          <div>
+            <label className="block text-smokey-grey">Year</label>
+            <input
+              type="number"
+              value={year}
+              onChange={(e) => setYear(e.target.value)}
+              className="w-28 p-2 text-2xl border-2 border-light-grey rounded-lg focus:outline-none focus:border-purple"
+              placeholder="YYYY"
+              required
+            />
+          </div>
+        </div>
+        <button
+          type="submit"
+          className="mt-4 px-6 py-2 bg-purple-300 text-black text-xl font-semibold rounded-full hover:bg-purple-dark transition-all duration-300"
+        >
+          Calculate
+        </button>
+      </form>
+      <div className="mt-10 text-center">
+        <div className="text-5xl font-extrabold text-purple">{age.years}</div>
+        <div className="text-2xl font-bold">years</div>
+        <div className="text-5xl font-extrabold text-purple">{age.months}</div>
+        <div className="text-2xl font-bold">months</div>
+        <div className="text-5xl font-extrabold text-purple">{age.days}</div>
+        <div className="text-2xl font-bold">days</div>
+      </div>
+    </div>
+  );
+};
+
+export default AgeCalculator;

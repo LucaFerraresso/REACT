@@ -19,11 +19,11 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "/homepage/advicegenerator",
+        path: "/exercise/advicegenerator",
         element: <AdviceApp />,
       },
       {
-        path: "/homepage/agecalculator",
+        path: "/exercise/agecalculator",
         element: <AgeCalculator />,
       },
     ],
