@@ -2,5 +2,7 @@
 export default async function getRandomAdvice() {
   const res = await fetch("https://api.adviceslip.com/advice");
   const data = await res.json();
-  return data.slip.advice;
+  //return data.slip.advice restituisce il messaggio
+  //a me serve anche l'id
+  return data;
 }
