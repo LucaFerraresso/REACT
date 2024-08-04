@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSpring, animated, config } from "@react-spring/web";
 import getRandomAdvice from "../API/getData";
 
 const AdviceApp = () => {
@@ -24,6 +25,35 @@ const AdviceApp = () => {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const [hoverStyles, hoverApi] = useSpring(() => ({
+    scale: 1,
+    backgroundColor: "hsl(150, 100%, 66%)",
+  }));
+
+  const [clickStyles, clickApi] = useSpring(() => ({
+    boxShadow: "0px 0px 0px 0px rgba(0, 255, 0, 0)",
+  }));
+
+  const handleMouseEnter = () => {
+    hoverApi.start({ scale: 1.1 });
+  };
+
+  const handleMouseLeave = () => {
+    hoverApi.start({ scale: 1 });
+  };
+
+  const handleClick = async () => {
+    clickApi.start({
+      boxShadow: "0px 0px 20px 5px rgba(0, 255, 0, 0.6)",
+      config: config.wobbly,
+    });
+    await getAdvice();
+    clickApi.start({
+      boxShadow: "0px 0px 0px 0px rgba(0, 255, 0, 0)",
+      config: { duration: 1000 },
+    });
   };
 
   return (
@@ -71,16 +101,19 @@ const AdviceApp = () => {
               </svg>
             </div>
             <div className="flex justify-center">
-              <button
-                className="bg-neon-green p-4 rounded-full hover:bg-light-cyan hover:shadow-neon transition duration-300"
-                onClick={getAdvice}
+              <animated.button
+                style={{ ...hoverStyles, ...clickStyles }}
+                className="p-4 rounded-full hover:shadow-neon transition duration-300"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onClick={handleClick}
               >
                 <img
                   src="/Exercises/advice-generator-app-main/images/icon-dice.svg"
                   alt="Get Advice"
                   className="w-6 h-6"
                 />
-              </button>
+              </animated.button>
             </div>
             <p className="text-light-cyan mt-4">
               You have read {count} pieces of advice
