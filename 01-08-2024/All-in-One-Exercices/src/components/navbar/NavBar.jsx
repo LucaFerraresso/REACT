@@ -9,6 +9,10 @@ const menulist = [
     name: "Advice-Generator",
     path: "/homepage/advicegenerator",
   },
+  {
+    name: "Age-Calculator",
+    path: "/homepage/agecalculator",
+  },
 ];
 
 const Navbar = () => {
