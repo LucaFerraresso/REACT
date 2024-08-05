@@ -1,7 +1,6 @@
 import { useRouteError } from "react-router-dom";
 
 const ErrorPage = () => {
-  //qui salvo in memoria l'oggetto ERRORE, per poi visualizarlo a dom
   const error = useRouteError();
   console.error(error);
 
