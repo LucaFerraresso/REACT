@@ -8,6 +8,7 @@ import AdviceApp from "./pages/AdviceGenerator.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import AgeCalculator from "./pages/AgeCalculator.jsx";
 import ContactForm from "./pages/ContactForm.jsx";
+import MortageCalculator from "./pages/MortageCalculator.jsx";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/exercise/contactform",
         element: <ContactForm />,
+      },
+      {
+        path: "/exercise/mortagecalculator",
+        element: <MortageCalculator />,
       },
     ],
   },

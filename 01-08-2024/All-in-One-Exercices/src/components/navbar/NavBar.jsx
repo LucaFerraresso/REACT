@@ -17,6 +17,10 @@ const menulist = [
     name: "Contact-Form",
     path: "/exercise/contactform",
   },
+  {
+    name: "Mortage-Calculator",
+    path: "/exercise/mortagecalculator",
+  },
 ];
 
 const Navbar = () => {
