@@ -3,14 +3,13 @@ import { Link } from "react-router-dom";
 import { useSpring, animated } from "@react-spring/web";
 
 const Card = ({ title, description, link, backgroundImage }) => {
-  // Animations for image hover effect
   const [imageProps, imageApi] = useSpring(() => ({
     transform: "scale(1)",
     config: { tension: 200, friction: 20 },
   }));
 
   return (
-    <div className="w-[300px] h-[400px] md:w-[350px] md:h-[450px] lg:w-[400px] lg:h-[500px] rounded-lg overflow-hidden shadow-lg bg-white">
+    <div className="w-[300px] h-[400px] md:w-[350px] md:h-[450px] lg:w-[400px] lg:h-[500px] rounded-lg overflow-hidden shadow-lg bg-white border border-black">
       <div className="flex flex-col justify-between h-full">
         <div className="relative overflow-hidden">
           <Link to={link}>
@@ -31,13 +30,13 @@ const Card = ({ title, description, link, backgroundImage }) => {
           <h1 className="text-gray-900 text-xl font-bold mb-2">{title}</h1>
           <p className="text-gray-700 text-base mb-4">{description}</p>
           <div className="flex items-center space-x-2 mb-4">
-            <span className=" text-blue-300 text-2x font-semibold px-2.5 py-0.5 rounded border border-black">
+            <span className=" text-blue-300 text-2x font-semibold px-2.5 py-0.5 rounded border border-black ">
               HTML
             </span>
             <span className="text-blue-800 text-2x font-semibold px-2.5 py-0.5 rounded border border-black">
               CSS
             </span>
-            <span className="bg-pink-400 text-blue-800 text-2x font-semibold px-2.5 py-0.5 rounded border border-black">
+            <span className=" text-pink-400 text-2x font-semibold px-2.5 py-0.5 rounded border border-black">
               JS
             </span>
           </div>

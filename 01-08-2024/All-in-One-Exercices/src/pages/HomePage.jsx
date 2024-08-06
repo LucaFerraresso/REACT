@@ -5,52 +5,59 @@ import Card from "../components/atoms/Card";
 const HomePage = () => {
   const Exercises = [
     {
-      title: "Esercizio 1",
-      description: "Advice Generator",
+      title: "Advice Generator",
+      description:
+        "The perfect project if you're learning how to interact with 3rd-party APIs. This challenge uses the Advice Slip API to generate random quotes of advice.",
       link: "/exercise/advicegenerator",
       backgroundImage:
         "/Exercises/advice-generator-app-main/design/desktop-preview.jpg",
     },
     {
-      title: "Esercizio 2",
-      description: "Age Calculator",
+      title: "Age Calculator",
+      description:
+        "This challenge is designed to sharpen your JavaScript and form validation skills. Working with dates in JavaScript can be tricky, so this will be a nice test!",
       link: "/exercise/agecalculator",
       backgroundImage:
         "/Exercises/age-calculator-app-main/design/desktop-preview.jpg",
     },
     {
-      title: "Esercizio 3",
-      description: "Contact-Form-Main",
+      title: "Contact Form",
+      description:
+        "Building accessible forms is a crucial task for front-end developers. This challenge will help you practice building a form with several input types and validation.",
       link: "/exercise/contactform",
       backgroundImage:
         "/Exercises/contact-form-main/design/desktop-preview.jpg",
     },
     {
-      title: "Esercizio 4",
-      description: "Mortgage Calculator",
+      title: "Mortgage Calculator",
+      description:
+        "This mortgage calculator is an excellent project for practicing working with forms, client-side validation, and updating the DOM. Remember to focus on accessibility, too!",
       link: "/exercise/mortgagecalculator",
       backgroundImage:
         "/Exercises/mortgage-repayment-calculator-main/design/desktop-design-empty.jpg",
     },
     {
-      title: "Esercizio 5",
-      description: "Product List with Cart",
+      title: "Product List with Cart",
+      description:
+        "Practice updating the UI in multiple places based on user actions. The starter download also includes a JSON file to help you practice populating the DOM dynamically.",
       link: "/exercise/productlist",
       backgroundImage:
         "/Exercises/product-list-with-cart-main/design/desktop-design-selected.jpg",
     },
   ];
 
+  // Funzione di animazione per il titolo
   const headerSpring = useSpring({
-    from: { opacity: 0, transform: "translate3d(0,-40px,0)" },
+    from: { opacity: 0, transform: "translate3d(0,-20px,0)" },
     to: { opacity: 1, transform: "translate3d(0,0,0)" },
+    config: { tension: 150, friction: 15 },
   });
 
   return (
     <>
       <animated.h1
         style={headerSpring}
-        className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-4xl font-bold text-center text-white py-6"
+        className="text-4xl font-bold text-off-black text-center py-6"
       >
         Esercizi
       </animated.h1>
