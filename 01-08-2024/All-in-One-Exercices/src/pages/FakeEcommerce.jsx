@@ -1,25 +1,48 @@
 import React, { useEffect, useState } from "react";
 import { getProducts } from "../API/getData";
+import EcommerceCard from "../components/atoms/EcommerceCard";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const FakeEcommerce = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [cart, setCart] = useState({});
+  const [quantities, setQuantities] = useState({});
 
   const getItems = async () => {
     setLoading(true);
     try {
       const data = await getProducts();
       setProducts(data);
-      setLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
+    } finally {
       setLoading(false);
+    }
+  };
+
+  const handleAddToCart = (productId, quantity) => {
+    if (quantity > 0) {
+      setCart((prev) => ({
+        ...prev,
+        [productId]: (prev[productId] || 0) + quantity,
+      }));
+      setQuantities((prev) => ({ ...prev, [productId]: 1 })); // Reset quantity after adding to cart
     }
   };
 
   useEffect(() => {
     getItems();
   }, []);
+
+  const handleQuantityChange = (productId, change) => {
+    setQuantities((prev) => {
+      const currentQuantity = prev[productId] || 1;
+      const newQuantity = Math.max(1, currentQuantity + change);
+      return { ...prev, [productId]: newQuantity };
+    });
+  };
 
   return (
     <div className="min-h-screen bg-rose-50 p-4">
@@ -38,25 +61,24 @@ const FakeEcommerce = () => {
                 </div>
               </div>
             ))
-          : products.map((product, index) => (
-              <div key={index} className="bg-white p-4 rounded-lg shadow-md">
-                <img
-                  src={product.image.thumbnail}
-                  alt={product.name}
-                  className="w-full h-48 object-cover rounded-t-lg"
+          : products.map((product) => {
+              const productQuantity = quantities[product.id] || 1;
+
+              return (
+                <EcommerceCard
+                  key={product.id}
+                  product={product}
+                  quantity={productQuantity}
+                  onIncrease={() => handleQuantityChange(product.id, 1)}
+                  onDecrease={() => handleQuantityChange(product.id, -1)}
+                  onAddToCart={() =>
+                    handleAddToCart(product.id, productQuantity)
+                  }
                 />
-                <div className="p-4">
-                  <h2 className="text-rose-900 text-product font-semibold mb-2">
-                    {product.name}
-                  </h2>
-                  <p className="text-rose-500 mb-2">{product.category}</p>
-                  <p className="text-green text-xl font-bold">
-                    ${product.price.toFixed(2)}
-                  </p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
       </div>
+      <ToastContainer />
     </div>
   );
 };

@@ -10,6 +10,8 @@ import AgeCalculator from "./pages/AgeCalculator.jsx";
 import ContactForm from "./pages/ContactForm.jsx";
 import MortgageCalculator from "./pages/MortgageCalculator.jsx";
 import FakeEcommerce from "./pages/FakeEcommerce.jsx";
+import { ToastContainer } from "react-toastify"; // Import ToastContainer
+import "react-toastify/dist/ReactToastify.css"; // Import toast styles
 
 const router = createBrowserRouter([
   {
@@ -46,5 +48,8 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <>
+    <RouterProvider router={router} />
+    <ToastContainer />
+  </>
 );
