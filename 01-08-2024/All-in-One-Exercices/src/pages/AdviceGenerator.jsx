@@ -7,6 +7,7 @@ const AdviceApp = () => {
   const [advice, setAdvice] = useState("");
   const [count, setCount] = useState(0);
   const [id, setId] = useState(0);
+  const [isIlluminated, setIsIlluminated] = useState(false); // Nuovo stato per l'illuminazione
 
   useEffect(() => {
     getAdvice();
@@ -54,6 +55,12 @@ const AdviceApp = () => {
       boxShadow: "0px 0px 0px 0px rgba(0, 255, 0, 0)",
       config: { duration: 1000 },
     });
+
+    // Attivare l'illuminazione e disattivarla dopo 2000 ms
+    setIsIlluminated(true);
+    setTimeout(() => {
+      setIsIlluminated(false);
+    }, 2000); // Illumina per 2000 ms
   };
 
   return (
@@ -102,7 +109,13 @@ const AdviceApp = () => {
             </div>
             <div className="flex justify-center">
               <animated.button
-                style={{ ...hoverStyles, ...clickStyles }}
+                style={{
+                  ...hoverStyles,
+                  ...clickStyles,
+                  boxShadow: isIlluminated
+                    ? "0 0 20px 5px rgba(0, 255, 0, 0.6)"
+                    : "0px 0px 0px 0px rgba(0, 255, 0, 0)",
+                }}
                 className="p-4 rounded-full hover:shadow-neon transition duration-300"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
