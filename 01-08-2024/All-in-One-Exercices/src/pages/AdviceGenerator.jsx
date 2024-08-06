@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, animated, config } from "@react-spring/web";
-import getRandomAdvice from "../API/getData";
+import { getRandomAdvice } from "../API/getData";
 
 const AdviceApp = () => {
   const [isLoading, setIsLoading] = useState(true);
