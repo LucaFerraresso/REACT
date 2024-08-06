@@ -24,7 +24,7 @@ const FakeEcommerce = () => {
   };
 
   const handleAddToCart = (productId, quantity) => {
-    console.log("Adding to cart:", productId, quantity);
+    //console.log("Adding to cart:", productId, quantity);
     if (quantity > 0) {
       setCart((prev) => ({
         ...prev,
