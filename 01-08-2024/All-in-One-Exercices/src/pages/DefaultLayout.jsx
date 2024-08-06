@@ -5,9 +5,9 @@ import Footer from "../components/footer/Footer";
 const DefaultLayout = () => {
   return (
     <>
-      <div>
+      <div className="flex flex-col min-h-screen">
         <NavBar />
-        <div>
+        <div className="flex-grow">
           <Outlet />
         </div>
         <Footer />
@@ -15,4 +15,5 @@ const DefaultLayout = () => {
     </>
   );
 };
+
 export default DefaultLayout;

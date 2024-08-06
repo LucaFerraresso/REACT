@@ -33,7 +33,7 @@ const router = createBrowserRouter([
         element: <ContactForm />,
       },
       {
-        path: "/exercise/mortagecalculator",
+        path: "/exercise/mortgagecalculator",
         element: <MortageCalculator />,
       },
     ],
