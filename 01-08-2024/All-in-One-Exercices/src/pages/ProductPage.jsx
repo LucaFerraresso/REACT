@@ -73,12 +73,20 @@ const ProductPage = () => {
             style={springProps}
             className="flex flex-col justify-center items-center h-full"
           >
-            <div className="flex flex-col gap-2 w-[320px] h-[420px] overflow-auto p-2">
-              <h1 className="text-2xl font-bold">Name: {product.name}</h1>
-              <img src={product.image} alt={product.name} className="rounded" />
-              <p className="text-lg">Price: {product.price}$</p>
-              <p className="text-sm">ID: {product.id}</p>
-              <p className="text-sm">Category: {product.category}</p>
+            <div className="flex flex-col gap-2 w-[320px] h-[450px] overflow-hidden p-2 text-center">
+              <h1 className="text-rose-900  text-2xl font-bold">
+                {" "}
+                {product.name}
+              </h1>
+              <img
+                src={product.image}
+                alt={product.name}
+                className="rounded border border-black"
+              />
+              <p className="text-green-600 text-lg">Price: {product.price}$</p>
+              <p className="text-rose-500 text-sm">
+                Category: {product.category}
+              </p>
             </div>
             <button
               onClick={handleCloseModal}
