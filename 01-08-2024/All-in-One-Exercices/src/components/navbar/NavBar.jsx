@@ -5,26 +5,6 @@ const menulist = [
     name: "Home",
     path: "/homepage",
   },
-  {
-    name: "Advice-Generator",
-    path: "/exercise/advicegenerator",
-  },
-  {
-    name: "Age-Calculator",
-    path: "/exercise/agecalculator",
-  },
-  {
-    name: "Contact-Form",
-    path: "/exercise/contactform",
-  },
-  {
-    name: "Mortgage-Calculator",
-    path: "/exercise/mortgagecalculator",
-  },
-  {
-    name: "Password-Generator",
-    path: "/exercise/passwordgenerator",
-  },
 ];
 
 const Navbar = () => {
