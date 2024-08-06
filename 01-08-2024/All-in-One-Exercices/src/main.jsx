@@ -36,10 +36,6 @@ const router = createBrowserRouter([
         path: "/exercise/mortgagecalculator",
         element: <MortgageCalculator />,
       },
-      {
-        path: "/exercixe/errorpage",
-        element: <ErrorPage />,
-      },
     ],
   },
 ]);

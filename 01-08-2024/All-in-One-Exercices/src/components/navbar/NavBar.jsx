@@ -21,6 +21,10 @@ const menulist = [
     name: "Mortgage-Calculator",
     path: "/exercise/mortgagecalculator",
   },
+  {
+    name: "Password-Generator",
+    path: "/exercise/passwordgenerator",
+  },
 ];
 
 const Navbar = () => {
