@@ -34,15 +34,47 @@ const HomePage = () => {
         "This mortgage calculator is an excellent project for practicing working with forms, client-side validation, and updating the DOM. Remember to focus on accessibility, too!",
       link: "/exercise/mortgagecalculator",
       backgroundImage:
-        "/Exercises/mortgage-repayment-calculator-main/design/desktop-design-empty.jpg",
+        "/Exercises/mortgage-repayment-calculator-main/design/desktop-design-completed.jpg",
     },
     {
       title: "Product List with Cart",
       description:
         "Practice updating the UI in multiple places based on user actions. The starter download also includes a JSON file to help you practice populating the DOM dynamically.",
-      link: "/exercise/productlist",
+      link: "/exercise/fakeecommerce",
       backgroundImage:
         "/Exercises/product-list-with-cart-main/design/desktop-design-selected.jpg",
+    },
+    {
+      title: "Interactive Credit Card Details Form",
+      description:
+        "This fun project will be an excellent way to practice DOM manipulation and form validation while also putting your HTML and CSS skills to the test.",
+      link: "/exercise/carddetailsform",
+      backgroundImage:
+        "/Exercises/interactive-card-details-form-main/design/desktop-preview.jpg",
+    },
+    {
+      title: "Tip Calculator",
+      description:
+        "This small app is perfect for anyone starting to get to grips with JavaScript. The calculator functionality will be a nice test!",
+      link: "/exercise/tipcalculator",
+      backgroundImage:
+        "/Exercises/tip-calculator-app-main/design/desktop-preview.jpg",
+    },
+    {
+      title: "Interactive Pricing Components",
+      description:
+        "In this project, you'll build out an interactive pricing component complete with custom range input slider and pricing toggle. A perfect way to test your JS skills!",
+      link: "/exercise/pricingcomponents",
+      backgroundImage:
+        "/Exercises/interactive-pricing-component-main/design/desktop-preview.jpg",
+    },
+    {
+      title: "NewsLetter Sign Up",
+      description:
+        "This will test your skills with basic form structure, validation, and submission. The success state will also be an excellent opportunity to work with DOM manipulation.",
+      link: "/exercise/newslettersignup",
+      backgroundImage:
+        "/Exercises/newsletter-sign-up-with-success-message-main/design/desktop-preview.jpg",
     },
   ];
 

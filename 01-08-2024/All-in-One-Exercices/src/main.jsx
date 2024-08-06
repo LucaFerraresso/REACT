@@ -9,6 +9,7 @@ import HomePage from "./pages/HomePage.jsx";
 import AgeCalculator from "./pages/AgeCalculator.jsx";
 import ContactForm from "./pages/ContactForm.jsx";
 import MortgageCalculator from "./pages/MortgageCalculator.jsx";
+import FakeEcommerce from "./pages/FakeEcommerce.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/exercise/mortgagecalculator",
         element: <MortgageCalculator />,
+      },
+      {
+        path: "/exercise/fakeecommerce",
+        element: <FakeEcommerce />,
       },
     ],
   },
