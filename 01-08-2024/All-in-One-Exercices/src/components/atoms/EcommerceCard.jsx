@@ -40,7 +40,7 @@ const EcommerceCard = ({
     <animated.div
       style={springProps}
       className="bg-white p-4 rounded-lg shadow-lg flex flex-col gap-2 justify-between border border-black hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 mx-auto
-                 w-full sm:w-[280px] md:w-[330px] lg:w-[380px] xl:w-[430px] h-auto"
+                 w-full sm:w-[280px] md:w-[330px] lg:w-[320px] xl:w-[430px] h-auto"
     >
       <Link to={`/exercise/fakeecommerce/${product.id}`}>
         <img

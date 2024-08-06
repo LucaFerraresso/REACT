@@ -16,8 +16,10 @@ const customStyles = {
     background: "white",
     borderRadius: "10px",
     outline: "none",
-    width: "500px",
-    height: "600px",
+    width: "90%",
+    maxWidth: "500px",
+    height: "auto",
+    maxHeight: "80vh",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
     borderWidth: "1px",
     borderColor: "#ddd",
@@ -71,7 +73,7 @@ const ProductPage = () => {
             style={springProps}
             className="flex flex-col justify-center items-center h-full"
           >
-            <div className="flex flex-col gap-2 w-[400px] h-[500px] overflow-auto p-4">
+            <div className="flex flex-col gap-2 w-[320px] h-[420px] overflow-auto p-2">
               <h1 className="text-2xl font-bold">Name: {product.name}</h1>
               <img src={product.image} alt={product.name} className="rounded" />
               <p className="text-lg">Price: {product.price}$</p>
