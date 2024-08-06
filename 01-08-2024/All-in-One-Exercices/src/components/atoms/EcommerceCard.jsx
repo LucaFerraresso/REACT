@@ -16,8 +16,6 @@ const EcommerceCard = ({
   });
 
   const handleAddToCart = () => {
-    onAddToCart(product, quantity);
-
     if (quantity > 1) {
       toast.success(`${quantity} ${product.name} added to cart!`, {
         position: "top-right",
@@ -41,6 +39,7 @@ const EcommerceCard = ({
         theme: "light",
       });
     }
+    onAddToCart(product, quantity);
   };
 
   return (
