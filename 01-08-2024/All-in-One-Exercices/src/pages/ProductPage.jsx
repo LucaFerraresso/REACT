@@ -5,11 +5,13 @@ import EcommerceCard from "../components/atoms/EcommerceCard";
 
 const ProductPage = () => {
   const { id } = useParams();
+  //console.log("id", id);
 
   const getProduct = async () => {
     const response = await getProducts();
-    const product = response[id];
-    console.log(product.image.thumbnail);
+    const product = response.find((product) => product.id == id);
+    //console.log("response", response);
+    //console.log("product", product);
     const productWithImage = { ...product, image: product.image.thumbnail };
     setProduct(productWithImage);
   };
@@ -17,7 +19,6 @@ const ProductPage = () => {
   useEffect(() => {
     getProduct();
   }, []);
-  //da rivedere lo style della card
 
   return (
     <>
