@@ -1,6 +1,7 @@
 import React from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 const EcommerceCard = ({
   product,
@@ -47,11 +48,13 @@ const EcommerceCard = ({
       style={springProps}
       className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
     >
-      <img
-        src={product.image.thumbnail}
-        alt={product.name}
-        className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 hover:scale-110"
-      />
+      <Link to={`/exercise/fakeecommerce/${product.id}`}>
+        <img
+          src={product.image.thumbnail}
+          alt={product.name}
+          className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 hover:scale-110"
+        />
+      </Link>
       <div className="p-2">
         <h2 className="text-rose-900 text-lg font-semibold mb-1 transition-colors duration-300 hover:text-rose-700">
           {product.name}
