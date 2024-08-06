@@ -10,8 +10,9 @@ import AgeCalculator from "./pages/AgeCalculator.jsx";
 import ContactForm from "./pages/ContactForm.jsx";
 import MortgageCalculator from "./pages/MortgageCalculator.jsx";
 import FakeEcommerce from "./pages/FakeEcommerce.jsx";
-import { ToastContainer } from "react-toastify"; // Import ToastContainer
-import "react-toastify/dist/ReactToastify.css"; // Import toast styles
+import ProductPage from "./pages/ProductPage.jsx";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/exercise/fakeecommerce",
         element: <FakeEcommerce />,
+      },
+      {
+        path: "/exercise/fakeecommerce/:id",
+        element: <ProductPage />,
       },
     ],
   },

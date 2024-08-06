@@ -89,7 +89,7 @@ const HomePage = () => {
     <>
       <animated.h1
         style={headerSpring}
-        className="text-4xl font-bold text-off-black text-center py-6"
+        className="text-4xl font-bold text-off-black text-center py-6 bg-gray-50"
       >
         Esercizi
       </animated.h1>

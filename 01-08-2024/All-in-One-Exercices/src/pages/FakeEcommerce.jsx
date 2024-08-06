@@ -14,6 +14,7 @@ const FakeEcommerce = () => {
     setLoading(true);
     try {
       const data = await getProducts();
+
       setProducts(data);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -23,12 +24,13 @@ const FakeEcommerce = () => {
   };
 
   const handleAddToCart = (productId, quantity) => {
+    console.log("Adding to cart:", productId, quantity);
     if (quantity > 0) {
       setCart((prev) => ({
         ...prev,
         [productId]: (prev[productId] || 0) + quantity,
       }));
-      setQuantities((prev) => ({ ...prev, [productId]: 1 })); // Reset quantity after adding to cart
+      setQuantities((prev) => ({ ...prev, [productId]: 1 }));
     }
   };
 
