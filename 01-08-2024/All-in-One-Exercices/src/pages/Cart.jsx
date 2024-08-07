@@ -51,15 +51,19 @@ const Cart = () => {
 
   return (
     <>
-      <div className="flex flex-row justify-center gap-6 mt-4 mb-4">
-        <h1>Cart</h1>
-        <p>Items in cart: {Object.keys(cart).length}</p>
-        <p>
+      <div className="flex flex-col sm:flex-row p-4 items-center text-center justify-center gap-4 mt-4 mb-4 bg-white shadow-md rounded-lg">
+        <h1 className="text-3xl font-extrabold text-gray-800">Cart</h1>
+        <p className="text-lg text-gray-600">
+          Items in cart: {Object.keys(cart).length}
+        </p>
+        <p className="text-lg text-gray-600">
           Total:{" "}
           {Object.values(cart).reduce((total, quantity) => total + quantity, 0)}
         </p>
         <Link to="/exercise/fakeecommerce">
-          <button>Back to Shop</button>
+          <button className="bg-indigo-500 text-white px-6 py-2 rounded-lg hover:bg-indigo-600 transition transform hover:scale-105 shadow-md">
+            Back to Shop
+          </button>
         </Link>
       </div>
       <div className="flex flex-wrap justify-center">
@@ -69,7 +73,7 @@ const Cart = () => {
           <div className="flex flex-wrap gap-6 p-4 justify-center">
             {products &&
               products.map((product) => (
-                <div key={product.id} className="relative w-60">
+                <div key={product.id} className="relative w-full sm:w-60">
                   <EcommerceCard
                     product={product}
                     quantity={cart[product.id]}
@@ -84,11 +88,12 @@ const Cart = () => {
           </div>
         )}
       </div>
+
       <div className="mt-4 p-4 bg-gray-200 rounded shadow-md w-full max-w-md mx-auto">
         <h2 className="text-xl font-bold">Summary</h2>
         <ul className="list-disc list-inside">
           {products.map((product) => (
-            <li key={product.id}>
+            <li key={product.id} className="truncate">
               {product.title} - {cart[product.id]} x ${product.price.toFixed(2)}{" "}
               = ${(cart[product.id] * product.price).toFixed(2)}
             </li>

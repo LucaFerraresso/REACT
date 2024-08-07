@@ -49,7 +49,7 @@ const FakeEcommerce = () => {
   );
 
   return (
-    <div className="min-h-screen bg-rose-50 p-4">
+    <div className="min-h-screen bg-rose-50 p-4 text-center items-center">
       <h1 className="text-center text-3xl font-bold text-rose-900 mb-6 flex justify-between items-center">
         Fake Ecommerce
         <Link to="/exercise/fakeecommerce/cart" className="relative">

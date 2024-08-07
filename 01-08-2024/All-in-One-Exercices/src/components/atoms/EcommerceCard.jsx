@@ -39,7 +39,7 @@ const EcommerceCard = ({
   return (
     <animated.div
       style={springProps}
-      className="bg-white p-4 rounded-lg shadow-lg flex flex-col gap-2 justify-between border border-black hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 mx-auto w-60 h-auto"
+      className="bg-white p-4 rounded-lg shadow-lg flex flex-col gap-2 justify-between border border-black hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 mx-auto w-full sm:w-60 h-auto"
     >
       <Link to={`/exercise/fakeecommerce/${product.id}`}>
         <img
@@ -51,7 +51,7 @@ const EcommerceCard = ({
       </Link>
       <div className="p-2 flex flex-col items-center justify-center">
         <h2 className="text-rose-900 text-lg font-semibold mb-1 border-b border-black pb-2 transition-colors duration-300 hover:text-rose-700">
-          Name: {product.name}
+          {product.name}
         </h2>
         <p className="text-rose-500 mb-2">Category: {product.category}</p>
         <p className="text-green-600 text-xl font-bold mb-4">

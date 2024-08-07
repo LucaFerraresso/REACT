@@ -18,7 +18,7 @@
         "tablet": "/Exercises/product-list-with-cart-main/assets/images/image-creme-brulee-tablet.jpg",
         "desktop": "/Exercises/product-list-with-cart-main/assets/images/image-creme-brulee-desktop.jpg"
       },
-      "name": "Vanilla Bean Crème Brûlée",
+      "name": "Vanilla Bean Crème",
       "category": "Crème Brûlée",
       "price": 7.0
     },
@@ -84,7 +84,7 @@
         "tablet": "/Exercises/product-list-with-cart-main/assets/images/image-brownie-tablet.jpg",
         "desktop": "/Exercises/product-list-with-cart-main/assets/images/image-brownie-desktop.jpg"
       },
-      "name": "Salted Caramel Brownie",
+      "name": "Caramel Brownie",
       "category": "Brownie",
       "price": 4.5
     },

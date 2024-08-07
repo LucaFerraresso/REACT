@@ -1,4 +1,4 @@
-cart,context,card
+cart perfettamente funzionante ma non responsive
 
 import React, { useEffect, useState } from "react";
 import { useCart } from "../useContext/CartContext";
@@ -9,7 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Cart = () => {
-  const { cart, removeFromCart } = useCart();
+  const { cart, updateCart } = useCart();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -30,11 +30,20 @@ const Cart = () => {
 
   useEffect(() => {
     getItem();
-  }, []);
+  }, [cart]);
 
   const handleRemove = (productId) => {
-    removeFromCart(productId);
-    toast.success("Item removed from cart");
+    updateCart(productId, -1);
+    toast.error("Item removed from cart", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   };
 
   const totalCost = products.reduce(
@@ -55,32 +64,31 @@ const Cart = () => {
           <button>Back to Shop</button>
         </Link>
       </div>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap justify-center">
         {loading ? (
           <p>Loading...</p>
         ) : (
-          <div className="flex flex-wrap gap-6 p-4">
+          <div className="flex flex-wrap gap-6 p-4 justify-center">
             {products &&
               products.map((product) => (
-                <div key={product.id} className="relative">
+                <div key={product.id} className="relative w-60">
                   <EcommerceCard
                     product={product}
                     quantity={cart[product.id]}
+                    onIncrease={() => updateCart(product.id, 1)}
+                    onDecrease={() => handleRemove(product.id)}
+                    onAddToCart={(product, quantity) =>
+                      updateCart(product.id, quantity)
+                    }
                   />
-                  <button
-                    onClick={() => handleRemove(product.id)}
-                    className="absolute top-0 right-0 bg-red text-white px-2 py-1 rounded"
-                  >
-                    Remove
-                  </button>
                 </div>
               ))}
           </div>
         )}
       </div>
-      <div className="mt-4 p-4 bg-gray-200 rounded">
+      <div className="mt-4 p-4 bg-gray-200 rounded shadow-md w-full max-w-md mx-auto">
         <h2 className="text-xl font-bold">Summary</h2>
-        <ul>
+        <ul className="list-disc list-inside">
           {products.map((product) => (
             <li key={product.id}>
               {product.title} - {cart[product.id]} x ${product.price.toFixed(2)}{" "}
@@ -88,7 +96,7 @@ const Cart = () => {
             </li>
           ))}
         </ul>
-        <h3 className="text-lg font-bold">
+        <h3 className="text-lg font-bold mt-2">
           Total Cost: ${totalCost.toFixed(2)}
         </h3>
       </div>
@@ -99,41 +107,8 @@ const Cart = () => {
 
 export default Cart;
 
-//////////////////////////////////////////////
-import React, { createContext, useContext, useState } from "react";
-
-const CartContext = createContext();
-
-export const useCart = () => {
-  return useContext(CartContext);
-};
-
-export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState({});
-
-  const addToCart = (productId, quantity) => {
-    setCart((prev) => ({
-      ...prev,
-      [productId]: (prev[productId] || 0) + quantity,
-    }));
-  };
-
-  const removeFromCart = (productId) => {
-    setCart((prev) => {
-      const newCart = { ...prev };
-      delete newCart[productId];
-      return newCart;
-    });
-  };
-
-  return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
-      {children}
-    </CartContext.Provider>
-  );
-};
-
-/////////////////////////////////////
+///////////////////////////////////
+e commerce card non responsive
 
 import React from "react";
 import { useSpring, animated } from "@react-spring/web";
@@ -176,8 +151,7 @@ const EcommerceCard = ({
   return (
     <animated.div
       style={springProps}
-      className="bg-white p-4 rounded-lg shadow-lg flex flex-col gap-2 justify-between border border-black hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 mx-auto
-                 w-full sm:w-[280px] md:w-[330px] lg:w-[320px] xl:w-[430px] h-auto"
+      className="bg-white p-4 rounded-lg shadow-lg flex flex-col gap-2 justify-between border border-black hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 mx-auto w-60 h-auto"
     >
       <Link to={`/exercise/fakeecommerce/${product.id}`}>
         <img
