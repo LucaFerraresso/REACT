@@ -48,7 +48,7 @@ const HomePage = () => {
       title: "Interactive Credit Card Details Form",
       description:
         "This fun project will be an excellent way to practice DOM manipulation and form validation while also putting your HTML and CSS skills to the test.",
-      link: "/exercise/carddetailsform",
+      link: "/exercise/interactivecardform",
       backgroundImage:
         "/Exercises/interactive-card-details-form-main/design/desktop-preview.jpg",
     },
