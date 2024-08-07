@@ -9,8 +9,12 @@ const MortgageCalculator = () => {
   const [result, setResult] = useState(null);
 
   const validateFields = () => {
-    if (!amount || !rate) {
+    if (!amount || !term) {
       setError("All fields are required");
+      return false;
+    }
+    if (amount <= 0 || term <= 0) {
+      setError("Values must be greater than zero");
       return false;
     }
     setError("");
@@ -24,6 +28,11 @@ const MortgageCalculator = () => {
     const months = term * 12;
     const monthlyRate = rate / 100 / 12;
     const denominator = Math.pow(1 + monthlyRate, months) - 1;
+
+    if (denominator === 0) {
+      setError("Calculation error. Please check the input values.");
+      return;
+    }
 
     const monthlyPayment =
       amount * monthlyRate * (Math.pow(1 + monthlyRate, months) / denominator);
@@ -114,7 +123,7 @@ const MortgageCalculator = () => {
         {error && <div className="text-red mb-4">{error}</div>}
         <button
           type="submit"
-          className="w-full p-3 bg-lime text-white rounded font-bold hover:bg-lime-dark transition duration-300"
+          className="w-full p-3 bg-lime text-white rounded font-bold hover:bg-lime transition duration-300"
         >
           Calculate Repayments
         </button>
@@ -129,6 +138,10 @@ const MortgageCalculator = () => {
               <p className="text-slate700">£{result.monthlyPayment}</p>
               <p className="text-slate900 font-semibold">Total Payment</p>
               <p className="text-slate700">£{result.totalPayment}</p>
+              <p className="text-slate900 font-semibold">Total Interest</p>
+              <p className="text-slate700">
+                £{(result.totalPayment - amount).toFixed(2)}
+              </p>
             </div>
           </div>
         </div>
