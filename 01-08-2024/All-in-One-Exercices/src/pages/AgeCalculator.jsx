@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
-import arrowSvg from "/public/Exercises/age-calculator-app-main/assets/images/icon-arrow.svg";
+import arrowSvg from "/Exercises/age-calculator-app-main/assets/images/icon-arrow.svg";
 
 const AgeCalculator = () => {
   const [day, setDay] = useState("");
