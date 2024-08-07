@@ -9,9 +9,8 @@ import { useCart } from "../useContext/CartContext";
 const FakeEcommerce = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [cart, setCart] = useState({});
   const [quantities, setQuantities] = useState({});
-  const { addToCart } = useCart();
+  const { cart, addToCart } = useCart();
 
   const getItems = async () => {
     setLoading(true);
@@ -27,13 +26,9 @@ const FakeEcommerce = () => {
 
   const handleAddToCart = (productId, quantity) => {
     if (quantity > 0) {
-      setCart((prev) => ({
-        ...prev,
-        [productId]: (prev[productId] || 0) + quantity,
-      }));
+      addToCart(productId, quantity);
       setQuantities((prev) => ({ ...prev, [productId]: 1 }));
     }
-    addToCart(productId, quantity);
   };
 
   useEffect(() => {

@@ -16,12 +16,20 @@ export const CartProvider = ({ children }) => {
     }));
   };
 
-  const getTotalItems = () => {
-    return Object.values(cart).reduce((total, quantity) => total + quantity, 0);
+  const updateCart = (productId, quantityChange) => {
+    setCart((prev) => {
+      const newQuantity = (prev[productId] || 0) + quantityChange;
+      if (newQuantity <= 0) {
+        const newCart = { ...prev };
+        delete newCart[productId];
+        return newCart;
+      }
+      return { ...prev, [productId]: newQuantity };
+    });
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, getTotalItems }}>
+    <CartContext.Provider value={{ cart, addToCart, updateCart }}>
       {children}
     </CartContext.Provider>
   );
