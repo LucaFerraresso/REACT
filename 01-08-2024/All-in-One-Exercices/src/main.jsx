@@ -13,6 +13,7 @@ import FakeEcommerce from "./pages/FakeEcommerce.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
 import Cart from "./pages/Cart.jsx";
 import { CartProvider } from "./useContext/CartContext.jsx";
+
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

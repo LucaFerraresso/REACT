@@ -4,12 +4,14 @@ import EcommerceCard from "../components/atoms/EcommerceCard";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
+import { useCart } from "../useContext/CartContext";
 
 const FakeEcommerce = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [cart, setCart] = useState({});
   const [quantities, setQuantities] = useState({});
+  const { addToCart } = useCart();
 
   const getItems = async () => {
     setLoading(true);
@@ -31,6 +33,7 @@ const FakeEcommerce = () => {
       }));
       setQuantities((prev) => ({ ...prev, [productId]: 1 }));
     }
+    addToCart(productId, quantity);
   };
 
   useEffect(() => {
