@@ -11,6 +11,8 @@ import ContactForm from "./pages/ContactForm.jsx";
 import MortgageCalculator from "./pages/MortgageCalculator.jsx";
 import FakeEcommerce from "./pages/FakeEcommerce.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
+import Cart from "./pages/Cart.jsx";
+import { CartProvider } from "./useContext/CartContext.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -48,13 +50,19 @@ const router = createBrowserRouter([
         path: "/exercise/fakeecommerce/:id",
         element: <ProductPage />,
       },
+      {
+        path: "/exercise/fakeecommerce/cart",
+        element: <Cart />,
+      },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
-    <RouterProvider router={router} />
-    <ToastContainer />
+    <CartProvider>
+      <RouterProvider router={router} />
+      <ToastContainer />
+    </CartProvider>
   </>
 );

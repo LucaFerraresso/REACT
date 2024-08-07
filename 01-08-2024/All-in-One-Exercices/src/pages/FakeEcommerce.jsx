@@ -3,6 +3,7 @@ import { getProducts } from "../API/getData";
 import EcommerceCard from "../components/atoms/EcommerceCard";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 
 const FakeEcommerce = () => {
   const [products, setProducts] = useState([]);
@@ -44,10 +45,36 @@ const FakeEcommerce = () => {
     });
   };
 
+  const totalItemsInCart = Object.values(cart).reduce(
+    (total, quantity) => total + quantity,
+    0
+  );
+
   return (
     <div className="min-h-screen bg-rose-50 p-4">
-      <h1 className="text-center text-3xl font-bold text-rose-900 mb-6">
+      <h1 className="text-center text-3xl font-bold text-rose-900 mb-6 flex justify-between items-center">
         Fake Ecommerce
+        <Link to="/exercise/fakeecommerce/cart" className="relative">
+          <svg
+            className="w-8 h-8 text-rose-900"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M3 3h18l-1.5 9H6L3 3zm3 14h12a3 3 0 003-3H6a3 3 0 003 3z"
+            />
+          </svg>
+          {totalItemsInCart > 0 && (
+            <span className="absolute -top-1 -right-1 bg-red text-white rounded-full text-xs px-1">
+              {totalItemsInCart}
+            </span>
+          )}
+        </Link>
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {loading
