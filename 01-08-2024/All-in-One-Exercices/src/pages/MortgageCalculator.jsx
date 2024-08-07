@@ -9,12 +9,18 @@ const MortgageCalculator = () => {
   const [result, setResult] = useState(null);
 
   const validateFields = () => {
-    if (!amount || !term) {
+    if (!amount || !rate) {
       setError("All fields are required");
       return false;
     }
-    if (amount <= 0 || term <= 0) {
-      setError("Values must be greater than zero");
+    if (isNaN(amount) || isNaN(rate)) {
+      setError("All fields must be numbers");
+      return false;
+    }
+    if (amount <= 0 || rate < 0) {
+      setError(
+        "Values must be greater than zero and rate must be zero or more"
+      );
       return false;
     }
     setError("");
@@ -27,16 +33,25 @@ const MortgageCalculator = () => {
 
     const months = term * 12;
     const monthlyRate = rate / 100 / 12;
-    const denominator = Math.pow(1 + monthlyRate, months) - 1;
 
-    if (denominator === 0) {
-      setError("Calculation error. Please check the input values.");
-      return;
+    let monthlyPayment = 0;
+    let totalPayment = 0;
+
+    if (monthlyRate === 0) {
+      monthlyPayment = amount / months;
+      totalPayment = Number(amount);
+    } else {
+      const denominator = Math.pow(1 + monthlyRate, months) - 1;
+      if (denominator === 0) {
+        setError("Errore nei calcoli. Controlla i dati inseriti.");
+        return;
+      }
+      monthlyPayment =
+        amount *
+        monthlyRate *
+        (Math.pow(1 + monthlyRate, months) / denominator);
+      totalPayment = monthlyPayment * months;
     }
-
-    const monthlyPayment =
-      amount * monthlyRate * (Math.pow(1 + monthlyRate, months) / denominator);
-    const totalPayment = monthlyPayment * months;
 
     const calculatedResult = {
       monthlyPayment: monthlyPayment.toFixed(2),
@@ -120,7 +135,6 @@ const MortgageCalculator = () => {
             </label>
           </div>
         </div>
-        {error && <div className="text-red mb-4">{error}</div>}
         <button
           type="submit"
           className="w-full p-3 bg-lime text-white rounded font-bold hover:bg-lime transition duration-300"
@@ -128,6 +142,8 @@ const MortgageCalculator = () => {
           Calculate Repayments
         </button>
       </form>
+
+      {error && <div className="text-red mb-4">{error}</div>}
 
       {result && (
         <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-lg text-center">
