@@ -76,7 +76,7 @@ const AgeCalculator = () => {
     months: age.months !== "--" ? age.months : 0,
     days: age.days !== "--" ? age.days : 0,
     from: { years: 0, months: 0, days: 0 },
-    config: { tension: 170, friction: 26 }, // Maggiore fluidità
+    config: { tension: 170, friction: 26 },
   });
 
   return (
