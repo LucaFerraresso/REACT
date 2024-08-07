@@ -43,6 +43,10 @@ export default {
         },
       },
       fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        karla: ["Karla", "sans-serif"],
+        "red-hat": ["Red Hat Text", "sans-serif"],
+        "plus-jakarta": ["Plus Jakarta Sans", "sans-serif"],
         spaceGrotesk: ["Space Grotesk", "sans-serif"],
         sans: ["Manrope", "sans-serif"],
       },

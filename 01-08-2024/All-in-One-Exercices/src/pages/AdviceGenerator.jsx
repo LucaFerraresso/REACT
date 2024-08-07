@@ -7,7 +7,7 @@ const AdviceApp = () => {
   const [advice, setAdvice] = useState("");
   const [count, setCount] = useState(0);
   const [id, setId] = useState(0);
-  const [isIlluminated, setIsIlluminated] = useState(false); // Nuovo stato per l'illuminazione
+  const [isIlluminated, setIsIlluminated] = useState(false);
 
   useEffect(() => {
     getAdvice();
@@ -56,15 +56,14 @@ const AdviceApp = () => {
       config: { duration: 1000 },
     });
 
-    // Attivare l'illuminazione e disattivarla dopo 2000 ms
     setIsIlluminated(true);
     setTimeout(() => {
       setIsIlluminated(false);
-    }, 2000); // Illumina per 2000 ms
+    }, 1500);
   };
 
   return (
-    <div className="min-h-screen bg-dark-blue flex items-center justify-center font-sans p-4">
+    <div className="min-h-screen bg-dark-blue flex items-center justify-center font-manrope p-4">
       <div className="bg-dark-grayish-blue text-center p-8 rounded-xl shadow-lg max-w-md w-full">
         {isLoading ? (
           <div className="animate-pulse">

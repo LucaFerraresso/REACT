@@ -62,7 +62,7 @@ const MortgageCalculator = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-slate100 p-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-slate100 p-4 font-plus-jakarta">
       <form
         onSubmit={calculateRepayments}
         className="bg-white p-8 rounded-lg shadow-md w-full max-w-lg mb-6"

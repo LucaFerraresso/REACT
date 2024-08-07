@@ -80,7 +80,7 @@ const AgeCalculator = () => {
   });
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-off-white p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-off-white p-4 font-poppins">
       <div className="bg-white rounded-lg shadow-lg p-8 md:p-10 text-center max-w-lg w-full relative">
         <div className="absolute top-[-30px] right-[-30px] p-2 bg-purple rounded-full">
           <img src={arrowSvg} alt="arrow" className="w-8 h-8" />
