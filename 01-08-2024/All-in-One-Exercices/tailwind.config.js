@@ -30,17 +30,9 @@ export default {
         green: "hsl(159, 69%, 38%)",
         "rose-50": "hsl(20, 50%, 98%)",
         "rose-100": "hsl(13, 31%, 94%)",
-        primary: {
-          "linear-gradient":
-            "linear-gradient(135deg, hsl(249, 99%, 64%) 0%, hsl(278, 94%, 30%) 100%)",
-          "input-border": "hsl(249, 99%, 64%)",
-        },
-        neutral: {
-          white: "hsl(0, 0%, 100%)",
-          "light-grayish-violet": "hsl(270, 3%, 87%)",
-          "dark-grayish-violet": "hsl(279, 6%, 55%)",
-          "very-dark-violet": "hsl(278, 68%, 11%)",
-        },
+        "light-grayish-violet": "hsl(270, 3%, 87%)",
+        "dark-grayish-violet": "hsl(279, 6%, 55%)",
+        "very-dark-violet": "hsl(278, 68%, 11%)",
         "strong-cyan": "hsl(172, 67%, 45%)",
         "very-dark-cyan": "hsl(183, 100%, 15%)",
         "dark-grayish-cyan": "hsl(186, 14%, 43%)",
@@ -58,6 +50,13 @@ export default {
         "toggle-bg": "hsl(223, 50%, 87%)",
         "text-grayish-blue": "hsl(225, 20%, 60%)",
         "text-dark-desaturated-blue": "hsl(227, 35%, 25%)",
+        "very-pale-blue": "hsl(230, 100%, 99%)",
+        tomato: "hsl(4, 100%, 67%)",
+        primary: {
+          "linear-gradient":
+            "linear-gradient(135deg, hsl(249, 99%, 64%) 0%, hsl(278, 94%, 30%) 100%)",
+          "input-border": "hsl(249, 99%, 64%)",
+        },
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
@@ -68,6 +67,16 @@ export default {
         sans: ["Manrope", "sans-serif"],
         spaceMono: ["Space Mono", "monospace"],
         manrope: ["Manrope", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"], // Aggiunto Roboto
+      },
+      animation: {
+        "fade-in": "fadeIn 0.5s ease-in-out",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
       },
     },
   },
