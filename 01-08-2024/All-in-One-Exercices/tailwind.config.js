@@ -47,7 +47,6 @@ export default {
         "grayish-cyan": "hsl(184, 14%, 56%)",
         "light-grayish-cyan": "hsl(185, 41%, 84%)",
         "very-light-grayish-cyan": "hsl(189, 41%, 97%)",
-        // New colors from style guide
         "soft-cyan": "hsl(174, 77%, 80%)",
         "slider-background": "hsl(174, 86%, 45%)",
         "discount-background": "hsl(14, 92%, 95%)",
@@ -61,7 +60,6 @@ export default {
         "text-dark-desaturated-blue": "hsl(227, 35%, 25%)",
       },
       fontFamily: {
-        // Existing font families
         poppins: ["Poppins", "sans-serif"],
         karla: ["Karla", "sans-serif"],
         "red-hat": ["Red Hat Text", "sans-serif"],
@@ -69,7 +67,6 @@ export default {
         spaceGrotesk: ["Space Grotesk", "sans-serif"],
         sans: ["Manrope", "sans-serif"],
         spaceMono: ["Space Mono", "monospace"],
-        // New font family
         manrope: ["Manrope", "sans-serif"],
       },
     },
