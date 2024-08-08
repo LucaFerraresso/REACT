@@ -21,6 +21,7 @@ import InteractivePricingSlider from "./pages/InteractivePricingSlider.jsx";
 import NewsLetterSignUp from "./pages/NewsLetterSignUp.jsx";
 //provider
 import { CartProvider } from "./useContext/CartContext.jsx";
+import { Navigate } from "react-router-dom";
 //toast library
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
