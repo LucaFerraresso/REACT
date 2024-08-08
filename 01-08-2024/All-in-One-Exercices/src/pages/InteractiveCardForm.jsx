@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import bgCardBack from "../../public/Exercises/interactive-card-details-form-main/images/bg-card-back";
+import bgCardFront from "../../public/Exercises/interactive-card-details-form-main/images/bg-card-front";
 
 const InteractiveForm = () => {
   const [cardholderName, setCardholderName] = useState("");
@@ -51,9 +53,33 @@ const InteractiveForm = () => {
       <h1 className="text-4xl mb-8 text-neutral-very-dark-violet">
         Interactive Card Details Form
       </h1>
+      <div className="flex flex-col md:flex-row items-center md:space-x-8 space-y-4 md:space-y-0">
+        <div className="relative">
+          <img src={bgCardFront} alt="Card Front" className="w-80" />
+          <div className="absolute top-8 left-6">
+            <span className="text-white text-lg">
+              {cardNumber || "0000 0000 0000 0000"}
+            </span>
+          </div>
+          <div className="absolute bottom-8 left-6">
+            <span className="text-white text-lg">
+              {cardholderName || "Jane Appleseed"}
+            </span>
+            <span className="text-white text-lg ml-4">
+              {expiryMonth || "00"}
+            </span>
+          </div>
+        </div>
+        <div className="relative">
+          <img src={bgCardBack} alt="Card Back" className="w-80" />
+          <div className="absolute top-16 right-8">
+            <span className="text-white text-lg">{cvc || "000"}</span>
+          </div>
+        </div>
+      </div>
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg space-y-6"
+        className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg space-y-6 mt-8"
       >
         <div>
           <label
@@ -69,11 +95,11 @@ const InteractiveForm = () => {
             onChange={(e) => setCardholderName(e.target.value)}
             placeholder="e.g. Jane Doe"
             className={`w-full p-2 border rounded ${
-              errors.cardholderName ? "border-red" : "border-gray-300"
+              errors.cardholderName ? "border-red-500" : "border-gray-300"
             } focus:outline-none focus:ring-2 focus:ring-primary-linear-gradient`}
           />
           {errors.cardholderName && (
-            <span className="text-red">{errors.cardholderName}</span>
+            <span className="text-red-500">{errors.cardholderName}</span>
           )}
         </div>
 
@@ -91,16 +117,16 @@ const InteractiveForm = () => {
             onChange={(e) => setCardNumber(e.target.value)}
             placeholder="e.g. 1234 5678 9123 4567"
             className={`w-full p-2 border rounded ${
-              errors.cardNumber ? "border-red" : "border-gray-300"
+              errors.cardNumber ? "border-red-500" : "border-gray-300"
             } focus:outline-none focus:ring-2 focus:ring-primary-linear-gradient`}
           />
           {errors.cardNumber && (
-            <span className="text-red">{errors.cardNumber}</span>
+            <span className="text-red-500">{errors.cardNumber}</span>
           )}
         </div>
 
-        <div className="flex space-x-4 p-2 flex-row justify-center ">
-          <div className="flex flex-col justify-between gap-4 items-center text-center p-2 ">
+        <div className="flex space-x-4">
+          <div>
             <label
               htmlFor="expiryMonth"
               className="block text-neutral-dark-grayish-violet mb-2"
@@ -114,15 +140,15 @@ const InteractiveForm = () => {
               onChange={(e) => setExpiryMonth(e.target.value)}
               placeholder="MM"
               className={`w-full p-2 border rounded ${
-                errors.expiryMonth ? "border-red" : "border-gray-300"
+                errors.expiryMonth ? "border-red-500" : "border-gray-300"
               } focus:outline-none focus:ring-2 focus:ring-primary-linear-gradient`}
             />
             {errors.expiryMonth && (
-              <span className="text-red">{errors.expiryMonth}</span>
+              <span className="text-red-500">{errors.expiryMonth}</span>
             )}
           </div>
 
-          <div className=" flex flex-col justify-between gap-4 items-center text-center p-2">
+          <div>
             <label
               htmlFor="expiryYear"
               className="block text-neutral-dark-grayish-violet mb-2"
@@ -136,15 +162,15 @@ const InteractiveForm = () => {
               onChange={(e) => setExpiryYear(e.target.value)}
               placeholder="YY"
               className={`w-full p-2 border rounded ${
-                errors.expiryYear ? "border-red" : "border-gray-300"
+                errors.expiryYear ? "border-red-500" : "border-gray-300"
               } focus:outline-none focus:ring-2 focus:ring-primary-linear-gradient`}
             />
             {errors.expiryYear && (
-              <span className="text-red">{errors.expiryYear}</span>
+              <span className="text-red-500">{errors.expiryYear}</span>
             )}
           </div>
 
-          <div className=" flex flex-col justify-between gap-4 items-center text-center p-2">
+          <div>
             <label
               htmlFor="cvc"
               className="block text-neutral-dark-grayish-violet mb-2"
@@ -158,10 +184,10 @@ const InteractiveForm = () => {
               onChange={(e) => setCvc(e.target.value)}
               placeholder="e.g. 123"
               className={`w-full p-2 border rounded ${
-                errors.cvc ? "border-red" : "border-gray-300"
+                errors.cvc ? "border-red-500" : "border-gray-300"
               } focus:outline-none focus:ring-2 focus:ring-primary-linear-gradient`}
             />
-            {errors.cvc && <span className="text-red">{errors.cvc}</span>}
+            {errors.cvc && <span className="text-red-500">{errors.cvc}</span>}
           </div>
         </div>
 
