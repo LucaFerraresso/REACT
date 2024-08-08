@@ -17,6 +17,7 @@ import Cart from "./pages/Cart.jsx";
 import InteractiveForm from "./pages/InteractiveCardForm.jsx";
 import TipCalculator from "./pages/TipCalculator.jsx";
 import InteractivePricingSlider from "./pages/InteractivePricingSlider.jsx";
+import NewsLetterSignUp from "./pages/NewsLetterSignUp.jsx";
 //provider
 import { CartProvider } from "./useContext/CartContext.jsx";
 //toast library
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
       {
         path: "/exercise/pricingslider",
         element: <InteractivePricingSlider />,
+      },
+      {
+        path: "/exercise/newslettersignup",
+        element: <NewsLetterSignUp />,
       },
     ],
   },

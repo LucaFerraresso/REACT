@@ -1,75 +1,73 @@
 import React, { useState } from "react";
+import "tailwindcss/tailwind.css";
 
 const InteractivePricingSlider = () => {
-  const [value, setValue] = useState(50);
-  const [isAnnual, setIsAnnual] = useState(false);
+  const [pageviews, setPageviews] = useState(100);
+  const [billing, setBilling] = useState("monthly");
+  const [discounted, setDiscounted] = useState(false);
 
-  const handleToggle = () => {
-    setIsAnnual(!isAnnual);
+  const toggleBilling = () => {
+    setBilling(billing === "monthly" ? "yearly" : "monthly");
+    setDiscounted(!discounted);
   };
 
-  const handleChange = (e) => {
-    setValue(e.target.value);
+  const handleSliderChange = (e) => {
+    setPageviews(e.target.value);
+  };
+
+  const getPrice = () => {
+    let price = (pageviews / 100) * 16;
+    if (discounted) {
+      price = price * 0.75;
+    }
+    return price.toFixed(2);
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-main-bg p-4">
-      <div className="bg-pricing-bg p-8 rounded-lg shadow-lg max-w-md w-full">
-        <h1 className="text-2xl font-manrope font-bold text-text-dark-desaturated-blue mb-4">
-          Interactive Pricing Component
-        </h1>
-        <div className="flex justify-between items-center mb-8">
-          <span className="font-manrope font-semibold text-text-grayish-blue">
-            ${isAnnual ? value * 12 : value}
-          </span>
-          <span className="font-manrope font-semibold text-text-grayish-blue">
-            {isAnnual ? "per year" : "per month"}
+    <div className="max-w-2xl mx-auto my-10 p-6 bg-white shadow-lg rounded-lg font-manrope">
+      <div className="text-center">
+        <h2 className="text-grayish-blue text-2xl font-bold">
+          Simple, traffic-based pricing
+        </h2>
+        <p className="text-grayish-blue mt-2">
+          Sign-up for our 30-day trial. No credit card required.
+        </p>
+      </div>
+      <div className="my-6">
+        <div className="flex justify-between items-center text-grayish-blue">
+          <span>{pageviews}K Pageviews</span>
+          <span className="text-4xl font-bold text-dark-desaturated-blue">
+            ${getPrice()}
           </span>
         </div>
         <input
           type="range"
-          min="0"
-          max="100"
-          value={value}
-          onChange={handleChange}
-          className="w-full h-2  rounded-lg appearance-none cursor-pointer slider-thumb bg-strong-cyan"
+          min="100"
+          max="1000"
+          value={pageviews}
+          onChange={handleSliderChange}
+          className="w-full h-2 bg-light-grayish-blue-slider rounded-lg appearance-none cursor-pointer"
         />
-        <div className="flex justify-between mt-4">
-          <span className="font-manrope font-semibold text-text-grayish-blue">
-            0
-          </span>
-          <span className="font-manrope font-semibold text-text-grayish-blue">
-            100
-          </span>
-        </div>
-        <div className="flex justify-center mt-8">
-          <div className="flex items-center">
-            <span className="font-manrope font-semibold text-text-grayish-blue mr-2">
-              Monthly
-            </span>
-            <div className="relative inline-block w-10 mr-2 align-middle select-none">
-              <input
-                type="checkbox"
-                name="toggle"
-                id="toggle"
-                checked={isAnnual}
-                onChange={handleToggle}
-                className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
-              />
-              <label
-                htmlFor="toggle"
-                className="toggle-label block overflow-hidden h-6 rounded-full bg-toggle-bg cursor-pointer"
-              />
-            </div>
-            <span className="font-manrope font-semibold text-text-grayish-blue ml-2">
-              Annual
-            </span>
-          </div>
-        </div>
-        <button className="mt-8 w-full bg-strong-cyan text-white py-2 rounded-lg font-manrope font-bold hover:bg-soft-cyan transition-colors">
-          Get Started
-        </button>
       </div>
+      <div className="flex flex-col sm:flex-row justify-between items-center my-6 space-y-4 sm:space-y-0">
+        <span className="text-grayish-blue">Monthly Billing</span>
+        <label className="relative inline-flex items-center cursor-pointer">
+          <input
+            type="checkbox"
+            className="sr-only peer"
+            checked={discounted}
+            onChange={toggleBilling}
+          />
+          <div className="w-11 h-6 bg-light-grayish-blue-toggle rounded-full peer peer-focus:ring-4 peer-focus:ring-soft-cyan peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-strong-cyan"></div>
+        </label>
+        <span className="text-grayish-blue">Yearly Billing</span>
+        <span className="text-sm text-light-red bg-light-grayish-red py-1 px-2 rounded-full">
+          25% discount
+        </span>
+      </div>
+      <button className="w-full py-3 mt-6 text-white bg-grayish-blue rounded-lg hover:bg-grayish-blue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-grayish-blue transition duration-200">
+        Get Started
+      </button>
     </div>
   );
 };
