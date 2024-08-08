@@ -18,7 +18,7 @@ export default {
         "off-black": "hsl(0, 0%, 8%)",
         "green-200": "hsl(148, 38%, 91%)",
         "green-600": "hsl(169, 82%, 27%)",
-        red: "hsl(0, 100%, 66%)", // Mantenuto come rosso degli errori
+        red: "hsl(0, 100%, 66%)",
         "grey-500": "hsl(186, 15%, 59%)",
         "grey-900": "hsl(187, 24%, 22%)",
         lime: "hsl(61, 70%, 52%)",
@@ -41,6 +41,12 @@ export default {
           "dark-grayish-violet": "hsl(279, 6%, 55%)",
           "very-dark-violet": "hsl(278, 68%, 11%)",
         },
+        "strong-cyan": "hsl(172, 67%, 45%)",
+        "very-dark-cyan": "hsl(183, 100%, 15%)",
+        "dark-grayish-cyan": "hsl(186, 14%, 43%)",
+        "grayish-cyan": "hsl(184, 14%, 56%)",
+        "light-grayish-cyan": "hsl(185, 41%, 84%)",
+        "very-light-grayish-cyan": "hsl(189, 41%, 97%)",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
@@ -49,8 +55,9 @@ export default {
         "plus-jakarta": ["Plus Jakarta Sans", "sans-serif"],
         spaceGrotesk: ["Space Grotesk", "sans-serif"],
         sans: ["Manrope", "sans-serif"],
+        spaceMono: ["Space Mono", "monospace"],
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };
