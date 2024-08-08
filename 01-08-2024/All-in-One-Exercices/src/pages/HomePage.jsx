@@ -64,7 +64,7 @@ const HomePage = () => {
       title: "Interactive Pricing Components",
       description:
         "In this project, you'll build out an interactive pricing component complete with custom range input slider and pricing toggle. A perfect way to test your JS skills!",
-      link: "/exercise/pricingcomponents",
+      link: "/exercise/pricingslider",
       backgroundImage:
         "/Exercises/interactive-pricing-component-main/design/desktop-preview.jpg",
     },

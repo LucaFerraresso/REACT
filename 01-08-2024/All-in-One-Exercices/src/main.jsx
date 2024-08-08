@@ -16,6 +16,7 @@ import ProductPage from "./pages/ProductPage.jsx";
 import Cart from "./pages/Cart.jsx";
 import InteractiveForm from "./pages/InteractiveCardForm.jsx";
 import TipCalculator from "./pages/TipCalculator.jsx";
+import InteractivePricingSlider from "./pages/InteractivePricingSlider.jsx";
 //provider
 import { CartProvider } from "./useContext/CartContext.jsx";
 //toast library
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
       {
         path: "/exercise/tipcalculator",
         element: <TipCalculator />,
+      },
+      {
+        path: "/exercise/pricingslider",
+        element: <InteractivePricingSlider />,
       },
     ],
   },

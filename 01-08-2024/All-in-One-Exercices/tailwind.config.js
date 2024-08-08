@@ -47,8 +47,21 @@ export default {
         "grayish-cyan": "hsl(184, 14%, 56%)",
         "light-grayish-cyan": "hsl(185, 41%, 84%)",
         "very-light-grayish-cyan": "hsl(189, 41%, 97%)",
+        // New colors from style guide
+        "soft-cyan": "hsl(174, 77%, 80%)",
+        "slider-background": "hsl(174, 86%, 45%)",
+        "discount-background": "hsl(14, 92%, 95%)",
+        "discount-text": "hsl(15, 100%, 70%)",
+        "cta-text": "hsl(226, 100%, 87%)",
+        "pricing-bg": "hsl(0, 0%, 100%)",
+        "main-bg": "hsl(230, 100%, 99%)",
+        "empty-slider": "hsl(224, 65%, 95%)",
+        "toggle-bg": "hsl(223, 50%, 87%)",
+        "text-grayish-blue": "hsl(225, 20%, 60%)",
+        "text-dark-desaturated-blue": "hsl(227, 35%, 25%)",
       },
       fontFamily: {
+        // Existing font families
         poppins: ["Poppins", "sans-serif"],
         karla: ["Karla", "sans-serif"],
         "red-hat": ["Red Hat Text", "sans-serif"],
@@ -56,6 +69,8 @@ export default {
         spaceGrotesk: ["Space Grotesk", "sans-serif"],
         sans: ["Manrope", "sans-serif"],
         spaceMono: ["Space Mono", "monospace"],
+        // New font family
+        manrope: ["Manrope", "sans-serif"],
       },
     },
   },
