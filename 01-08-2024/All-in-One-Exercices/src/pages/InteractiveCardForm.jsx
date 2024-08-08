@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// Componente per il modulo interattivo
 const InteractiveForm = () => {
   const [cardholderName, setCardholderName] = useState("");
   const [cardNumber, setCardNumber] = useState("");
@@ -11,7 +10,6 @@ const InteractiveForm = () => {
   const [cvc, setCvc] = useState("");
   const [errors, setErrors] = useState({});
 
-  // Funzione per validare gli input del modulo
   const validateForm = () => {
     const newErrors = {};
 
@@ -29,7 +27,6 @@ const InteractiveForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  // Funzione per gestire l'invio del modulo
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
@@ -40,7 +37,6 @@ const InteractiveForm = () => {
     }
   };
 
-  // Funzione per resettare il modulo
   const resetForm = () => {
     setCardholderName("");
     setCardNumber("");
