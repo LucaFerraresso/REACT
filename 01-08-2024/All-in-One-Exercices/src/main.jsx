@@ -27,7 +27,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const router = createBrowserRouter([
   {
-    path: "/homepage",
+    path: "/",
     element: <DefaultLayout />,
     errorElement: <ErrorPage />,
     children: [
