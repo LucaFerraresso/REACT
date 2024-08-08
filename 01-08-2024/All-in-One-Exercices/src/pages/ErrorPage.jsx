@@ -16,7 +16,7 @@ const ErrorPage = () => {
         {JSON.stringify(error, null, 2)}
       </pre>
       <a
-        href="/homepage"
+        href="/"
         className="mt-6 inline-block px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700"
       >
         Go back to the homepage
